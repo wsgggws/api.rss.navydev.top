@@ -17,7 +17,8 @@ mkdir -p ./data/certbot/www
 1. `navydev.top` 的 A 记录指向您的服务器 IP
 2. `rss.navydev.top` 的 A 记录指向同一 IP
 3. `obz.navydev.top` 的 A 记录指向同一 IP
-4. 域名备案也已经通过
+4. `crabtris.navydev.top` 的 A 记录指向同一 IP
+5. 域名备案也已经通过
 
 ## 步骤三：临时 Nginx 配置
 
@@ -50,15 +51,15 @@ docker compose restart nginx
 使用 Certbot 为多个域名申请单个证书（使用 HTTP 验证）：
 
 ```bash
-# 在 docker-compose 同级目录
-certbot certonly --webroot \
-  --webroot-path=$(pwd)/data/certbot/www \
-  --config-dir=$(pwd)/data/certbot/conf \
-  --work-dir=$(pwd)/data/certbot/conf \
-  --logs-dir=$(pwd)/data/certbot/conf/logs \
-  -d navydev.top -d rss.navydev.top -d obz.navydev.top \
-  --email wsgggws@gmail.com \
-  --agree-tos --no-eff-email
+# 在 docker-compose 同级目录, 只更改 -d 参数就好
+certbot certonly --webroot   \
+--webroot-path=$(pwd)/data/certbot/www  \
+--config-dir=$(pwd)/data/certbot/conf   \
+--work-dir=$(pwd)/data/certbot/conf   \
+--logs-dir=$(pwd)/data/certbot/conf/logs   \
+-d obz.navydev.top   \
+--email wsgggws@gmail.com   \
+--agree-tos --no-eff-email
 ```
 
 这会为多个域名创建一个共享证书，无需 DNS 验证。
@@ -68,8 +69,6 @@ certbot certonly --webroot \
 ```bash
 ls -la ./data/certbot/conf/live/
 ```
-
-您应该能看到 `navydev.top` 目录，包含适用于两个域名的证书文件。
 
 ## 步骤八：配置 Nginx 使用共享证书
 
@@ -83,6 +82,8 @@ cp ./config/nginx/nginx.conf.bak ./config/nginx/nginx.conf
 
 ```bash
 docker compose restart nginx
+# 如果有些卷什么的有添加，如 conf.d/, 需要 --build 进行重新加载
+# docker compose up --build -d nginx
 ```
 
 ## 步骤十：设置自动续期
