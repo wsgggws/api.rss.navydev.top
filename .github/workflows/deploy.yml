@@ -24,7 +24,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: ".,!notes,!tests,!png,!.git,!.github,!.env.ci,!.env.local"
-          target: "${{ secrets.REMOTE_BACKEND_DIR }}"
+          target: "deploy/api.rss.navydev.top/"
           strip_components: 0
 
       - name: Setup SSH
@@ -35,6 +35,6 @@ jobs:
       - name: 🚀 Deploy on server
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.REMOTE_IP }} <<EOF
-            cd ${{ secrets.REMOTE_BACKEND_DIR}}
+            cd deploy/api.rss.navydev.top/
             make docker-run
           EOF

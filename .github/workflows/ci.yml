@@ -10,7 +10,9 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Start Docker Compose
-        run: docker compose -f docker-compose.yml up test-db --build -d
+        run: |
+          docker network create otel-net
+          docker compose -f docker-compose.yml up test-db --build -d
 
       - name: Wait for PostgreSQL
         run: |
