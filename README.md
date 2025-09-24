@@ -5,11 +5,11 @@
 
 **AI 生成个性化新闻摘要**，并在 [Bilibili](https://space.bilibili.com/472722204?spm_id_from=333.1007.0.0) 有合集分享，敬请期待！🚀
 
-## 前后端体验
+## 体验地址
 
-- <https://rss.navydev.top/>
+[查看监控面板 (by FastAPI-radar)](https://rss.navydev.top/__radar/)
 
-[查看页面效果](https://github.com/wsgggws/rss.navydev.top)
+[前端体验 (by Vue3)](https://rss.navydev.top/)
 
 **注册** 或者使用如下用户密码
 
@@ -39,6 +39,7 @@
 - [x] 监控 Metrics（OpenTelemetry + otel-collector + Prometheus + Grafana）
 - [x] 监控 Traces（OpenTelemetry + otel-collector + Tempo + Grafana）
 - [x] 监控 Logs（OpenTelemetry + otel-collector + Loki + Grafana）
+- [x] 监控 FastAPI-radar（实时请求，异常监控）
 - [x] pydantic-settings（配置管理）
 - [x] 新闻爬取 & 存储（Celery + asyncio + aiohttp + parsel）
 - [x] AI 生成摘要（DeepSeek API）
@@ -51,24 +52,25 @@
 
 ## 🛠 **技术栈**
 
-| **技术**           | **描述**                                              |
-| ------------------ | ----------------------------------------------------- |
-| **开发语言**       | Python 3.11                                           |
-| **包管理**         | Poetry 2.1.2                                          |
-| **后端框架**       | FastAPI                                               |
-| **数据库**         | PostgreSQL + SQLAlchemy（ORM）                        |
-| **任务队列**       | Celery + aioredis（异步任务处理）                     |
-| **配置管理**       | pydantic-settings                                     |
-| **新闻爬取与解析** | Asyncio + aiohttp + parsel                            |
-| **单元测试**       | Pytest                                                |
-| **AI 组件**        | TODO                                                  |
-| **监控 Metrics**   | OpenTelemetry + otel-collector + Prometheus + Grafana |
-| **监控 Traces**    | OpenTelemetry + otel-collector + Tempo + Grafana      |
-| **监控 Logs**      | OpenTelemetry + otel-collector + Loki + Grafana       |
-| **错误追踪**       | Sentry                                                |
-| **API 认证**       | JWT（身份验证）                                       |
-| **API 限流**       | SlowAPI（请求频率限制）                               |
-| **部署方式**       | Docker Compose                                        |
+| **技术**            | **描述**                                              |
+| ------------------- | ----------------------------------------------------- |
+| **开发语言**        | Python 3.11                                           |
+| **包管理**          | Poetry 2.1.2                                          |
+| **后端框架**        | FastAPI                                               |
+| **数据库**          | PostgreSQL + SQLAlchemy（ORM）                        |
+| **任务队列**        | Celery + aioredis（异步任务处理）                     |
+| **配置管理**        | pydantic-settings                                     |
+| **新闻爬取与解析**  | Asyncio + aiohttp + parsel                            |
+| **单元测试**        | Pytest                                                |
+| **AI 组件**         | TODO                                                  |
+| **监控 Metrics**    | OpenTelemetry + otel-collector + Prometheus + Grafana |
+| **监控 Traces**     | OpenTelemetry + otel-collector + Tempo + Grafana      |
+| **监控 Logs**       | OpenTelemetry + otel-collector + Loki + Grafana       |
+| **监控 请求与异常** | FastAPI-radar                                         |
+| **错误追踪**        | Sentry                                                |
+| **API 认证**        | JWT（身份验证）                                       |
+| **API 限流**        | SlowAPI（请求频率限制）                               |
+| **部署方式**        | Docker Compose                                        |
 
 ---
 
