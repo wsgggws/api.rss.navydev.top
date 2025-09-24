@@ -11,7 +11,7 @@ ENV POETRY_VIRTUALENVS_IN_PROJECT=true \
   POETRY_NO_INTERACTION=true
 
 # 设置工作目录
-WORKDIR /news-summary
+WORKDIR /api.rss.navydev.top
 
 # 复制依赖文件（避免代码变动导致重新安装所有依赖）
 COPY pyproject.toml poetry.lock ./
@@ -24,14 +24,14 @@ RUN python3 -m poetry install --only main --no-root
 FROM swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/python:3.11-slim AS runtime
 
 # 设置虚拟环境路径
-ENV VIRTUAL_ENV=/news-summary/.venv
+ENV VIRTUAL_ENV=/api.rss.navydev.top/.venv
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 # 设置工作目录
-WORKDIR /news-summary
+WORKDIR /api.rss.navydev.top
 
 # 复制 Poetry 安装的依赖（仅复制已安装的依赖，而不复制 `poetry` 本身）
-COPY --from=builder /news-summary/.venv /news-summary/.venv
+COPY --from=builder /api.rss.navydev.top/.venv /api.rss.navydev.top/.venv
 
 # 复制项目文件
 COPY . .

@@ -1,7 +1,7 @@
-# 📰 News-Summary
+# 📰 api.rss.navydev.top
 
-![CI](https://github.com/wsgggws/news-summary/actions/workflows/ci.yml/badge.svg)
-[![Codecov](https://codecov.io/gh/wsgggws/news-summary/branch/main/graph/badge.svg)](https://codecov.io/gh/wsgggws/news-summary)
+![CI](https://github.com/wsgggws/api.rss.navydev.top/actions/workflows/ci.yml/badge.svg)
+[![Codecov](https://codecov.io/gh/wsgggws/api.rss.navydev.top/branch/main/graph/badge.svg)](https://codecov.io/gh/wsgggws/api.rss.navydev.top)
 
 **AI 生成个性化新闻摘要**，并在 [Bilibili](https://space.bilibili.com/472722204?spm_id_from=333.1007.0.0) 有合集分享，敬请期待！🚀
 
@@ -9,7 +9,7 @@
 
 - <https://rss.navydev.top/>
 
-[查看页面效果](https://github.com/wsgggws/news-summary-front)
+[查看页面效果](https://github.com/wsgggws/rss.navydev.top)
 
 **注册** 或者使用如下用户密码
 
