@@ -1,5 +1,5 @@
 [project]
-name = "news-summary"
+name = "api.rss.navydev.top"
 version = "0.1.0"
 description = ""
 authors = [{ name = "wsgggws", email = "wsgggws@gmail.com" }]
@@ -52,7 +52,7 @@ package-mode = false
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.5"
 pytest-asyncio = { extras = ["trio"], version = "^0.25.3" }
-httpx = {extras = ["socks"], version = "^0.28.1"}
+httpx = { extras = ["socks"], version = "^0.28.1" }
 sqlalchemy = "^2.0.39"
 alembic = "^1.15.1"
 trio = "^0.29.0"

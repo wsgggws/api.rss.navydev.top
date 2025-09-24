@@ -7,8 +7,8 @@ services:
       dockerfile: Dockerfile # 指定 Dockerfile 路径
     container_name: web # 自定义容器名称
     volumes:
-      - .:/news-summary:z # 确保和 Dockerfile 里的 WORKDIR 一致
-      - venv_data:/news-summary/.venv # 避免覆盖 .venv, 开发环境必须要设置
+      - .:/api.rss.navydev.top:z # 确保和 Dockerfile 里的 WORKDIR 一致
+      - venv_data:/api.rss.navydev.top/.venv # 避免覆盖 .venv, 开发环境必须要设置
     ports:
       - "8000:8000" # 暴露 FastAPI 端口
     env_file:
@@ -29,8 +29,8 @@ services:
     container_name: celery-worker
     command: ["sh", "./scripts/start-celery-worker.sh"]
     volumes:
-      - .:/news-summary:z
-      - venv_data:/news-summary/.venv
+      - .:/api.rss.navydev.top:z
+      - venv_data:/api.rss.navydev.top/.venv
     env_file:
       - .env.docker
       - .env
@@ -48,8 +48,8 @@ services:
     container_name: celery-beat
     command: ["sh", "./scripts/start-celery-beat.sh"]
     volumes:
-      - .:/news-summary:z
-      - venv_data:/news-summary/.venv
+      - .:/api.rss.navydev.top:z
+      - venv_data:/api.rss.navydev.top/.venv
     env_file:
       - .env.docker
       - .env
