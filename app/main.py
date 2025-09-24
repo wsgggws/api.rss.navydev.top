@@ -1,6 +1,8 @@
 # import sentry_sdk
 from fastapi import FastAPI
 from fastapi.concurrency import asynccontextmanager
+from fastapi_radar import Radar
+from sqlalchemy import create_engine
 
 from app.error_handlers import setup_exception_handlers
 from app.middleware_handlers import setup_middlewares
@@ -29,8 +31,12 @@ async def lifespan(_: FastAPI):
 #     send_default_pii=True,
 # )
 
-
 app = FastAPI(lifespan=lifespan)
+
+engine = create_engine("sqlite:///./app.db")
+
+radar = Radar(app, db_engine=engine)
+radar.create_tables()
 
 
 app.include_router(user.router)
