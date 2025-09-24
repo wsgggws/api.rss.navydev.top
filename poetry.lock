@@ -1178,6 +1178,32 @@ url = "http://mirrors.aliyun.com/pypi/simple"
 reference = "aliyun"
 
 [[package]]
+name = "fastapi-radar"
+version = "0.1.5"
+description = "A debugging dashboard for FastAPI applications with real-time monitoring"
+optional = false
+python-versions = ">=3.8"
+groups = ["main"]
+files = [
+    {file = "fastapi_radar-0.1.5-py3-none-any.whl", hash = "sha256:8343bf0ee737b9ea288367cb82fcac50f12b025f0d93fc6ce8da5d4d658c2b49"},
+    {file = "fastapi_radar-0.1.5.tar.gz", hash = "sha256:8c1eeef962ad163aebcbe82471faf05729ba37b2ff5de965ed4ea8780b2e45ab"},
+]
+
+[package.dependencies]
+fastapi = ">=0.68.0"
+pydantic = ">=1.8.0"
+sqlalchemy = ">=1.4.0"
+starlette = ">=0.14.2"
+
+[package.extras]
+dev = ["black (>=22.0.0)", "flake8 (>=4.0.0)", "httpx (>=0.28.1)", "isort (>=5.10.0)", "mypy (>=0.950)", "pytest (>=7.0.0)", "pytest-asyncio (>=0.21.0)", "uvicorn[standard] (>=0.15.0)"]
+
+[package.source]
+type = "legacy"
+url = "http://mirrors.aliyun.com/pypi/simple"
+reference = "aliyun"
+
+[[package]]
 name = "feedparser"
 version = "6.0.11"
 description = "Universal feed parser, handles RSS 0.9x, RSS 1.0, RSS 2.0, CDF, Atom 0.3, and Atom 1.0 feeds"
@@ -4409,4 +4435,4 @@ reference = "aliyun"
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11,<4.0"
-content-hash = "813f72dba837f870ea68dca1180e2c213b5fe144b33b9652b4356ed30fceed8c"
+content-hash = "22ab14a333ee2f29636d0722cd28afac665dd92c071aae047bdc9521f408aed7"
