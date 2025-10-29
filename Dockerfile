@@ -1,42 +1,36 @@
 # 第一阶段: 构建依赖环境
-# FROM python:3.11-slim AS builder
 FROM swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/python:3.11-slim AS builder
 
-
-# 安装 Poetry
-RUN python3 -m pip install --no-cache-dir poetry==2.1.0
-
-# 设置环境变量，确保 Poetry 在项目目录创建 `.venv`
-ENV POETRY_VIRTUALENVS_IN_PROJECT=true \
-  POETRY_NO_INTERACTION=true
+# 安装 uv（比 pip/poetry 更快）
+RUN pip install --no-cache-dir uv
 
 # 设置工作目录
 WORKDIR /api.rss.navydev.top
 
-# 复制依赖文件（避免代码变动导致重新安装所有依赖）
-COPY pyproject.toml poetry.lock ./
+# 复制依赖文件（缓存优化：先复制 pyproject 和锁文件）
+COPY pyproject.toml uv.lock ./
 
-# 安装依赖（只安装 main，不安装 dev 依赖）
-RUN python3 -m poetry install --only main --no-root
+# 直接在系统环境安装依赖（不使用 .venv）
+# --frozen: 严格使用锁文件版本
+# --system: 安装到系统 site-packages
+RUN uv sync --frozen --no-dev
 
-# 第二阶段: 运行时环境
-# FROM python:3.11-slim AS runtime
+# 第二阶段: 运行环境
 FROM swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/python:3.11-slim AS runtime
 
-# 设置虚拟环境路径
-ENV VIRTUAL_ENV=/api.rss.navydev.top/.venv
-ENV PATH="$VIRTUAL_ENV/bin:$PATH"
-
 # 设置工作目录
 WORKDIR /api.rss.navydev.top
 
-# 复制 Poetry 安装的依赖（仅复制已安装的依赖，而不复制 `poetry` 本身）
-COPY --from=builder /api.rss.navydev.top/.venv /api.rss.navydev.top/.venv
+# 从 builder 复制系统级已安装依赖（site-packages）
+# Python 安装目录一般为 /usr/local/lib/python3.11/
+COPY --from=builder /usr/local/lib/python3.11 /usr/local/lib/python3.11
+COPY --from=builder /usr/local/bin/uv /usr/local/bin/uv
 
-# 复制项目文件
+# 复制项目代码
 COPY . .
 
 # 暴露端口
 EXPOSE 8000
 
+# 启动命令
 CMD ["sh", "./scripts/start-web.sh"]
