@@ -25,18 +25,19 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install Poetry
-        run: pip install poetry==2.1.0
+      - name: Install uv
+        run: pip install uv
 
-      - name: Install dependencies
-        run: poetry install --no-interaction
+      - name: Install dependencies with uv
+        run: |
+          uv sync
 
       - name: Run tests
         run: |
           set -a
           source .env.ci
           set +a
-          poetry run pytest tests --cov=app --cov-report=xml
+          uv run pytest tests --cov=app --cov-report=xml
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5

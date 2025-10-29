@@ -55,7 +55,7 @@
 | **技术**            | **描述**                                              |
 | ------------------- | ----------------------------------------------------- |
 | **开发语言**        | Python 3.11                                           |
-| **包管理**          | Poetry 2.1.2                                          |
+| **包管理**          | uv                                                    |
 | **后端框架**        | FastAPI                                               |
 | **数据库**          | PostgreSQL + SQLAlchemy（ORM）                        |
 | **任务队列**        | Celery + aioredis（异步任务处理）                     |
@@ -80,10 +80,10 @@
 
 推荐使用 [Miniconda](https://www.anaconda.com/docs/getting-started/miniconda/main) 进行 Python 版本管理
 
-### [Poetry](https://python-poetry.org/docs/)
+### uv
 
 ```sh
-curl -sSL https://install.python-poetry.org | python3 - --version 2.1.2
+curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
 ---

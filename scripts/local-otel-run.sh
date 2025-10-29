@@ -13,4 +13,4 @@ source .env.otel
 set +a
 
 echo "🔭 启动带 OpenTelemetry 的 FastAPI 服务."
-opentelemetry-instrument uvicorn app.main:app
+uv run opentelemetry-instrument uvicorn app.main:app

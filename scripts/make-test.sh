@@ -16,10 +16,10 @@ set +a
 # 如果没有传参，则直接跑 pytest
 if [ $# -eq 0 ]; then
   echo "🧪 运行所有测试 (默认)..."
-  pytest
+  uv run pytest
 else
   echo "🧪 运行 pytest with args: $*"
-  pytest "$@"
+  uv run pytest "$@"
 fi
 
 echo "🧼 删除旧 <none> 镜像..."

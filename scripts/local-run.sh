@@ -18,4 +18,4 @@ source .env.local
 set +a
 
 echo "🚀 启动 FastAPI 开发服务..."
-uvicorn app.main:app --reload
+uv run uvicorn app.main:app --reload

@@ -2,4 +2,4 @@
 set -e
 
 echo "⏰ 启动 Celery Beat."
-exec celery -A celery_app beat --loglevel=info
+exec uv run celery -A celery_app beat --loglevel=info
