@@ -16,19 +16,25 @@ assert settings.db.URL.endswith("test_newsdb")
 # https://docs.sqlalchemy.org/en/20/orm/extensions/asyncio.html#using-multiple-asyncio-event-loops
 # https://pypi.org/project/pytest-async-sqlalchemy/
 # or poolclass = NullPool when create_async_engine
-@pytest_asyncio.fixture(scope="session", autouse=True)
+@pytest.fixture(scope="function")
 def event_loop():
-    """
-    Creates an instance of the default event loop for the test session.
+    """Create a fresh event loop for each test (function scope).
+
+    This avoids pytest-asyncio ScopeMismatch errors when session-scoped
+    fixtures try to access function-scoped internals. Using a new
+    event loop per test is the recommended, simple approach for these
+    tests.
     """
     loop = asyncio.new_event_loop()
-    yield loop
-    loop.close()
+    try:
+        yield loop
+    finally:
+        loop.close()
 
 
-@pytest_asyncio.fixture(scope="session", autouse=True)
+@pytest_asyncio.fixture(scope="function", autouse=True)
 async def setup_database():
-    """全局数据库初始化（整个测试会话只执行一次）"""
+    """为每个测试初始化数据库（每个测试函数执行一次），避免 session-scoped async fixture 引发 ScopeMismatch。"""
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
         print(f"\n创建所有表: {settings.db.URL}")
@@ -38,7 +44,7 @@ async def setup_database():
         await conn.run_sync(Base.metadata.drop_all)
 
 
-@pytest_asyncio.fixture(scope="session")
+@pytest_asyncio.fixture(scope="function")
 async def client():
     async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as ac:
         yield ac
@@ -68,4 +74,8 @@ def vcr_config():
         "cassette_library_dir": "tests/data/cassettes",
         "decode_compressed_response": True,
         "log": None,
+        # 在测试中允许重新录制（在某些环境 cassette 可能需更新）
+        # 可根据 CI/本地需求改回 'once' 或 'none'
+        # "record_mode": "all",
+        "record_mode": "none",
     }

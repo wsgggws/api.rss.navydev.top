@@ -186,3 +186,4 @@ ssl/
 data
 logs
 *.sql
+radar.duckdb

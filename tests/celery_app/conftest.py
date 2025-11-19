@@ -11,7 +11,7 @@ def pytest_configure():
     logging.getLogger("vcr").setLevel(logging.WARNING)
 
 
-@pytest.fixture(scope="package", autouse=True)
+@pytest.fixture(scope="function", autouse=True)
 async def async_test_db():
     feed1 = RSSFeed(**test_feeds[0])
     feed2 = RSSFeed(**test_feeds[1])
