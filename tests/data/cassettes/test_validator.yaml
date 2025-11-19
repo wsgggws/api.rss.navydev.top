@@ -234,4 +234,1733 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: "{\"username\":\"rss_user\",\"password\":\"Passw0rd;\",\"email\":\"rss@example.com\",\"bio\":\"\u53EF\u7EF4\u62A4\u6027\",\"avatar\":\"https://avatars.githubusercontent.com/u/20469245?v=4\",\"favorite_sites\":{\"GitHub\":\"https://github.com/wsgggws\",\"Bilibili\":\"https://space.bilibili.com/472722204\"}}"
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '264'
+      content-type:
+      - application/json
+      host:
+      - test
+      user-agent:
+      - python-httpx/0.28.1
+    method: POST
+    uri: http://test/api/v1/user/register
+  response:
+    body:
+      string: '{"id":"ea6975c7-1eb8-4496-a975-70928ba69313","username":"rss_user","email":"rss@example.com","last_login":null,"avatar":null,"bio":null,"favorite_sites":null,"created_at":"2025-11-19T14:46:43.346573Z","updated_at":"2025-11-19T14:46:43.346581Z"}'
+    headers:
+      content-length:
+      - '244'
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/136.0.0.0 Safari/537.36
+    method: GET
+    uri: https://sspai.com/feeds
+  response:
+    body:
+      string: "{\"error\":404,\"message\":\"\u672A\u627E\u5230\"}\n"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '36'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 19 Nov 2025 14:46:43 GMT
+      Vary:
+      - Origin
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: null
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/136.0.0.0 Safari/537.36
+    method: GET
+    uri: https://sspai.com/feed
+  response:
+    body:
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\"
+        xmlns:dc=\"http://purl.org/dc/elements/1.1/\"><channel><title>\u5C11\u6570\u6D3E</title><link>https://sspai.com</link><description>\u5C11\u6570\u6D3E\u81F4\u529B\u4E8E\u66F4\u597D\u5730\u8FD0\u7528\u6570\u5B57\u4EA7\u54C1\u6216\u79D1\u5B66\u65B9\u6CD5\uFF0C\u5E2E\u52A9\u7528\u6237\u63D0\u5347\u5DE5\u4F5C\u6548\u7387\u548C\u751F\u6D3B\u54C1\u8D28</description><language>zh-CN</language><managingEditor>contact@sspai.com
+        (\u5C11\u6570\u6D3E)</managingEditor><pubDate>Wed, 19 Nov 2025 17:44:54 +0800</pubDate><item><title>\u5177\u900F
+        | \u5F53\u4E00\u4E2A\u89C6\u9891\u4E0B\u8F7D\u811A\u672C\u88AB\u8FEB\u53D8\u6210\u534A\u4E2A\u6D4F\u89C8\u5668\uFF1BAndroid
+        \u4FA7\u8F7D\u4FDD\u4F4F\u4E86\u4E00\u534A</title><link>https://sspai.com/prime/story/inside-release-notes-251119</link><description>yt-dlp\u5F00\u59CB\u4F9D\u8D56\u5916\u90E8JavaScript\u8FD0\u884C\u65F6@PlatyHsu\uFF1Ayt-dlp\u662F\u5F00\u6E90\u793E\u533A\u975E\u5E38\u6709\u540D\u7684\u89C6\u9891\u4E0B\u8F7D\u5DE5\u5177\uFF0C\u4E5F\u662Fyoutube-dl\u505C\u6B62\u66F4\u65B0\u4E4B\u540E\uFF0C\u5C11\u6570\u4FDD\u6301\u6D3B\u8DC3\u548C\u53EF\u7528\u7684\u9009\u9879\u3002\u9664\u4E86\u5728\u7EC8\u7AEF\u76F4\u63A5\u4F7F\u7528\u5916
+        ...&lt;a href=&#34;https://sspai.com/prime/story/inside-release-notes-251119&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;&lt;p&gt;\u672C\u6587\u4E3A\u4F1A\u5458\u6587\u7AE0\uFF0C\u51FA\u81EA&lt;a
+        href=&#34;https://sspai.com/prime/precog/single&#34; target=&#34;_blank&#34;&gt;\u300A\u5355\u7BC7\u6587\u7AE0\u300B&lt;/a
+        &gt;\uFF0C\u8BA2\u9605\u540E\u53EF\u9605\u8BFB\u5168\u6587\u3002&lt;/p &gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Wed,
+        19 Nov 2025 17:44:54 +0800</pubDate></item><item><title>\u4F4E\u6210\u672C\u3001\u53EF\u6269\u5C55\u7684
+        CyberBrick \u590D\u73B0\u65B9\u6848\uFF0C\u81EA\u5DF1\u52A8\u624B\u505A\u4E00\u53F0
+        3D \u6253\u5370\u9065\u63A7\u8F66</title><link>https://sspai.com/post/103872</link><description>Matrix\u9996\u9875\u63A8\u8350Matrix\u662F\u5C11\u6570\u6D3E\u7684\u5199\u4F5C\u793E\u533A\uFF0C\u6211\u4EEC\u4E3B\u5F20\u5206\u4EAB\u771F\u5B9E\u7684\u4EA7\u54C1\u4F53\u9A8C\uFF0C\u6709\u5B9E\u7528\u4EF7\u503C\u7684\u7ECF\u9A8C\u4E0E\u601D\u8003\u3002\u6211\u4EEC\u4F1A\u4E0D\u5B9A\u671F\u6311\u9009Matrix\u6700\u4F18\u8D28\u7684\u6587\u7AE0\uFF0C\u5C55\u793A\u6765\u81EA\u7528\u6237\u7684\u6700\u771F\u5B9E\u7684\u4F53\u9A8C\u548C\u89C2\u70B9\u3002\u6587\u7AE0\u4EE3\u8868\u4F5C\u8005\u4E2A\u4EBA\u89C2\u70B9
+        ...&lt;a href=&#34;https://sspai.com/post/103872&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u4EFB\u4E9A\u519B</author><pubDate>Wed,
+        19 Nov 2025 17:33:01 +0800</pubDate></item><item><title>\u4ECE\u65E5\u5E38\u5230\u8FD0\u52A8\uFF0CAirPods
+        3 Pro \u5168\u9762\u4F53\u9A8C\u62A5\u544A</title><link>https://sspai.com/post/103806</link><description>AirPods
+        \u7CFB\u5217\u771F\u7684\u65E0\u6127\u4E8E iPhone \u4E4B\u540E\u82F9\u679C\u6700\u4F1F\u5927\u7684\u4EA7\u54C1\u3002&lt;a
+        href=&#34;https://sspai.com/post/103806&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5199\u5C0F\u9ED1\u6587\u7684Alex</author><pubDate>Wed,
+        19 Nov 2025 15:09:41 +0800</pubDate></item><item><title>\u6211\u7684\u79CB\u51AC\u7A7F\u642D\u601D\u8DEF\uFF1A\u4ECE\u6838\u5FC3\u5355\u54C1\u51FA\u53D1\uFF0C\u517C\u987E\u4FDD\u6696\u4E0E\u4E2A\u6027</title><link>https://sspai.com/post/103912</link><description>\u5929\u6C14\u8D8A\u51B7\uFF0C\u7ED9\u7A7F\u642D\u7684\u53D1\u6325\u7A7A\u95F4\u5C31\u8D8A\u5927\u3002\u79CB\u51AC\u7684\u5355\u54C1\uFF0C\u65E0\u8BBA\u662F\u5185\u642D\u8FD8\u662F\u5916\u8863\uFF0C\u90FD\u6709\u5F88\u591A\u79CD\u7EC6\u5206\u7684\u54C1\u7C7B\u53EF\u4EE5\u9009\u62E9\uFF0C\u81EA\u7136\u4E5F\u5C31\u6709\u65E0\u6570\u7684\u7A7F\u642D\u53EF\u80FD\u3002\u5728\u642D\u914D\u7684\u65B9\u6CD5\u4E0A\uFF0C\u9664\u4E86\u5E38\u89C4\u7684\u5185\u642D\u52A0\u5916\u5957\u7684\u7A7F\u6CD5\uFF0C\u79CB\u51AC\u8FD8\u53EF\u4EE5\u7528\u300C\u53E0\u7A7F\u300D\u6765\u7A81\u51FA\u5C42\u6B21\u611F\uFF0C
+        ...&lt;a href=&#34;https://sspai.com/post/103912&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u7A0B\u5929\u51B2</author><pubDate>Wed,
+        19 Nov 2025 11:00:00 +0800</pubDate></item><item><title>\u6D3E\u65E9\u62A5\uFF1AGoogle
+        \u53D1\u5E03 Gemini 3\u3001Cloudflare \u5F15\u53D1\u7F51\u7EDC\u6545\u969C\u7B49</title><link>https://sspai.com/post/103926</link><description>Zigbee
+        4.0 \u6807\u51C6\u516C\u5E03\uFF0C\u5FAE\u8F6F\u3001\u82F1\u4F1F\u8FBE\u4E0E
+        Anthropic \u8FBE\u6210\u6218\u7565\u5408\u4F5C\u7B49\u3002&lt;a href=&#34;https://sspai.com/post/103926&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Wed,
+        19 Nov 2025 08:54:21 +0800</pubDate></item><item><title>\u793E\u533A\u901F\u9012
+        118 | \u6D3E\u53CB\u5343\u5947\u767E\u602A\u7684\u5065\u8EAB\u8D77\u70B9\u3001\u4E00\u5468\u70ED\u8BC4\u4EE5\u53CA\u65B0\u73A9\u610F</title><link>https://sspai.com/post/103908</link><description>\u9664\u4E86\u9996\u9875\u65F6\u95F4\u6D41\u548C\u4FA7\u680F\u7684\u7CBE\u9009\u5C55\u4F4D\uFF0C\u5C11\u6570\u6D3EMatrix\u793E\u533A\u8FD8\u6709\u5F88\u591A\u4F18\u79C0\u5185\u5BB9\u56E0\u6761\u4EF6\u6240\u9650\u65E0\u6CD5\u5F97\u5230\u6709\u6548\u66DD\u5149\uFF0C\u56E0\u6B64\u6211\u4EEC\u51B3\u5B9A\u91CD\u542FMatrix\u5468\u62A5\uFF0C\u5E76\u5728\u6B64\u57FA\u7840\u4E0A\u6DFB\u52A0\u66F4\u591A\u793E\u533A\u5185\u5BB9\u3001\u4F5C\u8005\u6295\u7A3F\u65B0\u73A9\u610F\u5448\u73B0\u7ED9\u5927\u5BB6\u3002\U0001F4AC\u4E00\u6D3E\u70ED\u8BAE\u5728
+        ...&lt;a href=&#34;https://sspai.com/post/103908&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>Matrix\u673A\u5668\u4EBA</author><pubDate>Tue,
+        18 Nov 2025 17:20:00 +0800</pubDate></item><item><title>\u4E2D\u6863\u4EF7\u4F4D\u771F\u65E0\u7EBF\u8033\u673A\u6A2A\u8BC4\u4E0E\u5EFA\u8BAE\uFF082025
+        \u5E74\u7EC8\uFF09 - TDS \u65E0\u5FC3\u5FEB\u8BED</title><link>https://sspai.com/post/103767</link><description>\u805A\u7126\u4F69\u6234\u3001\u64CD\u4F5C\u4E0E
+        App \u4F53\u9A8C\u3001\u4FE1\u53F7\u8868\u73B0\u3001\u7EED\u822A\u8868\u73B0\u3001\u964D\u566A\u7EFC\u5408\u8868\u73B0\u3001\u58F0\u97F3\u8868\u73B0\u516D\u4E2A\u5927\u9879\u3002&lt;a
+        href=&#34;https://sspai.com/post/103767&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>KingTsui</author><pubDate>Tue,
+        18 Nov 2025 15:00:00 +0800</pubDate></item><item><title>\u7528 AI \u751F\u6210\u4E92\u52A8\u6E38\u620F\uFF0C\u8BA9\u8BFE\u672C\u91CC\u7684\u6545\u4E8B\u300C\u6D3B\u300D\u8D77\u6765</title><link>https://sspai.com/post/103811</link><description>Matrix\u9996\u9875\u63A8\u8350Matrix\u662F\u5C11\u6570\u6D3E\u7684\u5199\u4F5C\u793E\u533A\uFF0C\u6211\u4EEC\u4E3B\u5F20\u5206\u4EAB\u771F\u5B9E\u7684\u4EA7\u54C1\u4F53\u9A8C\uFF0C\u6709\u5B9E\u7528\u4EF7\u503C\u7684\u7ECF\u9A8C\u4E0E\u601D\u8003\u3002\u6211\u4EEC\u4F1A\u4E0D\u5B9A\u671F\u6311\u9009Matrix\u6700\u4F18\u8D28\u7684\u6587\u7AE0\uFF0C\u5C55\u793A\u6765\u81EA\u7528\u6237\u7684\u6700\u771F\u5B9E\u7684\u4F53\u9A8C\u548C\u89C2\u70B9\u3002\u6587\u7AE0\u4EE3\u8868\u4F5C\u8005\u4E2A\u4EBA\u89C2\u70B9
+        ...&lt;a href=&#34;https://sspai.com/post/103811&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u4E00\u6CFDEze</author><pubDate>Tue,
+        18 Nov 2025 11:03:00 +0800</pubDate></item><item><title>\u6D3E\u65E9\u62A5\uFF1A\u963F\u91CC\u5DF4\u5DF4\u5343\u95EE
+        App \u516C\u6D4B\u4E0A\u7EBF\uFF0C\u7D2B\u5149\u5C55\u9510\u53D1\u5E03 T9300
+        5G SoC \u7B49</title><link>https://sspai.com/post/103901</link><description>TGA
+        2025 \u6E38\u620F\u5956\u63D0\u540D\u516C\u5E03\uFF0COPPO \u53D1\u5E03 Reno15
+        \u7CFB\u5217\u624B\u673A\u7B49\u3002&lt;a href=&#34;https://sspai.com/post/103901&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Tue,
+        18 Nov 2025 08:42:57 +0800</pubDate></item><item><title>\u6D3E\u8BC4 | \u8FD1\u671F\u503C\u5F97\u5173\u6CE8\u7684
+        App</title><link>https://sspai.com/post/103895</link><description>\u6B22\u8FCE\u6536\u770B\u672C\u671F\u300A\u6D3E\u8BC4\u300B\u3002\u4F60\u53EF\u4EE5\u901A\u8FC7\u6587\u7AE0\u76EE\u5F55\u5FEB\u901F\u8DF3\u8F6C\u5230\u4F60\u611F\u5174\u8DA3\u7684\u5185\u5BB9\u3002\u5982\u679C\u53D1\u73B0\u4E86\u5176\u5B83\u611F\u5174\u8DA3\u7684App\u6216\u8005\u5173\u6CE8\u7684\u8BDD\u9898\uFF0C\u4E5F\u6B22\u8FCE\u5728\u8BC4\u8BBA\u533A\u548C\u6211\u4EEC\u8BA8\u8BBA\u3002\u4E0D\u5BB9\u9519\u8FC7\u7684App\u66F4\u65B0\u9664\u4E86\u300C\u65B0\u9C9C\u300DApp\uFF0CAppStore\u4E2D\u7684\u8BB8\u591A
+        ...&lt;a href=&#34;https://sspai.com/post/103895&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Mon,
+        17 Nov 2025 17:43:51 +0800</pubDate></item><atom:link href=\"https://sspai.com/feed\"
+        type=\"application/rss+xml\" ref=\"self\"></atom:link><atom:link href=\"https://sspai.com/feed\"
+        type=\"application/rss+xml\" ref=\"hub\"></atom:link></channel></rss>"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/xml; charset=UTF-8
+      Date:
+      - Wed, 19 Nov 2025 14:46:43 GMT
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: "{\"username\":\"rss_user\",\"password\":\"Passw0rd;\",\"email\":\"rss@example.com\",\"bio\":\"\u53EF\u7EF4\u62A4\u6027\",\"avatar\":\"https://avatars.githubusercontent.com/u/20469245?v=4\",\"favorite_sites\":{\"GitHub\":\"https://github.com/wsgggws\",\"Bilibili\":\"https://space.bilibili.com/472722204\"}}"
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '264'
+      content-type:
+      - application/json
+      host:
+      - test
+      user-agent:
+      - python-httpx/0.28.1
+    method: POST
+    uri: http://test/api/v1/user/register
+  response:
+    body:
+      string: '{"id":"431ba4f4-15d8-4a49-ba36-5331b03a3a4d","username":"rss_user","email":"rss@example.com","last_login":null,"avatar":null,"bio":null,"favorite_sites":null,"created_at":"2025-11-19T14:49:06.991779Z","updated_at":"2025-11-19T14:49:06.991788Z"}'
+    headers:
+      content-length:
+      - '244'
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/136.0.0.0 Safari/537.36
+    method: GET
+    uri: https://sspai.com/feeds
+  response:
+    body:
+      string: "{\"error\":404,\"message\":\"\u672A\u627E\u5230\"}\n"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '36'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 19 Nov 2025 14:49:07 GMT
+      Vary:
+      - Origin
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: null
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/136.0.0.0 Safari/537.36
+    method: GET
+    uri: https://sspai.com/feed
+  response:
+    body:
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\"
+        xmlns:dc=\"http://purl.org/dc/elements/1.1/\"><channel><title>\u5C11\u6570\u6D3E</title><link>https://sspai.com</link><description>\u5C11\u6570\u6D3E\u81F4\u529B\u4E8E\u66F4\u597D\u5730\u8FD0\u7528\u6570\u5B57\u4EA7\u54C1\u6216\u79D1\u5B66\u65B9\u6CD5\uFF0C\u5E2E\u52A9\u7528\u6237\u63D0\u5347\u5DE5\u4F5C\u6548\u7387\u548C\u751F\u6D3B\u54C1\u8D28</description><language>zh-CN</language><managingEditor>contact@sspai.com
+        (\u5C11\u6570\u6D3E)</managingEditor><pubDate>Wed, 19 Nov 2025 17:44:54 +0800</pubDate><item><title>\u5177\u900F
+        | \u5F53\u4E00\u4E2A\u89C6\u9891\u4E0B\u8F7D\u811A\u672C\u88AB\u8FEB\u53D8\u6210\u534A\u4E2A\u6D4F\u89C8\u5668\uFF1BAndroid
+        \u4FA7\u8F7D\u4FDD\u4F4F\u4E86\u4E00\u534A</title><link>https://sspai.com/prime/story/inside-release-notes-251119</link><description>yt-dlp\u5F00\u59CB\u4F9D\u8D56\u5916\u90E8JavaScript\u8FD0\u884C\u65F6@PlatyHsu\uFF1Ayt-dlp\u662F\u5F00\u6E90\u793E\u533A\u975E\u5E38\u6709\u540D\u7684\u89C6\u9891\u4E0B\u8F7D\u5DE5\u5177\uFF0C\u4E5F\u662Fyoutube-dl\u505C\u6B62\u66F4\u65B0\u4E4B\u540E\uFF0C\u5C11\u6570\u4FDD\u6301\u6D3B\u8DC3\u548C\u53EF\u7528\u7684\u9009\u9879\u3002\u9664\u4E86\u5728\u7EC8\u7AEF\u76F4\u63A5\u4F7F\u7528\u5916
+        ...&lt;a href=&#34;https://sspai.com/prime/story/inside-release-notes-251119&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;&lt;p&gt;\u672C\u6587\u4E3A\u4F1A\u5458\u6587\u7AE0\uFF0C\u51FA\u81EA&lt;a
+        href=&#34;https://sspai.com/prime/precog/single&#34; target=&#34;_blank&#34;&gt;\u300A\u5355\u7BC7\u6587\u7AE0\u300B&lt;/a
+        &gt;\uFF0C\u8BA2\u9605\u540E\u53EF\u9605\u8BFB\u5168\u6587\u3002&lt;/p &gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Wed,
+        19 Nov 2025 17:44:54 +0800</pubDate></item><item><title>\u4F4E\u6210\u672C\u3001\u53EF\u6269\u5C55\u7684
+        CyberBrick \u590D\u73B0\u65B9\u6848\uFF0C\u81EA\u5DF1\u52A8\u624B\u505A\u4E00\u53F0
+        3D \u6253\u5370\u9065\u63A7\u8F66</title><link>https://sspai.com/post/103872</link><description>Matrix\u9996\u9875\u63A8\u8350Matrix\u662F\u5C11\u6570\u6D3E\u7684\u5199\u4F5C\u793E\u533A\uFF0C\u6211\u4EEC\u4E3B\u5F20\u5206\u4EAB\u771F\u5B9E\u7684\u4EA7\u54C1\u4F53\u9A8C\uFF0C\u6709\u5B9E\u7528\u4EF7\u503C\u7684\u7ECF\u9A8C\u4E0E\u601D\u8003\u3002\u6211\u4EEC\u4F1A\u4E0D\u5B9A\u671F\u6311\u9009Matrix\u6700\u4F18\u8D28\u7684\u6587\u7AE0\uFF0C\u5C55\u793A\u6765\u81EA\u7528\u6237\u7684\u6700\u771F\u5B9E\u7684\u4F53\u9A8C\u548C\u89C2\u70B9\u3002\u6587\u7AE0\u4EE3\u8868\u4F5C\u8005\u4E2A\u4EBA\u89C2\u70B9
+        ...&lt;a href=&#34;https://sspai.com/post/103872&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u4EFB\u4E9A\u519B</author><pubDate>Wed,
+        19 Nov 2025 17:33:01 +0800</pubDate></item><item><title>\u4ECE\u65E5\u5E38\u5230\u8FD0\u52A8\uFF0CAirPods
+        3 Pro \u5168\u9762\u4F53\u9A8C\u62A5\u544A</title><link>https://sspai.com/post/103806</link><description>AirPods
+        \u7CFB\u5217\u771F\u7684\u65E0\u6127\u4E8E iPhone \u4E4B\u540E\u82F9\u679C\u6700\u4F1F\u5927\u7684\u4EA7\u54C1\u3002&lt;a
+        href=&#34;https://sspai.com/post/103806&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5199\u5C0F\u9ED1\u6587\u7684Alex</author><pubDate>Wed,
+        19 Nov 2025 15:09:41 +0800</pubDate></item><item><title>\u6211\u7684\u79CB\u51AC\u7A7F\u642D\u601D\u8DEF\uFF1A\u4ECE\u6838\u5FC3\u5355\u54C1\u51FA\u53D1\uFF0C\u517C\u987E\u4FDD\u6696\u4E0E\u4E2A\u6027</title><link>https://sspai.com/post/103912</link><description>\u5929\u6C14\u8D8A\u51B7\uFF0C\u7ED9\u7A7F\u642D\u7684\u53D1\u6325\u7A7A\u95F4\u5C31\u8D8A\u5927\u3002\u79CB\u51AC\u7684\u5355\u54C1\uFF0C\u65E0\u8BBA\u662F\u5185\u642D\u8FD8\u662F\u5916\u8863\uFF0C\u90FD\u6709\u5F88\u591A\u79CD\u7EC6\u5206\u7684\u54C1\u7C7B\u53EF\u4EE5\u9009\u62E9\uFF0C\u81EA\u7136\u4E5F\u5C31\u6709\u65E0\u6570\u7684\u7A7F\u642D\u53EF\u80FD\u3002\u5728\u642D\u914D\u7684\u65B9\u6CD5\u4E0A\uFF0C\u9664\u4E86\u5E38\u89C4\u7684\u5185\u642D\u52A0\u5916\u5957\u7684\u7A7F\u6CD5\uFF0C\u79CB\u51AC\u8FD8\u53EF\u4EE5\u7528\u300C\u53E0\u7A7F\u300D\u6765\u7A81\u51FA\u5C42\u6B21\u611F\uFF0C
+        ...&lt;a href=&#34;https://sspai.com/post/103912&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u7A0B\u5929\u51B2</author><pubDate>Wed,
+        19 Nov 2025 11:00:00 +0800</pubDate></item><item><title>\u6D3E\u65E9\u62A5\uFF1AGoogle
+        \u53D1\u5E03 Gemini 3\u3001Cloudflare \u5F15\u53D1\u7F51\u7EDC\u6545\u969C\u7B49</title><link>https://sspai.com/post/103926</link><description>Zigbee
+        4.0 \u6807\u51C6\u516C\u5E03\uFF0C\u5FAE\u8F6F\u3001\u82F1\u4F1F\u8FBE\u4E0E
+        Anthropic \u8FBE\u6210\u6218\u7565\u5408\u4F5C\u7B49\u3002&lt;a href=&#34;https://sspai.com/post/103926&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Wed,
+        19 Nov 2025 08:54:21 +0800</pubDate></item><item><title>\u793E\u533A\u901F\u9012
+        118 | \u6D3E\u53CB\u5343\u5947\u767E\u602A\u7684\u5065\u8EAB\u8D77\u70B9\u3001\u4E00\u5468\u70ED\u8BC4\u4EE5\u53CA\u65B0\u73A9\u610F</title><link>https://sspai.com/post/103908</link><description>\u9664\u4E86\u9996\u9875\u65F6\u95F4\u6D41\u548C\u4FA7\u680F\u7684\u7CBE\u9009\u5C55\u4F4D\uFF0C\u5C11\u6570\u6D3EMatrix\u793E\u533A\u8FD8\u6709\u5F88\u591A\u4F18\u79C0\u5185\u5BB9\u56E0\u6761\u4EF6\u6240\u9650\u65E0\u6CD5\u5F97\u5230\u6709\u6548\u66DD\u5149\uFF0C\u56E0\u6B64\u6211\u4EEC\u51B3\u5B9A\u91CD\u542FMatrix\u5468\u62A5\uFF0C\u5E76\u5728\u6B64\u57FA\u7840\u4E0A\u6DFB\u52A0\u66F4\u591A\u793E\u533A\u5185\u5BB9\u3001\u4F5C\u8005\u6295\u7A3F\u65B0\u73A9\u610F\u5448\u73B0\u7ED9\u5927\u5BB6\u3002\U0001F4AC\u4E00\u6D3E\u70ED\u8BAE\u5728
+        ...&lt;a href=&#34;https://sspai.com/post/103908&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>Matrix\u673A\u5668\u4EBA</author><pubDate>Tue,
+        18 Nov 2025 17:20:00 +0800</pubDate></item><item><title>\u4E2D\u6863\u4EF7\u4F4D\u771F\u65E0\u7EBF\u8033\u673A\u6A2A\u8BC4\u4E0E\u5EFA\u8BAE\uFF082025
+        \u5E74\u7EC8\uFF09 - TDS \u65E0\u5FC3\u5FEB\u8BED</title><link>https://sspai.com/post/103767</link><description>\u805A\u7126\u4F69\u6234\u3001\u64CD\u4F5C\u4E0E
+        App \u4F53\u9A8C\u3001\u4FE1\u53F7\u8868\u73B0\u3001\u7EED\u822A\u8868\u73B0\u3001\u964D\u566A\u7EFC\u5408\u8868\u73B0\u3001\u58F0\u97F3\u8868\u73B0\u516D\u4E2A\u5927\u9879\u3002&lt;a
+        href=&#34;https://sspai.com/post/103767&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>KingTsui</author><pubDate>Tue,
+        18 Nov 2025 15:00:00 +0800</pubDate></item><item><title>\u7528 AI \u751F\u6210\u4E92\u52A8\u6E38\u620F\uFF0C\u8BA9\u8BFE\u672C\u91CC\u7684\u6545\u4E8B\u300C\u6D3B\u300D\u8D77\u6765</title><link>https://sspai.com/post/103811</link><description>Matrix\u9996\u9875\u63A8\u8350Matrix\u662F\u5C11\u6570\u6D3E\u7684\u5199\u4F5C\u793E\u533A\uFF0C\u6211\u4EEC\u4E3B\u5F20\u5206\u4EAB\u771F\u5B9E\u7684\u4EA7\u54C1\u4F53\u9A8C\uFF0C\u6709\u5B9E\u7528\u4EF7\u503C\u7684\u7ECF\u9A8C\u4E0E\u601D\u8003\u3002\u6211\u4EEC\u4F1A\u4E0D\u5B9A\u671F\u6311\u9009Matrix\u6700\u4F18\u8D28\u7684\u6587\u7AE0\uFF0C\u5C55\u793A\u6765\u81EA\u7528\u6237\u7684\u6700\u771F\u5B9E\u7684\u4F53\u9A8C\u548C\u89C2\u70B9\u3002\u6587\u7AE0\u4EE3\u8868\u4F5C\u8005\u4E2A\u4EBA\u89C2\u70B9
+        ...&lt;a href=&#34;https://sspai.com/post/103811&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u4E00\u6CFDEze</author><pubDate>Tue,
+        18 Nov 2025 11:03:00 +0800</pubDate></item><item><title>\u6D3E\u65E9\u62A5\uFF1A\u963F\u91CC\u5DF4\u5DF4\u5343\u95EE
+        App \u516C\u6D4B\u4E0A\u7EBF\uFF0C\u7D2B\u5149\u5C55\u9510\u53D1\u5E03 T9300
+        5G SoC \u7B49</title><link>https://sspai.com/post/103901</link><description>TGA
+        2025 \u6E38\u620F\u5956\u63D0\u540D\u516C\u5E03\uFF0COPPO \u53D1\u5E03 Reno15
+        \u7CFB\u5217\u624B\u673A\u7B49\u3002&lt;a href=&#34;https://sspai.com/post/103901&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Tue,
+        18 Nov 2025 08:42:57 +0800</pubDate></item><item><title>\u6D3E\u8BC4 | \u8FD1\u671F\u503C\u5F97\u5173\u6CE8\u7684
+        App</title><link>https://sspai.com/post/103895</link><description>\u6B22\u8FCE\u6536\u770B\u672C\u671F\u300A\u6D3E\u8BC4\u300B\u3002\u4F60\u53EF\u4EE5\u901A\u8FC7\u6587\u7AE0\u76EE\u5F55\u5FEB\u901F\u8DF3\u8F6C\u5230\u4F60\u611F\u5174\u8DA3\u7684\u5185\u5BB9\u3002\u5982\u679C\u53D1\u73B0\u4E86\u5176\u5B83\u611F\u5174\u8DA3\u7684App\u6216\u8005\u5173\u6CE8\u7684\u8BDD\u9898\uFF0C\u4E5F\u6B22\u8FCE\u5728\u8BC4\u8BBA\u533A\u548C\u6211\u4EEC\u8BA8\u8BBA\u3002\u4E0D\u5BB9\u9519\u8FC7\u7684App\u66F4\u65B0\u9664\u4E86\u300C\u65B0\u9C9C\u300DApp\uFF0CAppStore\u4E2D\u7684\u8BB8\u591A
+        ...&lt;a href=&#34;https://sspai.com/post/103895&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Mon,
+        17 Nov 2025 17:43:51 +0800</pubDate></item><atom:link href=\"https://sspai.com/feed\"
+        type=\"application/rss+xml\" ref=\"self\"></atom:link><atom:link href=\"https://sspai.com/feed\"
+        type=\"application/rss+xml\" ref=\"hub\"></atom:link></channel></rss>"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/xml; charset=UTF-8
+      Date:
+      - Wed, 19 Nov 2025 14:49:07 GMT
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/136.0.0.0 Safari/537.36
+    method: GET
+    uri: https://wsgggws.github.io
+  response:
+    body:
+      string: "<!doctype html><html class=\"not-ready lg:text-base\" style=--bg:#f8f5d7
+        lang=en-us dir=ltr><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible
+        content=\"IE=edge\"><meta name=viewport content=\"width=device-width,initial-scale=1,shrink-to-fit=no\"><title>Blogs
+        (\u7801\u7801\u8981\u6D17\u624B)</title>\n<meta name=theme-color><meta name=description
+        content=\"A personal blog\"><meta name=author content=\"Blogs (\u7801\u7801\u8981\u6D17\u624B)\"><link
+        rel=\"preload stylesheet\" as=style href=https://wsgggws.github.io/main.min.css><link
+        rel=preload as=image href=https://wsgggws.github.io/theme.svg><link rel=preload
+        as=image href=https://wsgggws.github.io/rss.svg><link rel=stylesheet href=/katex.min.css><script
+        defer src=/katex.min.js></script><script defer src=/auto-render.min.js></script><script>document.addEventListener(\"DOMContentLoaded\",()=>renderMathInElement(document.body,{delimiters:[{left:\"$$\",right:\"$$\",display:!0},{left:\"$\",right:\"$\",display:!1}],throwOnError:!1}))</script><link
+        rel=icon href=https://wsgggws.github.io/images/website/Navy.ico><link rel=apple-touch-icon
+        href=https://wsgggws.github.io/apple-touch-icon.png><meta name=generator content=\"Hugo
+        0.128.0\"><meta itemprop=name content=\"Blogs (\u7801\u7801\u8981\u6D17\u624B)\"><meta
+        itemprop=dateModified content=\"2025-04-07T11:30:03+00:00\"><meta property=\"og:url\"
+        content=\"https://wsgggws.github.io/\"><meta property=\"og:site_name\" content=\"Blogs
+        (\u7801\u7801\u8981\u6D17\u624B)\"><meta property=\"og:title\" content=\"Blogs
+        (\u7801\u7801\u8981\u6D17\u624B)\"><meta property=\"og:locale\" content=\"en_us\"><meta
+        property=\"og:type\" content=\"website\"><meta name=twitter:card content=\"summary\"><meta
+        name=twitter:title content=\"Blogs (\u7801\u7801\u8981\u6D17\u624B)\"><link
+        rel=alternate type=application/rss+xml href=https://wsgggws.github.io/index.xml
+        title=\"Blogs (\u7801\u7801\u8981\u6D17\u624B)\"><link rel=canonical href=https://wsgggws.github.io/></head><body
+        class=\"text-black duration-200 ease-out dark:text-white\"><header class=\"mx-auto
+        flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center\"><div class=\"relative
+        z-50 ltr:mr-auto rtl:ml-auto flex items-center\"><a class=\"-translate-y-[1px]
+        text-2xl font-medium\" href=https://wsgggws.github.io/>Blogs (\u7801\u7801\u8981\u6D17\u624B)</a><div
+        class=\"btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer
+        [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]\"
+        role=button aria-label=Dark></div></div><div class=\"btn-menu relative z-50
+        ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col
+        items-center justify-center gap-2.5 lg:hidden\" role=button aria-label=Menu></div><script>const
+        htmlClass=document.documentElement.classList;setTimeout(()=>{htmlClass.remove(\"not-ready\")},10);const
+        btnMenu=document.querySelector(\".btn-menu\");btnMenu.addEventListener(\"click\",()=>{htmlClass.toggle(\"open\")});const
+        metaTheme=document.querySelector('meta[name=\"theme-color\"]'),lightBg=\"#f8f5d7\".replace(/\"/g,\"\"),setDark=e=>{metaTheme.setAttribute(\"content\",e?\"#000\":lightBg),htmlClass[e?\"add\":\"remove\"](\"dark\"),localStorage.setItem(\"dark\",e)},darkScheme=window.matchMedia(\"(prefers-color-scheme:
+        dark)\");if(htmlClass.contains(\"dark\"))setDark(!0);else{const e=localStorage.getItem(\"dark\");setDark(e?e===\"true\":darkScheme.matches)}darkScheme.addEventListener(\"change\",e=>{setDark(e.matches)});const
+        btnDark=document.querySelector(\".btn-dark\");btnDark.addEventListener(\"click\",()=>{setDark(localStorage.getItem(\"dark\")!==\"true\")})</script><div
+        class=\"nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none
+        flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto
+        lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none\"><nav class=\"lg:ml-12
+        lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse\"><a
+        class=\"block text-center text-xl leading-[5rem] lg:text-base lg:font-normal\"
+        href=/about/>About.Me</a></nav><nav class=\"mt-12 flex justify-center space-x-10
+        rtl:space-x-reverse dark:invert ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center\"><a
+        class=\"h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat]
+        lg:h-6 lg:w-6\" style=--url:url(./rss.svg) href=https://wsgggws.github.io/index.xml
+        target=_blank rel=alternate>rss</a></nav></div></header><main class=\"prose
+        prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16
+        pt-14 dark:prose-invert\"><section class=\"relative my-10 first-of-type:mt-0
+        last-of-type:mb-0\"><h2 class=!my-0>Python Debugger Pdb</h2><time class=\"text-xs
+        antialiased opacity-60\">Sep 6, 2024</time>\n<a class=\"absolute inset-0 text-[0]\"
+        href=https://wsgggws.github.io/blogs/pdb/>Python Debugger Pdb</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>MVP</h2><time
+        class=\"text-xs antialiased opacity-60\">Sep 6, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/mvp/>MVP</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>\u897F\u6E38\u8BB0</h2><time
+        class=\"text-xs antialiased opacity-60\">Sep 4, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/%E8%A5%BF%E6%B8%B8%E8%AE%B0/>\u897F\u6E38\u8BB0</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>\u5BCC\u7238\u7238\u4E0E\u7A77\u7238\u7238</h2><time
+        class=\"text-xs antialiased opacity-60\">Sep 2, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/%E5%AF%8C%E7%88%B8%E7%88%B8%E4%B8%8E%E7%A9%B7%E7%88%B8%E7%88%B8/>\u5BCC\u7238\u7238\u4E0E\u7A77\u7238\u7238</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>\u8521\u5FD7\u5FE0\u7ECF\u5178\u89E3\u5BC6\u7CFB\u5217</h2><time
+        class=\"text-xs antialiased opacity-60\">Aug 23, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/%E8%94%A1%E5%BF%97%E5%BF%A0%E7%BB%8F%E5%85%B8%E8%A7%A3%E5%AF%86%E7%B3%BB%E5%88%97/>\u8521\u5FD7\u5FE0\u7ECF\u5178\u89E3\u5BC6\u7CFB\u5217</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>HttpBin</h2><time
+        class=\"text-xs antialiased opacity-60\">Aug 23, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/httpbin/>HttpBin</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>JavaScript
+        \u7279\u6027</h2><time class=\"text-xs antialiased opacity-60\">Aug 5, 2024</time>\n<a
+        class=\"absolute inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/javascript-specials/>JavaScript
+        \u7279\u6027</a></section><section class=\"relative my-10 first-of-type:mt-0
+        last-of-type:mb-0\"><h2 class=!my-0>JEMSPath</h2><time class=\"text-xs antialiased
+        opacity-60\">Aug 1, 2024</time>\n<a class=\"absolute inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/jemspath/>JEMSPath</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>jq</h2><time
+        class=\"text-xs antialiased opacity-60\">Jul 31, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/jq/>jq</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>XPath</h2><time
+        class=\"text-xs antialiased opacity-60\">Jul 31, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/xpath/>XPath</a></section><nav
+        class=\"mt-14 flex\"><a class=\"btn ml-auto\" href=/page/2/>Next Page \u2192</a></nav></main><footer
+        class=\"mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase
+        tracking-wider opacity-60\"><div class=mr-auto>&copy; 2025\n<a class=link
+        href=https://wsgggws.github.io/>Blogs (\u7801\u7801\u8981\u6D17\u624B)</a></div><a
+        class=\"link mx-6\" href=https://gohugo.io/ rel=noopener target=_blank>powered
+        by hugo\uFE0F\uFE0F</a>\uFE0F\n<a class=link href=https://github.com/nanxiaobei/hugo-paper
+        rel=noopener target=_blank>hugo-paper</a></footer></body></html>"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - '*'
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=600
+      Connection:
+      - keep-alive
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Wed, 19 Nov 2025 14:49:07 GMT
+      Etag:
+      - W/"67f412bd-1e34"
+      Expires:
+      - Wed, 19 Nov 2025 14:56:44 GMT
+      Last-Modified:
+      - Mon, 07 Apr 2025 18:00:29 GMT
+      Server:
+      - GitHub.com
+      Strict-Transport-Security:
+      - max-age=31556952
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish
+      X-Cache:
+      - HIT
+      X-Cache-Hits:
+      - '0'
+      X-Fastly-Request-ID:
+      - 03fc52ea2fdf80eb870300bffd426ce0b4866f08
+      X-GitHub-Request-Id:
+      - F6EB:82351:BDE149:C317BB:691DD854
+      X-Served-By:
+      - cache-nrt-rjtt7900034-NRT
+      X-Timer:
+      - S1763563748.561845,VS0,VE171
+      content-length:
+      - '7732'
+      x-proxy-cache:
+      - MISS
+    status:
+      code: 200
+      message: OK
+- request:
+    body: "{\"username\":\"rss_user\",\"password\":\"Passw0rd;\",\"email\":\"rss@example.com\",\"bio\":\"\u53EF\u7EF4\u62A4\u6027\",\"avatar\":\"https://avatars.githubusercontent.com/u/20469245?v=4\",\"favorite_sites\":{\"GitHub\":\"https://github.com/wsgggws\",\"Bilibili\":\"https://space.bilibili.com/472722204\"}}"
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '264'
+      content-type:
+      - application/json
+      host:
+      - test
+      user-agent:
+      - python-httpx/0.28.1
+    method: POST
+    uri: http://test/api/v1/user/register
+  response:
+    body:
+      string: '{"id":"72230c55-1f99-4651-b6c3-5e7fba36b26f","username":"rss_user","email":"rss@example.com","last_login":null,"avatar":null,"bio":null,"favorite_sites":null,"created_at":"2025-11-19T14:51:19.028672Z","updated_at":"2025-11-19T14:51:19.028685Z"}'
+    headers:
+      content-length:
+      - '244'
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/136.0.0.0 Safari/537.36
+    method: GET
+    uri: https://sspai.com/feeds
+  response:
+    body:
+      string: "{\"error\":404,\"message\":\"\u672A\u627E\u5230\"}\n"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '36'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 19 Nov 2025 14:51:19 GMT
+      Vary:
+      - Origin
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: null
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/136.0.0.0 Safari/537.36
+    method: GET
+    uri: https://sspai.com/feed
+  response:
+    body:
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\"
+        xmlns:dc=\"http://purl.org/dc/elements/1.1/\"><channel><title>\u5C11\u6570\u6D3E</title><link>https://sspai.com</link><description>\u5C11\u6570\u6D3E\u81F4\u529B\u4E8E\u66F4\u597D\u5730\u8FD0\u7528\u6570\u5B57\u4EA7\u54C1\u6216\u79D1\u5B66\u65B9\u6CD5\uFF0C\u5E2E\u52A9\u7528\u6237\u63D0\u5347\u5DE5\u4F5C\u6548\u7387\u548C\u751F\u6D3B\u54C1\u8D28</description><language>zh-CN</language><managingEditor>contact@sspai.com
+        (\u5C11\u6570\u6D3E)</managingEditor><pubDate>Wed, 19 Nov 2025 17:44:54 +0800</pubDate><item><title>\u5177\u900F
+        | \u5F53\u4E00\u4E2A\u89C6\u9891\u4E0B\u8F7D\u811A\u672C\u88AB\u8FEB\u53D8\u6210\u534A\u4E2A\u6D4F\u89C8\u5668\uFF1BAndroid
+        \u4FA7\u8F7D\u4FDD\u4F4F\u4E86\u4E00\u534A</title><link>https://sspai.com/prime/story/inside-release-notes-251119</link><description>yt-dlp\u5F00\u59CB\u4F9D\u8D56\u5916\u90E8JavaScript\u8FD0\u884C\u65F6@PlatyHsu\uFF1Ayt-dlp\u662F\u5F00\u6E90\u793E\u533A\u975E\u5E38\u6709\u540D\u7684\u89C6\u9891\u4E0B\u8F7D\u5DE5\u5177\uFF0C\u4E5F\u662Fyoutube-dl\u505C\u6B62\u66F4\u65B0\u4E4B\u540E\uFF0C\u5C11\u6570\u4FDD\u6301\u6D3B\u8DC3\u548C\u53EF\u7528\u7684\u9009\u9879\u3002\u9664\u4E86\u5728\u7EC8\u7AEF\u76F4\u63A5\u4F7F\u7528\u5916
+        ...&lt;a href=&#34;https://sspai.com/prime/story/inside-release-notes-251119&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;&lt;p&gt;\u672C\u6587\u4E3A\u4F1A\u5458\u6587\u7AE0\uFF0C\u51FA\u81EA&lt;a
+        href=&#34;https://sspai.com/prime/precog/single&#34; target=&#34;_blank&#34;&gt;\u300A\u5355\u7BC7\u6587\u7AE0\u300B&lt;/a
+        &gt;\uFF0C\u8BA2\u9605\u540E\u53EF\u9605\u8BFB\u5168\u6587\u3002&lt;/p &gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Wed,
+        19 Nov 2025 17:44:54 +0800</pubDate></item><item><title>\u4F4E\u6210\u672C\u3001\u53EF\u6269\u5C55\u7684
+        CyberBrick \u590D\u73B0\u65B9\u6848\uFF0C\u81EA\u5DF1\u52A8\u624B\u505A\u4E00\u53F0
+        3D \u6253\u5370\u9065\u63A7\u8F66</title><link>https://sspai.com/post/103872</link><description>Matrix\u9996\u9875\u63A8\u8350Matrix\u662F\u5C11\u6570\u6D3E\u7684\u5199\u4F5C\u793E\u533A\uFF0C\u6211\u4EEC\u4E3B\u5F20\u5206\u4EAB\u771F\u5B9E\u7684\u4EA7\u54C1\u4F53\u9A8C\uFF0C\u6709\u5B9E\u7528\u4EF7\u503C\u7684\u7ECF\u9A8C\u4E0E\u601D\u8003\u3002\u6211\u4EEC\u4F1A\u4E0D\u5B9A\u671F\u6311\u9009Matrix\u6700\u4F18\u8D28\u7684\u6587\u7AE0\uFF0C\u5C55\u793A\u6765\u81EA\u7528\u6237\u7684\u6700\u771F\u5B9E\u7684\u4F53\u9A8C\u548C\u89C2\u70B9\u3002\u6587\u7AE0\u4EE3\u8868\u4F5C\u8005\u4E2A\u4EBA\u89C2\u70B9
+        ...&lt;a href=&#34;https://sspai.com/post/103872&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u4EFB\u4E9A\u519B</author><pubDate>Wed,
+        19 Nov 2025 17:33:01 +0800</pubDate></item><item><title>\u4ECE\u65E5\u5E38\u5230\u8FD0\u52A8\uFF0CAirPods
+        3 Pro \u5168\u9762\u4F53\u9A8C\u62A5\u544A</title><link>https://sspai.com/post/103806</link><description>AirPods
+        \u7CFB\u5217\u771F\u7684\u65E0\u6127\u4E8E iPhone \u4E4B\u540E\u82F9\u679C\u6700\u4F1F\u5927\u7684\u4EA7\u54C1\u3002&lt;a
+        href=&#34;https://sspai.com/post/103806&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5199\u5C0F\u9ED1\u6587\u7684Alex</author><pubDate>Wed,
+        19 Nov 2025 15:09:41 +0800</pubDate></item><item><title>\u6211\u7684\u79CB\u51AC\u7A7F\u642D\u601D\u8DEF\uFF1A\u4ECE\u6838\u5FC3\u5355\u54C1\u51FA\u53D1\uFF0C\u517C\u987E\u4FDD\u6696\u4E0E\u4E2A\u6027</title><link>https://sspai.com/post/103912</link><description>\u5929\u6C14\u8D8A\u51B7\uFF0C\u7ED9\u7A7F\u642D\u7684\u53D1\u6325\u7A7A\u95F4\u5C31\u8D8A\u5927\u3002\u79CB\u51AC\u7684\u5355\u54C1\uFF0C\u65E0\u8BBA\u662F\u5185\u642D\u8FD8\u662F\u5916\u8863\uFF0C\u90FD\u6709\u5F88\u591A\u79CD\u7EC6\u5206\u7684\u54C1\u7C7B\u53EF\u4EE5\u9009\u62E9\uFF0C\u81EA\u7136\u4E5F\u5C31\u6709\u65E0\u6570\u7684\u7A7F\u642D\u53EF\u80FD\u3002\u5728\u642D\u914D\u7684\u65B9\u6CD5\u4E0A\uFF0C\u9664\u4E86\u5E38\u89C4\u7684\u5185\u642D\u52A0\u5916\u5957\u7684\u7A7F\u6CD5\uFF0C\u79CB\u51AC\u8FD8\u53EF\u4EE5\u7528\u300C\u53E0\u7A7F\u300D\u6765\u7A81\u51FA\u5C42\u6B21\u611F\uFF0C
+        ...&lt;a href=&#34;https://sspai.com/post/103912&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u7A0B\u5929\u51B2</author><pubDate>Wed,
+        19 Nov 2025 11:00:00 +0800</pubDate></item><item><title>\u6D3E\u65E9\u62A5\uFF1AGoogle
+        \u53D1\u5E03 Gemini 3\u3001Cloudflare \u5F15\u53D1\u7F51\u7EDC\u6545\u969C\u7B49</title><link>https://sspai.com/post/103926</link><description>Zigbee
+        4.0 \u6807\u51C6\u516C\u5E03\uFF0C\u5FAE\u8F6F\u3001\u82F1\u4F1F\u8FBE\u4E0E
+        Anthropic \u8FBE\u6210\u6218\u7565\u5408\u4F5C\u7B49\u3002&lt;a href=&#34;https://sspai.com/post/103926&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Wed,
+        19 Nov 2025 08:54:21 +0800</pubDate></item><item><title>\u793E\u533A\u901F\u9012
+        118 | \u6D3E\u53CB\u5343\u5947\u767E\u602A\u7684\u5065\u8EAB\u8D77\u70B9\u3001\u4E00\u5468\u70ED\u8BC4\u4EE5\u53CA\u65B0\u73A9\u610F</title><link>https://sspai.com/post/103908</link><description>\u9664\u4E86\u9996\u9875\u65F6\u95F4\u6D41\u548C\u4FA7\u680F\u7684\u7CBE\u9009\u5C55\u4F4D\uFF0C\u5C11\u6570\u6D3EMatrix\u793E\u533A\u8FD8\u6709\u5F88\u591A\u4F18\u79C0\u5185\u5BB9\u56E0\u6761\u4EF6\u6240\u9650\u65E0\u6CD5\u5F97\u5230\u6709\u6548\u66DD\u5149\uFF0C\u56E0\u6B64\u6211\u4EEC\u51B3\u5B9A\u91CD\u542FMatrix\u5468\u62A5\uFF0C\u5E76\u5728\u6B64\u57FA\u7840\u4E0A\u6DFB\u52A0\u66F4\u591A\u793E\u533A\u5185\u5BB9\u3001\u4F5C\u8005\u6295\u7A3F\u65B0\u73A9\u610F\u5448\u73B0\u7ED9\u5927\u5BB6\u3002\U0001F4AC\u4E00\u6D3E\u70ED\u8BAE\u5728
+        ...&lt;a href=&#34;https://sspai.com/post/103908&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>Matrix\u673A\u5668\u4EBA</author><pubDate>Tue,
+        18 Nov 2025 17:20:00 +0800</pubDate></item><item><title>\u4E2D\u6863\u4EF7\u4F4D\u771F\u65E0\u7EBF\u8033\u673A\u6A2A\u8BC4\u4E0E\u5EFA\u8BAE\uFF082025
+        \u5E74\u7EC8\uFF09 - TDS \u65E0\u5FC3\u5FEB\u8BED</title><link>https://sspai.com/post/103767</link><description>\u805A\u7126\u4F69\u6234\u3001\u64CD\u4F5C\u4E0E
+        App \u4F53\u9A8C\u3001\u4FE1\u53F7\u8868\u73B0\u3001\u7EED\u822A\u8868\u73B0\u3001\u964D\u566A\u7EFC\u5408\u8868\u73B0\u3001\u58F0\u97F3\u8868\u73B0\u516D\u4E2A\u5927\u9879\u3002&lt;a
+        href=&#34;https://sspai.com/post/103767&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>KingTsui</author><pubDate>Tue,
+        18 Nov 2025 15:00:00 +0800</pubDate></item><item><title>\u7528 AI \u751F\u6210\u4E92\u52A8\u6E38\u620F\uFF0C\u8BA9\u8BFE\u672C\u91CC\u7684\u6545\u4E8B\u300C\u6D3B\u300D\u8D77\u6765</title><link>https://sspai.com/post/103811</link><description>Matrix\u9996\u9875\u63A8\u8350Matrix\u662F\u5C11\u6570\u6D3E\u7684\u5199\u4F5C\u793E\u533A\uFF0C\u6211\u4EEC\u4E3B\u5F20\u5206\u4EAB\u771F\u5B9E\u7684\u4EA7\u54C1\u4F53\u9A8C\uFF0C\u6709\u5B9E\u7528\u4EF7\u503C\u7684\u7ECF\u9A8C\u4E0E\u601D\u8003\u3002\u6211\u4EEC\u4F1A\u4E0D\u5B9A\u671F\u6311\u9009Matrix\u6700\u4F18\u8D28\u7684\u6587\u7AE0\uFF0C\u5C55\u793A\u6765\u81EA\u7528\u6237\u7684\u6700\u771F\u5B9E\u7684\u4F53\u9A8C\u548C\u89C2\u70B9\u3002\u6587\u7AE0\u4EE3\u8868\u4F5C\u8005\u4E2A\u4EBA\u89C2\u70B9
+        ...&lt;a href=&#34;https://sspai.com/post/103811&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u4E00\u6CFDEze</author><pubDate>Tue,
+        18 Nov 2025 11:03:00 +0800</pubDate></item><item><title>\u6D3E\u65E9\u62A5\uFF1A\u963F\u91CC\u5DF4\u5DF4\u5343\u95EE
+        App \u516C\u6D4B\u4E0A\u7EBF\uFF0C\u7D2B\u5149\u5C55\u9510\u53D1\u5E03 T9300
+        5G SoC \u7B49</title><link>https://sspai.com/post/103901</link><description>TGA
+        2025 \u6E38\u620F\u5956\u63D0\u540D\u516C\u5E03\uFF0COPPO \u53D1\u5E03 Reno15
+        \u7CFB\u5217\u624B\u673A\u7B49\u3002&lt;a href=&#34;https://sspai.com/post/103901&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Tue,
+        18 Nov 2025 08:42:57 +0800</pubDate></item><item><title>\u6D3E\u8BC4 | \u8FD1\u671F\u503C\u5F97\u5173\u6CE8\u7684
+        App</title><link>https://sspai.com/post/103895</link><description>\u6B22\u8FCE\u6536\u770B\u672C\u671F\u300A\u6D3E\u8BC4\u300B\u3002\u4F60\u53EF\u4EE5\u901A\u8FC7\u6587\u7AE0\u76EE\u5F55\u5FEB\u901F\u8DF3\u8F6C\u5230\u4F60\u611F\u5174\u8DA3\u7684\u5185\u5BB9\u3002\u5982\u679C\u53D1\u73B0\u4E86\u5176\u5B83\u611F\u5174\u8DA3\u7684App\u6216\u8005\u5173\u6CE8\u7684\u8BDD\u9898\uFF0C\u4E5F\u6B22\u8FCE\u5728\u8BC4\u8BBA\u533A\u548C\u6211\u4EEC\u8BA8\u8BBA\u3002\u4E0D\u5BB9\u9519\u8FC7\u7684App\u66F4\u65B0\u9664\u4E86\u300C\u65B0\u9C9C\u300DApp\uFF0CAppStore\u4E2D\u7684\u8BB8\u591A
+        ...&lt;a href=&#34;https://sspai.com/post/103895&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Mon,
+        17 Nov 2025 17:43:51 +0800</pubDate></item><atom:link href=\"https://sspai.com/feed\"
+        type=\"application/rss+xml\" ref=\"self\"></atom:link><atom:link href=\"https://sspai.com/feed\"
+        type=\"application/rss+xml\" ref=\"hub\"></atom:link></channel></rss>"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/xml; charset=UTF-8
+      Date:
+      - Wed, 19 Nov 2025 14:51:19 GMT
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/136.0.0.0 Safari/537.36
+    method: GET
+    uri: https://wsgggws.github.io
+  response:
+    body:
+      string: "<!doctype html><html class=\"not-ready lg:text-base\" style=--bg:#f8f5d7
+        lang=en-us dir=ltr><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible
+        content=\"IE=edge\"><meta name=viewport content=\"width=device-width,initial-scale=1,shrink-to-fit=no\"><title>Blogs
+        (\u7801\u7801\u8981\u6D17\u624B)</title>\n<meta name=theme-color><meta name=description
+        content=\"A personal blog\"><meta name=author content=\"Blogs (\u7801\u7801\u8981\u6D17\u624B)\"><link
+        rel=\"preload stylesheet\" as=style href=https://wsgggws.github.io/main.min.css><link
+        rel=preload as=image href=https://wsgggws.github.io/theme.svg><link rel=preload
+        as=image href=https://wsgggws.github.io/rss.svg><link rel=stylesheet href=/katex.min.css><script
+        defer src=/katex.min.js></script><script defer src=/auto-render.min.js></script><script>document.addEventListener(\"DOMContentLoaded\",()=>renderMathInElement(document.body,{delimiters:[{left:\"$$\",right:\"$$\",display:!0},{left:\"$\",right:\"$\",display:!1}],throwOnError:!1}))</script><link
+        rel=icon href=https://wsgggws.github.io/images/website/Navy.ico><link rel=apple-touch-icon
+        href=https://wsgggws.github.io/apple-touch-icon.png><meta name=generator content=\"Hugo
+        0.128.0\"><meta itemprop=name content=\"Blogs (\u7801\u7801\u8981\u6D17\u624B)\"><meta
+        itemprop=dateModified content=\"2025-04-07T11:30:03+00:00\"><meta property=\"og:url\"
+        content=\"https://wsgggws.github.io/\"><meta property=\"og:site_name\" content=\"Blogs
+        (\u7801\u7801\u8981\u6D17\u624B)\"><meta property=\"og:title\" content=\"Blogs
+        (\u7801\u7801\u8981\u6D17\u624B)\"><meta property=\"og:locale\" content=\"en_us\"><meta
+        property=\"og:type\" content=\"website\"><meta name=twitter:card content=\"summary\"><meta
+        name=twitter:title content=\"Blogs (\u7801\u7801\u8981\u6D17\u624B)\"><link
+        rel=alternate type=application/rss+xml href=https://wsgggws.github.io/index.xml
+        title=\"Blogs (\u7801\u7801\u8981\u6D17\u624B)\"><link rel=canonical href=https://wsgggws.github.io/></head><body
+        class=\"text-black duration-200 ease-out dark:text-white\"><header class=\"mx-auto
+        flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center\"><div class=\"relative
+        z-50 ltr:mr-auto rtl:ml-auto flex items-center\"><a class=\"-translate-y-[1px]
+        text-2xl font-medium\" href=https://wsgggws.github.io/>Blogs (\u7801\u7801\u8981\u6D17\u624B)</a><div
+        class=\"btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer
+        [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]\"
+        role=button aria-label=Dark></div></div><div class=\"btn-menu relative z-50
+        ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col
+        items-center justify-center gap-2.5 lg:hidden\" role=button aria-label=Menu></div><script>const
+        htmlClass=document.documentElement.classList;setTimeout(()=>{htmlClass.remove(\"not-ready\")},10);const
+        btnMenu=document.querySelector(\".btn-menu\");btnMenu.addEventListener(\"click\",()=>{htmlClass.toggle(\"open\")});const
+        metaTheme=document.querySelector('meta[name=\"theme-color\"]'),lightBg=\"#f8f5d7\".replace(/\"/g,\"\"),setDark=e=>{metaTheme.setAttribute(\"content\",e?\"#000\":lightBg),htmlClass[e?\"add\":\"remove\"](\"dark\"),localStorage.setItem(\"dark\",e)},darkScheme=window.matchMedia(\"(prefers-color-scheme:
+        dark)\");if(htmlClass.contains(\"dark\"))setDark(!0);else{const e=localStorage.getItem(\"dark\");setDark(e?e===\"true\":darkScheme.matches)}darkScheme.addEventListener(\"change\",e=>{setDark(e.matches)});const
+        btnDark=document.querySelector(\".btn-dark\");btnDark.addEventListener(\"click\",()=>{setDark(localStorage.getItem(\"dark\")!==\"true\")})</script><div
+        class=\"nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none
+        flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto
+        lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none\"><nav class=\"lg:ml-12
+        lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse\"><a
+        class=\"block text-center text-xl leading-[5rem] lg:text-base lg:font-normal\"
+        href=/about/>About.Me</a></nav><nav class=\"mt-12 flex justify-center space-x-10
+        rtl:space-x-reverse dark:invert ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center\"><a
+        class=\"h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat]
+        lg:h-6 lg:w-6\" style=--url:url(./rss.svg) href=https://wsgggws.github.io/index.xml
+        target=_blank rel=alternate>rss</a></nav></div></header><main class=\"prose
+        prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16
+        pt-14 dark:prose-invert\"><section class=\"relative my-10 first-of-type:mt-0
+        last-of-type:mb-0\"><h2 class=!my-0>Python Debugger Pdb</h2><time class=\"text-xs
+        antialiased opacity-60\">Sep 6, 2024</time>\n<a class=\"absolute inset-0 text-[0]\"
+        href=https://wsgggws.github.io/blogs/pdb/>Python Debugger Pdb</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>MVP</h2><time
+        class=\"text-xs antialiased opacity-60\">Sep 6, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/mvp/>MVP</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>\u897F\u6E38\u8BB0</h2><time
+        class=\"text-xs antialiased opacity-60\">Sep 4, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/%E8%A5%BF%E6%B8%B8%E8%AE%B0/>\u897F\u6E38\u8BB0</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>\u5BCC\u7238\u7238\u4E0E\u7A77\u7238\u7238</h2><time
+        class=\"text-xs antialiased opacity-60\">Sep 2, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/%E5%AF%8C%E7%88%B8%E7%88%B8%E4%B8%8E%E7%A9%B7%E7%88%B8%E7%88%B8/>\u5BCC\u7238\u7238\u4E0E\u7A77\u7238\u7238</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>\u8521\u5FD7\u5FE0\u7ECF\u5178\u89E3\u5BC6\u7CFB\u5217</h2><time
+        class=\"text-xs antialiased opacity-60\">Aug 23, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/%E8%94%A1%E5%BF%97%E5%BF%A0%E7%BB%8F%E5%85%B8%E8%A7%A3%E5%AF%86%E7%B3%BB%E5%88%97/>\u8521\u5FD7\u5FE0\u7ECF\u5178\u89E3\u5BC6\u7CFB\u5217</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>HttpBin</h2><time
+        class=\"text-xs antialiased opacity-60\">Aug 23, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/httpbin/>HttpBin</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>JavaScript
+        \u7279\u6027</h2><time class=\"text-xs antialiased opacity-60\">Aug 5, 2024</time>\n<a
+        class=\"absolute inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/javascript-specials/>JavaScript
+        \u7279\u6027</a></section><section class=\"relative my-10 first-of-type:mt-0
+        last-of-type:mb-0\"><h2 class=!my-0>JEMSPath</h2><time class=\"text-xs antialiased
+        opacity-60\">Aug 1, 2024</time>\n<a class=\"absolute inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/jemspath/>JEMSPath</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>jq</h2><time
+        class=\"text-xs antialiased opacity-60\">Jul 31, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/jq/>jq</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>XPath</h2><time
+        class=\"text-xs antialiased opacity-60\">Jul 31, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/xpath/>XPath</a></section><nav
+        class=\"mt-14 flex\"><a class=\"btn ml-auto\" href=/page/2/>Next Page \u2192</a></nav></main><footer
+        class=\"mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase
+        tracking-wider opacity-60\"><div class=mr-auto>&copy; 2025\n<a class=link
+        href=https://wsgggws.github.io/>Blogs (\u7801\u7801\u8981\u6D17\u624B)</a></div><a
+        class=\"link mx-6\" href=https://gohugo.io/ rel=noopener target=_blank>powered
+        by hugo\uFE0F\uFE0F</a>\uFE0F\n<a class=link href=https://github.com/nanxiaobei/hugo-paper
+        rel=noopener target=_blank>hugo-paper</a></footer></body></html>"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - '*'
+      Age:
+      - '132'
+      Cache-Control:
+      - max-age=600
+      Connection:
+      - keep-alive
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Wed, 19 Nov 2025 14:51:20 GMT
+      Etag:
+      - W/"67f412bd-1e34"
+      Expires:
+      - Wed, 19 Nov 2025 14:56:44 GMT
+      Last-Modified:
+      - Mon, 07 Apr 2025 18:00:29 GMT
+      Server:
+      - GitHub.com
+      Strict-Transport-Security:
+      - max-age=31556952
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish
+      X-Cache:
+      - HIT
+      X-Cache-Hits:
+      - '0'
+      X-Fastly-Request-ID:
+      - b22b9b0fed6cf17ef97dfd695fdaca322cf52551
+      X-GitHub-Request-Id:
+      - F6EB:82351:BDE149:C317BB:691DD854
+      X-Served-By:
+      - cache-nrt-rjtf7700022-NRT
+      X-Timer:
+      - S1763563880.213891,VS0,VE1
+      content-length:
+      - '7732'
+      x-proxy-cache:
+      - MISS
+    status:
+      code: 200
+      message: OK
+- request:
+    body: "{\"username\":\"rss_user\",\"password\":\"Passw0rd;\",\"email\":\"rss@example.com\",\"bio\":\"\u53EF\u7EF4\u62A4\u6027\",\"avatar\":\"https://avatars.githubusercontent.com/u/20469245?v=4\",\"favorite_sites\":{\"GitHub\":\"https://github.com/wsgggws\",\"Bilibili\":\"https://space.bilibili.com/472722204\"}}"
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '264'
+      content-type:
+      - application/json
+      host:
+      - test
+      user-agent:
+      - python-httpx/0.28.1
+    method: POST
+    uri: http://test/api/v1/user/register
+  response:
+    body:
+      string: '{"id":"bd282a0c-a062-4dcc-8855-8459bc3a7781","username":"rss_user","email":"rss@example.com","last_login":null,"avatar":null,"bio":null,"favorite_sites":null,"created_at":"2025-11-19T14:53:08.805467Z","updated_at":"2025-11-19T14:53:08.805477Z"}'
+    headers:
+      content-length:
+      - '244'
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/136.0.0.0 Safari/537.36
+    method: GET
+    uri: https://sspai.com/feeds
+  response:
+    body:
+      string: "{\"error\":404,\"message\":\"\u672A\u627E\u5230\"}\n"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '36'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 19 Nov 2025 14:53:09 GMT
+      Vary:
+      - Origin
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: null
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/136.0.0.0 Safari/537.36
+    method: GET
+    uri: https://sspai.com/feed
+  response:
+    body:
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\"
+        xmlns:dc=\"http://purl.org/dc/elements/1.1/\"><channel><title>\u5C11\u6570\u6D3E</title><link>https://sspai.com</link><description>\u5C11\u6570\u6D3E\u81F4\u529B\u4E8E\u66F4\u597D\u5730\u8FD0\u7528\u6570\u5B57\u4EA7\u54C1\u6216\u79D1\u5B66\u65B9\u6CD5\uFF0C\u5E2E\u52A9\u7528\u6237\u63D0\u5347\u5DE5\u4F5C\u6548\u7387\u548C\u751F\u6D3B\u54C1\u8D28</description><language>zh-CN</language><managingEditor>contact@sspai.com
+        (\u5C11\u6570\u6D3E)</managingEditor><pubDate>Wed, 19 Nov 2025 17:44:54 +0800</pubDate><item><title>\u5177\u900F
+        | \u5F53\u4E00\u4E2A\u89C6\u9891\u4E0B\u8F7D\u811A\u672C\u88AB\u8FEB\u53D8\u6210\u534A\u4E2A\u6D4F\u89C8\u5668\uFF1BAndroid
+        \u4FA7\u8F7D\u4FDD\u4F4F\u4E86\u4E00\u534A</title><link>https://sspai.com/prime/story/inside-release-notes-251119</link><description>yt-dlp\u5F00\u59CB\u4F9D\u8D56\u5916\u90E8JavaScript\u8FD0\u884C\u65F6@PlatyHsu\uFF1Ayt-dlp\u662F\u5F00\u6E90\u793E\u533A\u975E\u5E38\u6709\u540D\u7684\u89C6\u9891\u4E0B\u8F7D\u5DE5\u5177\uFF0C\u4E5F\u662Fyoutube-dl\u505C\u6B62\u66F4\u65B0\u4E4B\u540E\uFF0C\u5C11\u6570\u4FDD\u6301\u6D3B\u8DC3\u548C\u53EF\u7528\u7684\u9009\u9879\u3002\u9664\u4E86\u5728\u7EC8\u7AEF\u76F4\u63A5\u4F7F\u7528\u5916
+        ...&lt;a href=&#34;https://sspai.com/prime/story/inside-release-notes-251119&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;&lt;p&gt;\u672C\u6587\u4E3A\u4F1A\u5458\u6587\u7AE0\uFF0C\u51FA\u81EA&lt;a
+        href=&#34;https://sspai.com/prime/precog/single&#34; target=&#34;_blank&#34;&gt;\u300A\u5355\u7BC7\u6587\u7AE0\u300B&lt;/a
+        &gt;\uFF0C\u8BA2\u9605\u540E\u53EF\u9605\u8BFB\u5168\u6587\u3002&lt;/p &gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Wed,
+        19 Nov 2025 17:44:54 +0800</pubDate></item><item><title>\u4F4E\u6210\u672C\u3001\u53EF\u6269\u5C55\u7684
+        CyberBrick \u590D\u73B0\u65B9\u6848\uFF0C\u81EA\u5DF1\u52A8\u624B\u505A\u4E00\u53F0
+        3D \u6253\u5370\u9065\u63A7\u8F66</title><link>https://sspai.com/post/103872</link><description>Matrix\u9996\u9875\u63A8\u8350Matrix\u662F\u5C11\u6570\u6D3E\u7684\u5199\u4F5C\u793E\u533A\uFF0C\u6211\u4EEC\u4E3B\u5F20\u5206\u4EAB\u771F\u5B9E\u7684\u4EA7\u54C1\u4F53\u9A8C\uFF0C\u6709\u5B9E\u7528\u4EF7\u503C\u7684\u7ECF\u9A8C\u4E0E\u601D\u8003\u3002\u6211\u4EEC\u4F1A\u4E0D\u5B9A\u671F\u6311\u9009Matrix\u6700\u4F18\u8D28\u7684\u6587\u7AE0\uFF0C\u5C55\u793A\u6765\u81EA\u7528\u6237\u7684\u6700\u771F\u5B9E\u7684\u4F53\u9A8C\u548C\u89C2\u70B9\u3002\u6587\u7AE0\u4EE3\u8868\u4F5C\u8005\u4E2A\u4EBA\u89C2\u70B9
+        ...&lt;a href=&#34;https://sspai.com/post/103872&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u4EFB\u4E9A\u519B</author><pubDate>Wed,
+        19 Nov 2025 17:33:01 +0800</pubDate></item><item><title>\u4ECE\u65E5\u5E38\u5230\u8FD0\u52A8\uFF0CAirPods
+        3 Pro \u5168\u9762\u4F53\u9A8C\u62A5\u544A</title><link>https://sspai.com/post/103806</link><description>AirPods
+        \u7CFB\u5217\u771F\u7684\u65E0\u6127\u4E8E iPhone \u4E4B\u540E\u82F9\u679C\u6700\u4F1F\u5927\u7684\u4EA7\u54C1\u3002&lt;a
+        href=&#34;https://sspai.com/post/103806&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5199\u5C0F\u9ED1\u6587\u7684Alex</author><pubDate>Wed,
+        19 Nov 2025 15:09:41 +0800</pubDate></item><item><title>\u6211\u7684\u79CB\u51AC\u7A7F\u642D\u601D\u8DEF\uFF1A\u4ECE\u6838\u5FC3\u5355\u54C1\u51FA\u53D1\uFF0C\u517C\u987E\u4FDD\u6696\u4E0E\u4E2A\u6027</title><link>https://sspai.com/post/103912</link><description>\u5929\u6C14\u8D8A\u51B7\uFF0C\u7ED9\u7A7F\u642D\u7684\u53D1\u6325\u7A7A\u95F4\u5C31\u8D8A\u5927\u3002\u79CB\u51AC\u7684\u5355\u54C1\uFF0C\u65E0\u8BBA\u662F\u5185\u642D\u8FD8\u662F\u5916\u8863\uFF0C\u90FD\u6709\u5F88\u591A\u79CD\u7EC6\u5206\u7684\u54C1\u7C7B\u53EF\u4EE5\u9009\u62E9\uFF0C\u81EA\u7136\u4E5F\u5C31\u6709\u65E0\u6570\u7684\u7A7F\u642D\u53EF\u80FD\u3002\u5728\u642D\u914D\u7684\u65B9\u6CD5\u4E0A\uFF0C\u9664\u4E86\u5E38\u89C4\u7684\u5185\u642D\u52A0\u5916\u5957\u7684\u7A7F\u6CD5\uFF0C\u79CB\u51AC\u8FD8\u53EF\u4EE5\u7528\u300C\u53E0\u7A7F\u300D\u6765\u7A81\u51FA\u5C42\u6B21\u611F\uFF0C
+        ...&lt;a href=&#34;https://sspai.com/post/103912&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u7A0B\u5929\u51B2</author><pubDate>Wed,
+        19 Nov 2025 11:00:00 +0800</pubDate></item><item><title>\u6D3E\u65E9\u62A5\uFF1AGoogle
+        \u53D1\u5E03 Gemini 3\u3001Cloudflare \u5F15\u53D1\u7F51\u7EDC\u6545\u969C\u7B49</title><link>https://sspai.com/post/103926</link><description>Zigbee
+        4.0 \u6807\u51C6\u516C\u5E03\uFF0C\u5FAE\u8F6F\u3001\u82F1\u4F1F\u8FBE\u4E0E
+        Anthropic \u8FBE\u6210\u6218\u7565\u5408\u4F5C\u7B49\u3002&lt;a href=&#34;https://sspai.com/post/103926&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Wed,
+        19 Nov 2025 08:54:21 +0800</pubDate></item><item><title>\u793E\u533A\u901F\u9012
+        118 | \u6D3E\u53CB\u5343\u5947\u767E\u602A\u7684\u5065\u8EAB\u8D77\u70B9\u3001\u4E00\u5468\u70ED\u8BC4\u4EE5\u53CA\u65B0\u73A9\u610F</title><link>https://sspai.com/post/103908</link><description>\u9664\u4E86\u9996\u9875\u65F6\u95F4\u6D41\u548C\u4FA7\u680F\u7684\u7CBE\u9009\u5C55\u4F4D\uFF0C\u5C11\u6570\u6D3EMatrix\u793E\u533A\u8FD8\u6709\u5F88\u591A\u4F18\u79C0\u5185\u5BB9\u56E0\u6761\u4EF6\u6240\u9650\u65E0\u6CD5\u5F97\u5230\u6709\u6548\u66DD\u5149\uFF0C\u56E0\u6B64\u6211\u4EEC\u51B3\u5B9A\u91CD\u542FMatrix\u5468\u62A5\uFF0C\u5E76\u5728\u6B64\u57FA\u7840\u4E0A\u6DFB\u52A0\u66F4\u591A\u793E\u533A\u5185\u5BB9\u3001\u4F5C\u8005\u6295\u7A3F\u65B0\u73A9\u610F\u5448\u73B0\u7ED9\u5927\u5BB6\u3002\U0001F4AC\u4E00\u6D3E\u70ED\u8BAE\u5728
+        ...&lt;a href=&#34;https://sspai.com/post/103908&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>Matrix\u673A\u5668\u4EBA</author><pubDate>Tue,
+        18 Nov 2025 17:20:00 +0800</pubDate></item><item><title>\u4E2D\u6863\u4EF7\u4F4D\u771F\u65E0\u7EBF\u8033\u673A\u6A2A\u8BC4\u4E0E\u5EFA\u8BAE\uFF082025
+        \u5E74\u7EC8\uFF09 - TDS \u65E0\u5FC3\u5FEB\u8BED</title><link>https://sspai.com/post/103767</link><description>\u805A\u7126\u4F69\u6234\u3001\u64CD\u4F5C\u4E0E
+        App \u4F53\u9A8C\u3001\u4FE1\u53F7\u8868\u73B0\u3001\u7EED\u822A\u8868\u73B0\u3001\u964D\u566A\u7EFC\u5408\u8868\u73B0\u3001\u58F0\u97F3\u8868\u73B0\u516D\u4E2A\u5927\u9879\u3002&lt;a
+        href=&#34;https://sspai.com/post/103767&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>KingTsui</author><pubDate>Tue,
+        18 Nov 2025 15:00:00 +0800</pubDate></item><item><title>\u7528 AI \u751F\u6210\u4E92\u52A8\u6E38\u620F\uFF0C\u8BA9\u8BFE\u672C\u91CC\u7684\u6545\u4E8B\u300C\u6D3B\u300D\u8D77\u6765</title><link>https://sspai.com/post/103811</link><description>Matrix\u9996\u9875\u63A8\u8350Matrix\u662F\u5C11\u6570\u6D3E\u7684\u5199\u4F5C\u793E\u533A\uFF0C\u6211\u4EEC\u4E3B\u5F20\u5206\u4EAB\u771F\u5B9E\u7684\u4EA7\u54C1\u4F53\u9A8C\uFF0C\u6709\u5B9E\u7528\u4EF7\u503C\u7684\u7ECF\u9A8C\u4E0E\u601D\u8003\u3002\u6211\u4EEC\u4F1A\u4E0D\u5B9A\u671F\u6311\u9009Matrix\u6700\u4F18\u8D28\u7684\u6587\u7AE0\uFF0C\u5C55\u793A\u6765\u81EA\u7528\u6237\u7684\u6700\u771F\u5B9E\u7684\u4F53\u9A8C\u548C\u89C2\u70B9\u3002\u6587\u7AE0\u4EE3\u8868\u4F5C\u8005\u4E2A\u4EBA\u89C2\u70B9
+        ...&lt;a href=&#34;https://sspai.com/post/103811&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u4E00\u6CFDEze</author><pubDate>Tue,
+        18 Nov 2025 11:03:00 +0800</pubDate></item><item><title>\u6D3E\u65E9\u62A5\uFF1A\u963F\u91CC\u5DF4\u5DF4\u5343\u95EE
+        App \u516C\u6D4B\u4E0A\u7EBF\uFF0C\u7D2B\u5149\u5C55\u9510\u53D1\u5E03 T9300
+        5G SoC \u7B49</title><link>https://sspai.com/post/103901</link><description>TGA
+        2025 \u6E38\u620F\u5956\u63D0\u540D\u516C\u5E03\uFF0COPPO \u53D1\u5E03 Reno15
+        \u7CFB\u5217\u624B\u673A\u7B49\u3002&lt;a href=&#34;https://sspai.com/post/103901&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Tue,
+        18 Nov 2025 08:42:57 +0800</pubDate></item><item><title>\u6D3E\u8BC4 | \u8FD1\u671F\u503C\u5F97\u5173\u6CE8\u7684
+        App</title><link>https://sspai.com/post/103895</link><description>\u6B22\u8FCE\u6536\u770B\u672C\u671F\u300A\u6D3E\u8BC4\u300B\u3002\u4F60\u53EF\u4EE5\u901A\u8FC7\u6587\u7AE0\u76EE\u5F55\u5FEB\u901F\u8DF3\u8F6C\u5230\u4F60\u611F\u5174\u8DA3\u7684\u5185\u5BB9\u3002\u5982\u679C\u53D1\u73B0\u4E86\u5176\u5B83\u611F\u5174\u8DA3\u7684App\u6216\u8005\u5173\u6CE8\u7684\u8BDD\u9898\uFF0C\u4E5F\u6B22\u8FCE\u5728\u8BC4\u8BBA\u533A\u548C\u6211\u4EEC\u8BA8\u8BBA\u3002\u4E0D\u5BB9\u9519\u8FC7\u7684App\u66F4\u65B0\u9664\u4E86\u300C\u65B0\u9C9C\u300DApp\uFF0CAppStore\u4E2D\u7684\u8BB8\u591A
+        ...&lt;a href=&#34;https://sspai.com/post/103895&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Mon,
+        17 Nov 2025 17:43:51 +0800</pubDate></item><atom:link href=\"https://sspai.com/feed\"
+        type=\"application/rss+xml\" ref=\"self\"></atom:link><atom:link href=\"https://sspai.com/feed\"
+        type=\"application/rss+xml\" ref=\"hub\"></atom:link></channel></rss>"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/xml; charset=UTF-8
+      Date:
+      - Wed, 19 Nov 2025 14:53:09 GMT
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: "{\"username\":\"rss_user\",\"password\":\"Passw0rd;\",\"email\":\"rss@example.com\",\"bio\":\"\u53EF\u7EF4\u62A4\u6027\",\"avatar\":\"https://avatars.githubusercontent.com/u/20469245?v=4\",\"favorite_sites\":{\"GitHub\":\"https://github.com/wsgggws\",\"Bilibili\":\"https://space.bilibili.com/472722204\"}}"
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '264'
+      content-type:
+      - application/json
+      host:
+      - test
+      user-agent:
+      - python-httpx/0.28.1
+    method: POST
+    uri: http://test/api/v1/user/register
+  response:
+    body:
+      string: '{"id":"dcff6a21-67e0-4431-b85c-ab6a955ee87c","username":"rss_user","email":"rss@example.com","last_login":null,"avatar":null,"bio":null,"favorite_sites":null,"created_at":"2025-11-19T14:54:43.847696Z","updated_at":"2025-11-19T14:54:43.847704Z"}'
+    headers:
+      content-length:
+      - '244'
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/136.0.0.0 Safari/537.36
+    method: GET
+    uri: https://sspai.com/feed
+  response:
+    body:
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\"
+        xmlns:dc=\"http://purl.org/dc/elements/1.1/\"><channel><title>\u5C11\u6570\u6D3E</title><link>https://sspai.com</link><description>\u5C11\u6570\u6D3E\u81F4\u529B\u4E8E\u66F4\u597D\u5730\u8FD0\u7528\u6570\u5B57\u4EA7\u54C1\u6216\u79D1\u5B66\u65B9\u6CD5\uFF0C\u5E2E\u52A9\u7528\u6237\u63D0\u5347\u5DE5\u4F5C\u6548\u7387\u548C\u751F\u6D3B\u54C1\u8D28</description><language>zh-CN</language><managingEditor>contact@sspai.com
+        (\u5C11\u6570\u6D3E)</managingEditor><pubDate>Wed, 19 Nov 2025 17:44:54 +0800</pubDate><item><title>\u5177\u900F
+        | \u5F53\u4E00\u4E2A\u89C6\u9891\u4E0B\u8F7D\u811A\u672C\u88AB\u8FEB\u53D8\u6210\u534A\u4E2A\u6D4F\u89C8\u5668\uFF1BAndroid
+        \u4FA7\u8F7D\u4FDD\u4F4F\u4E86\u4E00\u534A</title><link>https://sspai.com/prime/story/inside-release-notes-251119</link><description>yt-dlp\u5F00\u59CB\u4F9D\u8D56\u5916\u90E8JavaScript\u8FD0\u884C\u65F6@PlatyHsu\uFF1Ayt-dlp\u662F\u5F00\u6E90\u793E\u533A\u975E\u5E38\u6709\u540D\u7684\u89C6\u9891\u4E0B\u8F7D\u5DE5\u5177\uFF0C\u4E5F\u662Fyoutube-dl\u505C\u6B62\u66F4\u65B0\u4E4B\u540E\uFF0C\u5C11\u6570\u4FDD\u6301\u6D3B\u8DC3\u548C\u53EF\u7528\u7684\u9009\u9879\u3002\u9664\u4E86\u5728\u7EC8\u7AEF\u76F4\u63A5\u4F7F\u7528\u5916
+        ...&lt;a href=&#34;https://sspai.com/prime/story/inside-release-notes-251119&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;&lt;p&gt;\u672C\u6587\u4E3A\u4F1A\u5458\u6587\u7AE0\uFF0C\u51FA\u81EA&lt;a
+        href=&#34;https://sspai.com/prime/precog/single&#34; target=&#34;_blank&#34;&gt;\u300A\u5355\u7BC7\u6587\u7AE0\u300B&lt;/a
+        &gt;\uFF0C\u8BA2\u9605\u540E\u53EF\u9605\u8BFB\u5168\u6587\u3002&lt;/p &gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Wed,
+        19 Nov 2025 17:44:54 +0800</pubDate></item><item><title>\u4F4E\u6210\u672C\u3001\u53EF\u6269\u5C55\u7684
+        CyberBrick \u590D\u73B0\u65B9\u6848\uFF0C\u81EA\u5DF1\u52A8\u624B\u505A\u4E00\u53F0
+        3D \u6253\u5370\u9065\u63A7\u8F66</title><link>https://sspai.com/post/103872</link><description>Matrix\u9996\u9875\u63A8\u8350Matrix\u662F\u5C11\u6570\u6D3E\u7684\u5199\u4F5C\u793E\u533A\uFF0C\u6211\u4EEC\u4E3B\u5F20\u5206\u4EAB\u771F\u5B9E\u7684\u4EA7\u54C1\u4F53\u9A8C\uFF0C\u6709\u5B9E\u7528\u4EF7\u503C\u7684\u7ECF\u9A8C\u4E0E\u601D\u8003\u3002\u6211\u4EEC\u4F1A\u4E0D\u5B9A\u671F\u6311\u9009Matrix\u6700\u4F18\u8D28\u7684\u6587\u7AE0\uFF0C\u5C55\u793A\u6765\u81EA\u7528\u6237\u7684\u6700\u771F\u5B9E\u7684\u4F53\u9A8C\u548C\u89C2\u70B9\u3002\u6587\u7AE0\u4EE3\u8868\u4F5C\u8005\u4E2A\u4EBA\u89C2\u70B9
+        ...&lt;a href=&#34;https://sspai.com/post/103872&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u4EFB\u4E9A\u519B</author><pubDate>Wed,
+        19 Nov 2025 17:33:01 +0800</pubDate></item><item><title>\u4ECE\u65E5\u5E38\u5230\u8FD0\u52A8\uFF0CAirPods
+        3 Pro \u5168\u9762\u4F53\u9A8C\u62A5\u544A</title><link>https://sspai.com/post/103806</link><description>AirPods
+        \u7CFB\u5217\u771F\u7684\u65E0\u6127\u4E8E iPhone \u4E4B\u540E\u82F9\u679C\u6700\u4F1F\u5927\u7684\u4EA7\u54C1\u3002&lt;a
+        href=&#34;https://sspai.com/post/103806&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5199\u5C0F\u9ED1\u6587\u7684Alex</author><pubDate>Wed,
+        19 Nov 2025 15:09:41 +0800</pubDate></item><item><title>\u6211\u7684\u79CB\u51AC\u7A7F\u642D\u601D\u8DEF\uFF1A\u4ECE\u6838\u5FC3\u5355\u54C1\u51FA\u53D1\uFF0C\u517C\u987E\u4FDD\u6696\u4E0E\u4E2A\u6027</title><link>https://sspai.com/post/103912</link><description>\u5929\u6C14\u8D8A\u51B7\uFF0C\u7ED9\u7A7F\u642D\u7684\u53D1\u6325\u7A7A\u95F4\u5C31\u8D8A\u5927\u3002\u79CB\u51AC\u7684\u5355\u54C1\uFF0C\u65E0\u8BBA\u662F\u5185\u642D\u8FD8\u662F\u5916\u8863\uFF0C\u90FD\u6709\u5F88\u591A\u79CD\u7EC6\u5206\u7684\u54C1\u7C7B\u53EF\u4EE5\u9009\u62E9\uFF0C\u81EA\u7136\u4E5F\u5C31\u6709\u65E0\u6570\u7684\u7A7F\u642D\u53EF\u80FD\u3002\u5728\u642D\u914D\u7684\u65B9\u6CD5\u4E0A\uFF0C\u9664\u4E86\u5E38\u89C4\u7684\u5185\u642D\u52A0\u5916\u5957\u7684\u7A7F\u6CD5\uFF0C\u79CB\u51AC\u8FD8\u53EF\u4EE5\u7528\u300C\u53E0\u7A7F\u300D\u6765\u7A81\u51FA\u5C42\u6B21\u611F\uFF0C
+        ...&lt;a href=&#34;https://sspai.com/post/103912&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u7A0B\u5929\u51B2</author><pubDate>Wed,
+        19 Nov 2025 11:00:00 +0800</pubDate></item><item><title>\u6D3E\u65E9\u62A5\uFF1AGoogle
+        \u53D1\u5E03 Gemini 3\u3001Cloudflare \u5F15\u53D1\u7F51\u7EDC\u6545\u969C\u7B49</title><link>https://sspai.com/post/103926</link><description>Zigbee
+        4.0 \u6807\u51C6\u516C\u5E03\uFF0C\u5FAE\u8F6F\u3001\u82F1\u4F1F\u8FBE\u4E0E
+        Anthropic \u8FBE\u6210\u6218\u7565\u5408\u4F5C\u7B49\u3002&lt;a href=&#34;https://sspai.com/post/103926&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Wed,
+        19 Nov 2025 08:54:21 +0800</pubDate></item><item><title>\u793E\u533A\u901F\u9012
+        118 | \u6D3E\u53CB\u5343\u5947\u767E\u602A\u7684\u5065\u8EAB\u8D77\u70B9\u3001\u4E00\u5468\u70ED\u8BC4\u4EE5\u53CA\u65B0\u73A9\u610F</title><link>https://sspai.com/post/103908</link><description>\u9664\u4E86\u9996\u9875\u65F6\u95F4\u6D41\u548C\u4FA7\u680F\u7684\u7CBE\u9009\u5C55\u4F4D\uFF0C\u5C11\u6570\u6D3EMatrix\u793E\u533A\u8FD8\u6709\u5F88\u591A\u4F18\u79C0\u5185\u5BB9\u56E0\u6761\u4EF6\u6240\u9650\u65E0\u6CD5\u5F97\u5230\u6709\u6548\u66DD\u5149\uFF0C\u56E0\u6B64\u6211\u4EEC\u51B3\u5B9A\u91CD\u542FMatrix\u5468\u62A5\uFF0C\u5E76\u5728\u6B64\u57FA\u7840\u4E0A\u6DFB\u52A0\u66F4\u591A\u793E\u533A\u5185\u5BB9\u3001\u4F5C\u8005\u6295\u7A3F\u65B0\u73A9\u610F\u5448\u73B0\u7ED9\u5927\u5BB6\u3002\U0001F4AC\u4E00\u6D3E\u70ED\u8BAE\u5728
+        ...&lt;a href=&#34;https://sspai.com/post/103908&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>Matrix\u673A\u5668\u4EBA</author><pubDate>Tue,
+        18 Nov 2025 17:20:00 +0800</pubDate></item><item><title>\u4E2D\u6863\u4EF7\u4F4D\u771F\u65E0\u7EBF\u8033\u673A\u6A2A\u8BC4\u4E0E\u5EFA\u8BAE\uFF082025
+        \u5E74\u7EC8\uFF09 - TDS \u65E0\u5FC3\u5FEB\u8BED</title><link>https://sspai.com/post/103767</link><description>\u805A\u7126\u4F69\u6234\u3001\u64CD\u4F5C\u4E0E
+        App \u4F53\u9A8C\u3001\u4FE1\u53F7\u8868\u73B0\u3001\u7EED\u822A\u8868\u73B0\u3001\u964D\u566A\u7EFC\u5408\u8868\u73B0\u3001\u58F0\u97F3\u8868\u73B0\u516D\u4E2A\u5927\u9879\u3002&lt;a
+        href=&#34;https://sspai.com/post/103767&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>KingTsui</author><pubDate>Tue,
+        18 Nov 2025 15:00:00 +0800</pubDate></item><item><title>\u7528 AI \u751F\u6210\u4E92\u52A8\u6E38\u620F\uFF0C\u8BA9\u8BFE\u672C\u91CC\u7684\u6545\u4E8B\u300C\u6D3B\u300D\u8D77\u6765</title><link>https://sspai.com/post/103811</link><description>Matrix\u9996\u9875\u63A8\u8350Matrix\u662F\u5C11\u6570\u6D3E\u7684\u5199\u4F5C\u793E\u533A\uFF0C\u6211\u4EEC\u4E3B\u5F20\u5206\u4EAB\u771F\u5B9E\u7684\u4EA7\u54C1\u4F53\u9A8C\uFF0C\u6709\u5B9E\u7528\u4EF7\u503C\u7684\u7ECF\u9A8C\u4E0E\u601D\u8003\u3002\u6211\u4EEC\u4F1A\u4E0D\u5B9A\u671F\u6311\u9009Matrix\u6700\u4F18\u8D28\u7684\u6587\u7AE0\uFF0C\u5C55\u793A\u6765\u81EA\u7528\u6237\u7684\u6700\u771F\u5B9E\u7684\u4F53\u9A8C\u548C\u89C2\u70B9\u3002\u6587\u7AE0\u4EE3\u8868\u4F5C\u8005\u4E2A\u4EBA\u89C2\u70B9
+        ...&lt;a href=&#34;https://sspai.com/post/103811&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u4E00\u6CFDEze</author><pubDate>Tue,
+        18 Nov 2025 11:03:00 +0800</pubDate></item><item><title>\u6D3E\u65E9\u62A5\uFF1A\u963F\u91CC\u5DF4\u5DF4\u5343\u95EE
+        App \u516C\u6D4B\u4E0A\u7EBF\uFF0C\u7D2B\u5149\u5C55\u9510\u53D1\u5E03 T9300
+        5G SoC \u7B49</title><link>https://sspai.com/post/103901</link><description>TGA
+        2025 \u6E38\u620F\u5956\u63D0\u540D\u516C\u5E03\uFF0COPPO \u53D1\u5E03 Reno15
+        \u7CFB\u5217\u624B\u673A\u7B49\u3002&lt;a href=&#34;https://sspai.com/post/103901&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Tue,
+        18 Nov 2025 08:42:57 +0800</pubDate></item><item><title>\u6D3E\u8BC4 | \u8FD1\u671F\u503C\u5F97\u5173\u6CE8\u7684
+        App</title><link>https://sspai.com/post/103895</link><description>\u6B22\u8FCE\u6536\u770B\u672C\u671F\u300A\u6D3E\u8BC4\u300B\u3002\u4F60\u53EF\u4EE5\u901A\u8FC7\u6587\u7AE0\u76EE\u5F55\u5FEB\u901F\u8DF3\u8F6C\u5230\u4F60\u611F\u5174\u8DA3\u7684\u5185\u5BB9\u3002\u5982\u679C\u53D1\u73B0\u4E86\u5176\u5B83\u611F\u5174\u8DA3\u7684App\u6216\u8005\u5173\u6CE8\u7684\u8BDD\u9898\uFF0C\u4E5F\u6B22\u8FCE\u5728\u8BC4\u8BBA\u533A\u548C\u6211\u4EEC\u8BA8\u8BBA\u3002\u4E0D\u5BB9\u9519\u8FC7\u7684App\u66F4\u65B0\u9664\u4E86\u300C\u65B0\u9C9C\u300DApp\uFF0CAppStore\u4E2D\u7684\u8BB8\u591A
+        ...&lt;a href=&#34;https://sspai.com/post/103895&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Mon,
+        17 Nov 2025 17:43:51 +0800</pubDate></item><atom:link href=\"https://sspai.com/feed\"
+        type=\"application/rss+xml\" ref=\"self\"></atom:link><atom:link href=\"https://sspai.com/feed\"
+        type=\"application/rss+xml\" ref=\"hub\"></atom:link></channel></rss>"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/xml; charset=UTF-8
+      Date:
+      - Wed, 19 Nov 2025 14:54:44 GMT
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/136.0.0.0 Safari/537.36
+    method: GET
+    uri: https://sspai.com/feeds
+  response:
+    body:
+      string: "{\"error\":404,\"message\":\"\u672A\u627E\u5230\"}\n"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '36'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 19 Nov 2025 14:54:44 GMT
+      Vary:
+      - Origin
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: null
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/136.0.0.0 Safari/537.36
+    method: GET
+    uri: https://wsgggws.github.io
+  response:
+    body:
+      string: "<!doctype html><html class=\"not-ready lg:text-base\" style=--bg:#f8f5d7
+        lang=en-us dir=ltr><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible
+        content=\"IE=edge\"><meta name=viewport content=\"width=device-width,initial-scale=1,shrink-to-fit=no\"><title>Blogs
+        (\u7801\u7801\u8981\u6D17\u624B)</title>\n<meta name=theme-color><meta name=description
+        content=\"A personal blog\"><meta name=author content=\"Blogs (\u7801\u7801\u8981\u6D17\u624B)\"><link
+        rel=\"preload stylesheet\" as=style href=https://wsgggws.github.io/main.min.css><link
+        rel=preload as=image href=https://wsgggws.github.io/theme.svg><link rel=preload
+        as=image href=https://wsgggws.github.io/rss.svg><link rel=stylesheet href=/katex.min.css><script
+        defer src=/katex.min.js></script><script defer src=/auto-render.min.js></script><script>document.addEventListener(\"DOMContentLoaded\",()=>renderMathInElement(document.body,{delimiters:[{left:\"$$\",right:\"$$\",display:!0},{left:\"$\",right:\"$\",display:!1}],throwOnError:!1}))</script><link
+        rel=icon href=https://wsgggws.github.io/images/website/Navy.ico><link rel=apple-touch-icon
+        href=https://wsgggws.github.io/apple-touch-icon.png><meta name=generator content=\"Hugo
+        0.128.0\"><meta itemprop=name content=\"Blogs (\u7801\u7801\u8981\u6D17\u624B)\"><meta
+        itemprop=dateModified content=\"2025-04-07T11:30:03+00:00\"><meta property=\"og:url\"
+        content=\"https://wsgggws.github.io/\"><meta property=\"og:site_name\" content=\"Blogs
+        (\u7801\u7801\u8981\u6D17\u624B)\"><meta property=\"og:title\" content=\"Blogs
+        (\u7801\u7801\u8981\u6D17\u624B)\"><meta property=\"og:locale\" content=\"en_us\"><meta
+        property=\"og:type\" content=\"website\"><meta name=twitter:card content=\"summary\"><meta
+        name=twitter:title content=\"Blogs (\u7801\u7801\u8981\u6D17\u624B)\"><link
+        rel=alternate type=application/rss+xml href=https://wsgggws.github.io/index.xml
+        title=\"Blogs (\u7801\u7801\u8981\u6D17\u624B)\"><link rel=canonical href=https://wsgggws.github.io/></head><body
+        class=\"text-black duration-200 ease-out dark:text-white\"><header class=\"mx-auto
+        flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center\"><div class=\"relative
+        z-50 ltr:mr-auto rtl:ml-auto flex items-center\"><a class=\"-translate-y-[1px]
+        text-2xl font-medium\" href=https://wsgggws.github.io/>Blogs (\u7801\u7801\u8981\u6D17\u624B)</a><div
+        class=\"btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer
+        [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]\"
+        role=button aria-label=Dark></div></div><div class=\"btn-menu relative z-50
+        ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col
+        items-center justify-center gap-2.5 lg:hidden\" role=button aria-label=Menu></div><script>const
+        htmlClass=document.documentElement.classList;setTimeout(()=>{htmlClass.remove(\"not-ready\")},10);const
+        btnMenu=document.querySelector(\".btn-menu\");btnMenu.addEventListener(\"click\",()=>{htmlClass.toggle(\"open\")});const
+        metaTheme=document.querySelector('meta[name=\"theme-color\"]'),lightBg=\"#f8f5d7\".replace(/\"/g,\"\"),setDark=e=>{metaTheme.setAttribute(\"content\",e?\"#000\":lightBg),htmlClass[e?\"add\":\"remove\"](\"dark\"),localStorage.setItem(\"dark\",e)},darkScheme=window.matchMedia(\"(prefers-color-scheme:
+        dark)\");if(htmlClass.contains(\"dark\"))setDark(!0);else{const e=localStorage.getItem(\"dark\");setDark(e?e===\"true\":darkScheme.matches)}darkScheme.addEventListener(\"change\",e=>{setDark(e.matches)});const
+        btnDark=document.querySelector(\".btn-dark\");btnDark.addEventListener(\"click\",()=>{setDark(localStorage.getItem(\"dark\")!==\"true\")})</script><div
+        class=\"nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none
+        flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto
+        lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none\"><nav class=\"lg:ml-12
+        lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse\"><a
+        class=\"block text-center text-xl leading-[5rem] lg:text-base lg:font-normal\"
+        href=/about/>About.Me</a></nav><nav class=\"mt-12 flex justify-center space-x-10
+        rtl:space-x-reverse dark:invert ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center\"><a
+        class=\"h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat]
+        lg:h-6 lg:w-6\" style=--url:url(./rss.svg) href=https://wsgggws.github.io/index.xml
+        target=_blank rel=alternate>rss</a></nav></div></header><main class=\"prose
+        prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16
+        pt-14 dark:prose-invert\"><section class=\"relative my-10 first-of-type:mt-0
+        last-of-type:mb-0\"><h2 class=!my-0>Python Debugger Pdb</h2><time class=\"text-xs
+        antialiased opacity-60\">Sep 6, 2024</time>\n<a class=\"absolute inset-0 text-[0]\"
+        href=https://wsgggws.github.io/blogs/pdb/>Python Debugger Pdb</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>MVP</h2><time
+        class=\"text-xs antialiased opacity-60\">Sep 6, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/mvp/>MVP</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>\u897F\u6E38\u8BB0</h2><time
+        class=\"text-xs antialiased opacity-60\">Sep 4, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/%E8%A5%BF%E6%B8%B8%E8%AE%B0/>\u897F\u6E38\u8BB0</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>\u5BCC\u7238\u7238\u4E0E\u7A77\u7238\u7238</h2><time
+        class=\"text-xs antialiased opacity-60\">Sep 2, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/%E5%AF%8C%E7%88%B8%E7%88%B8%E4%B8%8E%E7%A9%B7%E7%88%B8%E7%88%B8/>\u5BCC\u7238\u7238\u4E0E\u7A77\u7238\u7238</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>\u8521\u5FD7\u5FE0\u7ECF\u5178\u89E3\u5BC6\u7CFB\u5217</h2><time
+        class=\"text-xs antialiased opacity-60\">Aug 23, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/%E8%94%A1%E5%BF%97%E5%BF%A0%E7%BB%8F%E5%85%B8%E8%A7%A3%E5%AF%86%E7%B3%BB%E5%88%97/>\u8521\u5FD7\u5FE0\u7ECF\u5178\u89E3\u5BC6\u7CFB\u5217</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>HttpBin</h2><time
+        class=\"text-xs antialiased opacity-60\">Aug 23, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/httpbin/>HttpBin</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>JavaScript
+        \u7279\u6027</h2><time class=\"text-xs antialiased opacity-60\">Aug 5, 2024</time>\n<a
+        class=\"absolute inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/javascript-specials/>JavaScript
+        \u7279\u6027</a></section><section class=\"relative my-10 first-of-type:mt-0
+        last-of-type:mb-0\"><h2 class=!my-0>JEMSPath</h2><time class=\"text-xs antialiased
+        opacity-60\">Aug 1, 2024</time>\n<a class=\"absolute inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/jemspath/>JEMSPath</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>jq</h2><time
+        class=\"text-xs antialiased opacity-60\">Jul 31, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/jq/>jq</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>XPath</h2><time
+        class=\"text-xs antialiased opacity-60\">Jul 31, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/xpath/>XPath</a></section><nav
+        class=\"mt-14 flex\"><a class=\"btn ml-auto\" href=/page/2/>Next Page \u2192</a></nav></main><footer
+        class=\"mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase
+        tracking-wider opacity-60\"><div class=mr-auto>&copy; 2025\n<a class=link
+        href=https://wsgggws.github.io/>Blogs (\u7801\u7801\u8981\u6D17\u624B)</a></div><a
+        class=\"link mx-6\" href=https://gohugo.io/ rel=noopener target=_blank>powered
+        by hugo\uFE0F\uFE0F</a>\uFE0F\n<a class=link href=https://github.com/nanxiaobei/hugo-paper
+        rel=noopener target=_blank>hugo-paper</a></footer></body></html>"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - '*'
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=600
+      Connection:
+      - keep-alive
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Wed, 19 Nov 2025 14:54:44 GMT
+      Etag:
+      - W/"67f412bd-1e34"
+      Expires:
+      - Wed, 19 Nov 2025 15:03:10 GMT
+      Last-Modified:
+      - Mon, 07 Apr 2025 18:00:29 GMT
+      Server:
+      - GitHub.com
+      Strict-Transport-Security:
+      - max-age=31556952
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish
+      X-Cache:
+      - HIT
+      X-Cache-Hits:
+      - '0'
+      X-Fastly-Request-ID:
+      - 7e040b6da03a71f5d49648da3f315b0cc47ad707
+      X-GitHub-Request-Id:
+      - F862:3D22FB:BEB646:C3EDE6:691DD9D6
+      X-Served-By:
+      - cache-tyo11948-TYO
+      X-Timer:
+      - S1763564085.646966,VS0,VE209
+      content-length:
+      - '7732'
+      x-proxy-cache:
+      - MISS
+    status:
+      code: 200
+      message: OK
+- request:
+    body: "{\"username\":\"rss_user\",\"password\":\"Passw0rd;\",\"email\":\"rss@example.com\",\"bio\":\"\u53EF\u7EF4\u62A4\u6027\",\"avatar\":\"https://avatars.githubusercontent.com/u/20469245?v=4\",\"favorite_sites\":{\"GitHub\":\"https://github.com/wsgggws\",\"Bilibili\":\"https://space.bilibili.com/472722204\"}}"
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '264'
+      content-type:
+      - application/json
+      host:
+      - test
+      user-agent:
+      - python-httpx/0.28.1
+    method: POST
+    uri: http://test/api/v1/user/register
+  response:
+    body:
+      string: '{"id":"ffd3c90d-bf29-48a6-bdc1-83d00727351a","username":"rss_user","email":"rss@example.com","last_login":null,"avatar":null,"bio":null,"favorite_sites":null,"created_at":"2025-11-19T14:57:05.364607Z","updated_at":"2025-11-19T14:57:05.364622Z"}'
+    headers:
+      content-length:
+      - '244'
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/136.0.0.0 Safari/537.36
+    method: GET
+    uri: https://sspai.com/feeds
+  response:
+    body:
+      string: "{\"error\":404,\"message\":\"\u672A\u627E\u5230\"}\n"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '36'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 19 Nov 2025 14:57:05 GMT
+      Vary:
+      - Origin
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: null
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/136.0.0.0 Safari/537.36
+    method: GET
+    uri: https://sspai.com/feed
+  response:
+    body:
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\"
+        xmlns:dc=\"http://purl.org/dc/elements/1.1/\"><channel><title>\u5C11\u6570\u6D3E</title><link>https://sspai.com</link><description>\u5C11\u6570\u6D3E\u81F4\u529B\u4E8E\u66F4\u597D\u5730\u8FD0\u7528\u6570\u5B57\u4EA7\u54C1\u6216\u79D1\u5B66\u65B9\u6CD5\uFF0C\u5E2E\u52A9\u7528\u6237\u63D0\u5347\u5DE5\u4F5C\u6548\u7387\u548C\u751F\u6D3B\u54C1\u8D28</description><language>zh-CN</language><managingEditor>contact@sspai.com
+        (\u5C11\u6570\u6D3E)</managingEditor><pubDate>Wed, 19 Nov 2025 17:44:54 +0800</pubDate><item><title>\u5177\u900F
+        | \u5F53\u4E00\u4E2A\u89C6\u9891\u4E0B\u8F7D\u811A\u672C\u88AB\u8FEB\u53D8\u6210\u534A\u4E2A\u6D4F\u89C8\u5668\uFF1BAndroid
+        \u4FA7\u8F7D\u4FDD\u4F4F\u4E86\u4E00\u534A</title><link>https://sspai.com/prime/story/inside-release-notes-251119</link><description>yt-dlp\u5F00\u59CB\u4F9D\u8D56\u5916\u90E8JavaScript\u8FD0\u884C\u65F6@PlatyHsu\uFF1Ayt-dlp\u662F\u5F00\u6E90\u793E\u533A\u975E\u5E38\u6709\u540D\u7684\u89C6\u9891\u4E0B\u8F7D\u5DE5\u5177\uFF0C\u4E5F\u662Fyoutube-dl\u505C\u6B62\u66F4\u65B0\u4E4B\u540E\uFF0C\u5C11\u6570\u4FDD\u6301\u6D3B\u8DC3\u548C\u53EF\u7528\u7684\u9009\u9879\u3002\u9664\u4E86\u5728\u7EC8\u7AEF\u76F4\u63A5\u4F7F\u7528\u5916
+        ...&lt;a href=&#34;https://sspai.com/prime/story/inside-release-notes-251119&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;&lt;p&gt;\u672C\u6587\u4E3A\u4F1A\u5458\u6587\u7AE0\uFF0C\u51FA\u81EA&lt;a
+        href=&#34;https://sspai.com/prime/precog/single&#34; target=&#34;_blank&#34;&gt;\u300A\u5355\u7BC7\u6587\u7AE0\u300B&lt;/a
+        &gt;\uFF0C\u8BA2\u9605\u540E\u53EF\u9605\u8BFB\u5168\u6587\u3002&lt;/p &gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Wed,
+        19 Nov 2025 17:44:54 +0800</pubDate></item><item><title>\u4F4E\u6210\u672C\u3001\u53EF\u6269\u5C55\u7684
+        CyberBrick \u590D\u73B0\u65B9\u6848\uFF0C\u81EA\u5DF1\u52A8\u624B\u505A\u4E00\u53F0
+        3D \u6253\u5370\u9065\u63A7\u8F66</title><link>https://sspai.com/post/103872</link><description>Matrix\u9996\u9875\u63A8\u8350Matrix\u662F\u5C11\u6570\u6D3E\u7684\u5199\u4F5C\u793E\u533A\uFF0C\u6211\u4EEC\u4E3B\u5F20\u5206\u4EAB\u771F\u5B9E\u7684\u4EA7\u54C1\u4F53\u9A8C\uFF0C\u6709\u5B9E\u7528\u4EF7\u503C\u7684\u7ECF\u9A8C\u4E0E\u601D\u8003\u3002\u6211\u4EEC\u4F1A\u4E0D\u5B9A\u671F\u6311\u9009Matrix\u6700\u4F18\u8D28\u7684\u6587\u7AE0\uFF0C\u5C55\u793A\u6765\u81EA\u7528\u6237\u7684\u6700\u771F\u5B9E\u7684\u4F53\u9A8C\u548C\u89C2\u70B9\u3002\u6587\u7AE0\u4EE3\u8868\u4F5C\u8005\u4E2A\u4EBA\u89C2\u70B9
+        ...&lt;a href=&#34;https://sspai.com/post/103872&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u4EFB\u4E9A\u519B</author><pubDate>Wed,
+        19 Nov 2025 17:33:01 +0800</pubDate></item><item><title>\u4ECE\u65E5\u5E38\u5230\u8FD0\u52A8\uFF0CAirPods
+        3 Pro \u5168\u9762\u4F53\u9A8C\u62A5\u544A</title><link>https://sspai.com/post/103806</link><description>AirPods
+        \u7CFB\u5217\u771F\u7684\u65E0\u6127\u4E8E iPhone \u4E4B\u540E\u82F9\u679C\u6700\u4F1F\u5927\u7684\u4EA7\u54C1\u3002&lt;a
+        href=&#34;https://sspai.com/post/103806&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5199\u5C0F\u9ED1\u6587\u7684Alex</author><pubDate>Wed,
+        19 Nov 2025 15:09:41 +0800</pubDate></item><item><title>\u6211\u7684\u79CB\u51AC\u7A7F\u642D\u601D\u8DEF\uFF1A\u4ECE\u6838\u5FC3\u5355\u54C1\u51FA\u53D1\uFF0C\u517C\u987E\u4FDD\u6696\u4E0E\u4E2A\u6027</title><link>https://sspai.com/post/103912</link><description>\u5929\u6C14\u8D8A\u51B7\uFF0C\u7ED9\u7A7F\u642D\u7684\u53D1\u6325\u7A7A\u95F4\u5C31\u8D8A\u5927\u3002\u79CB\u51AC\u7684\u5355\u54C1\uFF0C\u65E0\u8BBA\u662F\u5185\u642D\u8FD8\u662F\u5916\u8863\uFF0C\u90FD\u6709\u5F88\u591A\u79CD\u7EC6\u5206\u7684\u54C1\u7C7B\u53EF\u4EE5\u9009\u62E9\uFF0C\u81EA\u7136\u4E5F\u5C31\u6709\u65E0\u6570\u7684\u7A7F\u642D\u53EF\u80FD\u3002\u5728\u642D\u914D\u7684\u65B9\u6CD5\u4E0A\uFF0C\u9664\u4E86\u5E38\u89C4\u7684\u5185\u642D\u52A0\u5916\u5957\u7684\u7A7F\u6CD5\uFF0C\u79CB\u51AC\u8FD8\u53EF\u4EE5\u7528\u300C\u53E0\u7A7F\u300D\u6765\u7A81\u51FA\u5C42\u6B21\u611F\uFF0C
+        ...&lt;a href=&#34;https://sspai.com/post/103912&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u7A0B\u5929\u51B2</author><pubDate>Wed,
+        19 Nov 2025 11:00:00 +0800</pubDate></item><item><title>\u6D3E\u65E9\u62A5\uFF1AGoogle
+        \u53D1\u5E03 Gemini 3\u3001Cloudflare \u5F15\u53D1\u7F51\u7EDC\u6545\u969C\u7B49</title><link>https://sspai.com/post/103926</link><description>Zigbee
+        4.0 \u6807\u51C6\u516C\u5E03\uFF0C\u5FAE\u8F6F\u3001\u82F1\u4F1F\u8FBE\u4E0E
+        Anthropic \u8FBE\u6210\u6218\u7565\u5408\u4F5C\u7B49\u3002&lt;a href=&#34;https://sspai.com/post/103926&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Wed,
+        19 Nov 2025 08:54:21 +0800</pubDate></item><item><title>\u793E\u533A\u901F\u9012
+        118 | \u6D3E\u53CB\u5343\u5947\u767E\u602A\u7684\u5065\u8EAB\u8D77\u70B9\u3001\u4E00\u5468\u70ED\u8BC4\u4EE5\u53CA\u65B0\u73A9\u610F</title><link>https://sspai.com/post/103908</link><description>\u9664\u4E86\u9996\u9875\u65F6\u95F4\u6D41\u548C\u4FA7\u680F\u7684\u7CBE\u9009\u5C55\u4F4D\uFF0C\u5C11\u6570\u6D3EMatrix\u793E\u533A\u8FD8\u6709\u5F88\u591A\u4F18\u79C0\u5185\u5BB9\u56E0\u6761\u4EF6\u6240\u9650\u65E0\u6CD5\u5F97\u5230\u6709\u6548\u66DD\u5149\uFF0C\u56E0\u6B64\u6211\u4EEC\u51B3\u5B9A\u91CD\u542FMatrix\u5468\u62A5\uFF0C\u5E76\u5728\u6B64\u57FA\u7840\u4E0A\u6DFB\u52A0\u66F4\u591A\u793E\u533A\u5185\u5BB9\u3001\u4F5C\u8005\u6295\u7A3F\u65B0\u73A9\u610F\u5448\u73B0\u7ED9\u5927\u5BB6\u3002\U0001F4AC\u4E00\u6D3E\u70ED\u8BAE\u5728
+        ...&lt;a href=&#34;https://sspai.com/post/103908&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>Matrix\u673A\u5668\u4EBA</author><pubDate>Tue,
+        18 Nov 2025 17:20:00 +0800</pubDate></item><item><title>\u4E2D\u6863\u4EF7\u4F4D\u771F\u65E0\u7EBF\u8033\u673A\u6A2A\u8BC4\u4E0E\u5EFA\u8BAE\uFF082025
+        \u5E74\u7EC8\uFF09 - TDS \u65E0\u5FC3\u5FEB\u8BED</title><link>https://sspai.com/post/103767</link><description>\u805A\u7126\u4F69\u6234\u3001\u64CD\u4F5C\u4E0E
+        App \u4F53\u9A8C\u3001\u4FE1\u53F7\u8868\u73B0\u3001\u7EED\u822A\u8868\u73B0\u3001\u964D\u566A\u7EFC\u5408\u8868\u73B0\u3001\u58F0\u97F3\u8868\u73B0\u516D\u4E2A\u5927\u9879\u3002&lt;a
+        href=&#34;https://sspai.com/post/103767&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>KingTsui</author><pubDate>Tue,
+        18 Nov 2025 15:00:00 +0800</pubDate></item><item><title>\u7528 AI \u751F\u6210\u4E92\u52A8\u6E38\u620F\uFF0C\u8BA9\u8BFE\u672C\u91CC\u7684\u6545\u4E8B\u300C\u6D3B\u300D\u8D77\u6765</title><link>https://sspai.com/post/103811</link><description>Matrix\u9996\u9875\u63A8\u8350Matrix\u662F\u5C11\u6570\u6D3E\u7684\u5199\u4F5C\u793E\u533A\uFF0C\u6211\u4EEC\u4E3B\u5F20\u5206\u4EAB\u771F\u5B9E\u7684\u4EA7\u54C1\u4F53\u9A8C\uFF0C\u6709\u5B9E\u7528\u4EF7\u503C\u7684\u7ECF\u9A8C\u4E0E\u601D\u8003\u3002\u6211\u4EEC\u4F1A\u4E0D\u5B9A\u671F\u6311\u9009Matrix\u6700\u4F18\u8D28\u7684\u6587\u7AE0\uFF0C\u5C55\u793A\u6765\u81EA\u7528\u6237\u7684\u6700\u771F\u5B9E\u7684\u4F53\u9A8C\u548C\u89C2\u70B9\u3002\u6587\u7AE0\u4EE3\u8868\u4F5C\u8005\u4E2A\u4EBA\u89C2\u70B9
+        ...&lt;a href=&#34;https://sspai.com/post/103811&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u4E00\u6CFDEze</author><pubDate>Tue,
+        18 Nov 2025 11:03:00 +0800</pubDate></item><item><title>\u6D3E\u65E9\u62A5\uFF1A\u963F\u91CC\u5DF4\u5DF4\u5343\u95EE
+        App \u516C\u6D4B\u4E0A\u7EBF\uFF0C\u7D2B\u5149\u5C55\u9510\u53D1\u5E03 T9300
+        5G SoC \u7B49</title><link>https://sspai.com/post/103901</link><description>TGA
+        2025 \u6E38\u620F\u5956\u63D0\u540D\u516C\u5E03\uFF0COPPO \u53D1\u5E03 Reno15
+        \u7CFB\u5217\u624B\u673A\u7B49\u3002&lt;a href=&#34;https://sspai.com/post/103901&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Tue,
+        18 Nov 2025 08:42:57 +0800</pubDate></item><item><title>\u6D3E\u8BC4 | \u8FD1\u671F\u503C\u5F97\u5173\u6CE8\u7684
+        App</title><link>https://sspai.com/post/103895</link><description>\u6B22\u8FCE\u6536\u770B\u672C\u671F\u300A\u6D3E\u8BC4\u300B\u3002\u4F60\u53EF\u4EE5\u901A\u8FC7\u6587\u7AE0\u76EE\u5F55\u5FEB\u901F\u8DF3\u8F6C\u5230\u4F60\u611F\u5174\u8DA3\u7684\u5185\u5BB9\u3002\u5982\u679C\u53D1\u73B0\u4E86\u5176\u5B83\u611F\u5174\u8DA3\u7684App\u6216\u8005\u5173\u6CE8\u7684\u8BDD\u9898\uFF0C\u4E5F\u6B22\u8FCE\u5728\u8BC4\u8BBA\u533A\u548C\u6211\u4EEC\u8BA8\u8BBA\u3002\u4E0D\u5BB9\u9519\u8FC7\u7684App\u66F4\u65B0\u9664\u4E86\u300C\u65B0\u9C9C\u300DApp\uFF0CAppStore\u4E2D\u7684\u8BB8\u591A
+        ...&lt;a href=&#34;https://sspai.com/post/103895&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Mon,
+        17 Nov 2025 17:43:51 +0800</pubDate></item><atom:link href=\"https://sspai.com/feed\"
+        type=\"application/rss+xml\" ref=\"self\"></atom:link><atom:link href=\"https://sspai.com/feed\"
+        type=\"application/rss+xml\" ref=\"hub\"></atom:link></channel></rss>"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/xml; charset=UTF-8
+      Date:
+      - Wed, 19 Nov 2025 14:57:05 GMT
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: "{\"username\":\"rss_user\",\"password\":\"Passw0rd;\",\"email\":\"rss@example.com\",\"bio\":\"\u53EF\u7EF4\u62A4\u6027\",\"avatar\":\"https://avatars.githubusercontent.com/u/20469245?v=4\",\"favorite_sites\":{\"GitHub\":\"https://github.com/wsgggws\",\"Bilibili\":\"https://space.bilibili.com/472722204\"}}"
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '264'
+      content-type:
+      - application/json
+      host:
+      - test
+      user-agent:
+      - python-httpx/0.28.1
+    method: POST
+    uri: http://test/api/v1/user/register
+  response:
+    body:
+      string: '{"id":"faa7d55a-b651-468c-9c7a-a2926a6b40f4","username":"rss_user","email":"rss@example.com","last_login":null,"avatar":null,"bio":null,"favorite_sites":null,"created_at":"2025-11-19T14:58:39.299203Z","updated_at":"2025-11-19T14:58:39.299211Z"}'
+    headers:
+      content-length:
+      - '244'
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/136.0.0.0 Safari/537.36
+    method: GET
+    uri: https://sspai.com/feeds
+  response:
+    body:
+      string: "{\"error\":404,\"message\":\"\u672A\u627E\u5230\"}\n"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '36'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 19 Nov 2025 14:58:39 GMT
+      Vary:
+      - Origin
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: null
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/136.0.0.0 Safari/537.36
+    method: GET
+    uri: https://sspai.com/feed
+  response:
+    body:
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\"
+        xmlns:dc=\"http://purl.org/dc/elements/1.1/\"><channel><title>\u5C11\u6570\u6D3E</title><link>https://sspai.com</link><description>\u5C11\u6570\u6D3E\u81F4\u529B\u4E8E\u66F4\u597D\u5730\u8FD0\u7528\u6570\u5B57\u4EA7\u54C1\u6216\u79D1\u5B66\u65B9\u6CD5\uFF0C\u5E2E\u52A9\u7528\u6237\u63D0\u5347\u5DE5\u4F5C\u6548\u7387\u548C\u751F\u6D3B\u54C1\u8D28</description><language>zh-CN</language><managingEditor>contact@sspai.com
+        (\u5C11\u6570\u6D3E)</managingEditor><pubDate>Wed, 19 Nov 2025 17:44:54 +0800</pubDate><item><title>\u5177\u900F
+        | \u5F53\u4E00\u4E2A\u89C6\u9891\u4E0B\u8F7D\u811A\u672C\u88AB\u8FEB\u53D8\u6210\u534A\u4E2A\u6D4F\u89C8\u5668\uFF1BAndroid
+        \u4FA7\u8F7D\u4FDD\u4F4F\u4E86\u4E00\u534A</title><link>https://sspai.com/prime/story/inside-release-notes-251119</link><description>yt-dlp\u5F00\u59CB\u4F9D\u8D56\u5916\u90E8JavaScript\u8FD0\u884C\u65F6@PlatyHsu\uFF1Ayt-dlp\u662F\u5F00\u6E90\u793E\u533A\u975E\u5E38\u6709\u540D\u7684\u89C6\u9891\u4E0B\u8F7D\u5DE5\u5177\uFF0C\u4E5F\u662Fyoutube-dl\u505C\u6B62\u66F4\u65B0\u4E4B\u540E\uFF0C\u5C11\u6570\u4FDD\u6301\u6D3B\u8DC3\u548C\u53EF\u7528\u7684\u9009\u9879\u3002\u9664\u4E86\u5728\u7EC8\u7AEF\u76F4\u63A5\u4F7F\u7528\u5916
+        ...&lt;a href=&#34;https://sspai.com/prime/story/inside-release-notes-251119&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;&lt;p&gt;\u672C\u6587\u4E3A\u4F1A\u5458\u6587\u7AE0\uFF0C\u51FA\u81EA&lt;a
+        href=&#34;https://sspai.com/prime/precog/single&#34; target=&#34;_blank&#34;&gt;\u300A\u5355\u7BC7\u6587\u7AE0\u300B&lt;/a
+        &gt;\uFF0C\u8BA2\u9605\u540E\u53EF\u9605\u8BFB\u5168\u6587\u3002&lt;/p &gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Wed,
+        19 Nov 2025 17:44:54 +0800</pubDate></item><item><title>\u4F4E\u6210\u672C\u3001\u53EF\u6269\u5C55\u7684
+        CyberBrick \u590D\u73B0\u65B9\u6848\uFF0C\u81EA\u5DF1\u52A8\u624B\u505A\u4E00\u53F0
+        3D \u6253\u5370\u9065\u63A7\u8F66</title><link>https://sspai.com/post/103872</link><description>Matrix\u9996\u9875\u63A8\u8350Matrix\u662F\u5C11\u6570\u6D3E\u7684\u5199\u4F5C\u793E\u533A\uFF0C\u6211\u4EEC\u4E3B\u5F20\u5206\u4EAB\u771F\u5B9E\u7684\u4EA7\u54C1\u4F53\u9A8C\uFF0C\u6709\u5B9E\u7528\u4EF7\u503C\u7684\u7ECF\u9A8C\u4E0E\u601D\u8003\u3002\u6211\u4EEC\u4F1A\u4E0D\u5B9A\u671F\u6311\u9009Matrix\u6700\u4F18\u8D28\u7684\u6587\u7AE0\uFF0C\u5C55\u793A\u6765\u81EA\u7528\u6237\u7684\u6700\u771F\u5B9E\u7684\u4F53\u9A8C\u548C\u89C2\u70B9\u3002\u6587\u7AE0\u4EE3\u8868\u4F5C\u8005\u4E2A\u4EBA\u89C2\u70B9
+        ...&lt;a href=&#34;https://sspai.com/post/103872&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u4EFB\u4E9A\u519B</author><pubDate>Wed,
+        19 Nov 2025 17:33:01 +0800</pubDate></item><item><title>\u4ECE\u65E5\u5E38\u5230\u8FD0\u52A8\uFF0CAirPods
+        3 Pro \u5168\u9762\u4F53\u9A8C\u62A5\u544A</title><link>https://sspai.com/post/103806</link><description>AirPods
+        \u7CFB\u5217\u771F\u7684\u65E0\u6127\u4E8E iPhone \u4E4B\u540E\u82F9\u679C\u6700\u4F1F\u5927\u7684\u4EA7\u54C1\u3002&lt;a
+        href=&#34;https://sspai.com/post/103806&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5199\u5C0F\u9ED1\u6587\u7684Alex</author><pubDate>Wed,
+        19 Nov 2025 15:09:41 +0800</pubDate></item><item><title>\u6211\u7684\u79CB\u51AC\u7A7F\u642D\u601D\u8DEF\uFF1A\u4ECE\u6838\u5FC3\u5355\u54C1\u51FA\u53D1\uFF0C\u517C\u987E\u4FDD\u6696\u4E0E\u4E2A\u6027</title><link>https://sspai.com/post/103912</link><description>\u5929\u6C14\u8D8A\u51B7\uFF0C\u7ED9\u7A7F\u642D\u7684\u53D1\u6325\u7A7A\u95F4\u5C31\u8D8A\u5927\u3002\u79CB\u51AC\u7684\u5355\u54C1\uFF0C\u65E0\u8BBA\u662F\u5185\u642D\u8FD8\u662F\u5916\u8863\uFF0C\u90FD\u6709\u5F88\u591A\u79CD\u7EC6\u5206\u7684\u54C1\u7C7B\u53EF\u4EE5\u9009\u62E9\uFF0C\u81EA\u7136\u4E5F\u5C31\u6709\u65E0\u6570\u7684\u7A7F\u642D\u53EF\u80FD\u3002\u5728\u642D\u914D\u7684\u65B9\u6CD5\u4E0A\uFF0C\u9664\u4E86\u5E38\u89C4\u7684\u5185\u642D\u52A0\u5916\u5957\u7684\u7A7F\u6CD5\uFF0C\u79CB\u51AC\u8FD8\u53EF\u4EE5\u7528\u300C\u53E0\u7A7F\u300D\u6765\u7A81\u51FA\u5C42\u6B21\u611F\uFF0C
+        ...&lt;a href=&#34;https://sspai.com/post/103912&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u7A0B\u5929\u51B2</author><pubDate>Wed,
+        19 Nov 2025 11:00:00 +0800</pubDate></item><item><title>\u6D3E\u65E9\u62A5\uFF1AGoogle
+        \u53D1\u5E03 Gemini 3\u3001Cloudflare \u5F15\u53D1\u7F51\u7EDC\u6545\u969C\u7B49</title><link>https://sspai.com/post/103926</link><description>Zigbee
+        4.0 \u6807\u51C6\u516C\u5E03\uFF0C\u5FAE\u8F6F\u3001\u82F1\u4F1F\u8FBE\u4E0E
+        Anthropic \u8FBE\u6210\u6218\u7565\u5408\u4F5C\u7B49\u3002&lt;a href=&#34;https://sspai.com/post/103926&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Wed,
+        19 Nov 2025 08:54:21 +0800</pubDate></item><item><title>\u793E\u533A\u901F\u9012
+        118 | \u6D3E\u53CB\u5343\u5947\u767E\u602A\u7684\u5065\u8EAB\u8D77\u70B9\u3001\u4E00\u5468\u70ED\u8BC4\u4EE5\u53CA\u65B0\u73A9\u610F</title><link>https://sspai.com/post/103908</link><description>\u9664\u4E86\u9996\u9875\u65F6\u95F4\u6D41\u548C\u4FA7\u680F\u7684\u7CBE\u9009\u5C55\u4F4D\uFF0C\u5C11\u6570\u6D3EMatrix\u793E\u533A\u8FD8\u6709\u5F88\u591A\u4F18\u79C0\u5185\u5BB9\u56E0\u6761\u4EF6\u6240\u9650\u65E0\u6CD5\u5F97\u5230\u6709\u6548\u66DD\u5149\uFF0C\u56E0\u6B64\u6211\u4EEC\u51B3\u5B9A\u91CD\u542FMatrix\u5468\u62A5\uFF0C\u5E76\u5728\u6B64\u57FA\u7840\u4E0A\u6DFB\u52A0\u66F4\u591A\u793E\u533A\u5185\u5BB9\u3001\u4F5C\u8005\u6295\u7A3F\u65B0\u73A9\u610F\u5448\u73B0\u7ED9\u5927\u5BB6\u3002\U0001F4AC\u4E00\u6D3E\u70ED\u8BAE\u5728
+        ...&lt;a href=&#34;https://sspai.com/post/103908&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>Matrix\u673A\u5668\u4EBA</author><pubDate>Tue,
+        18 Nov 2025 17:20:00 +0800</pubDate></item><item><title>\u4E2D\u6863\u4EF7\u4F4D\u771F\u65E0\u7EBF\u8033\u673A\u6A2A\u8BC4\u4E0E\u5EFA\u8BAE\uFF082025
+        \u5E74\u7EC8\uFF09 - TDS \u65E0\u5FC3\u5FEB\u8BED</title><link>https://sspai.com/post/103767</link><description>\u805A\u7126\u4F69\u6234\u3001\u64CD\u4F5C\u4E0E
+        App \u4F53\u9A8C\u3001\u4FE1\u53F7\u8868\u73B0\u3001\u7EED\u822A\u8868\u73B0\u3001\u964D\u566A\u7EFC\u5408\u8868\u73B0\u3001\u58F0\u97F3\u8868\u73B0\u516D\u4E2A\u5927\u9879\u3002&lt;a
+        href=&#34;https://sspai.com/post/103767&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>KingTsui</author><pubDate>Tue,
+        18 Nov 2025 15:00:00 +0800</pubDate></item><item><title>\u7528 AI \u751F\u6210\u4E92\u52A8\u6E38\u620F\uFF0C\u8BA9\u8BFE\u672C\u91CC\u7684\u6545\u4E8B\u300C\u6D3B\u300D\u8D77\u6765</title><link>https://sspai.com/post/103811</link><description>Matrix\u9996\u9875\u63A8\u8350Matrix\u662F\u5C11\u6570\u6D3E\u7684\u5199\u4F5C\u793E\u533A\uFF0C\u6211\u4EEC\u4E3B\u5F20\u5206\u4EAB\u771F\u5B9E\u7684\u4EA7\u54C1\u4F53\u9A8C\uFF0C\u6709\u5B9E\u7528\u4EF7\u503C\u7684\u7ECF\u9A8C\u4E0E\u601D\u8003\u3002\u6211\u4EEC\u4F1A\u4E0D\u5B9A\u671F\u6311\u9009Matrix\u6700\u4F18\u8D28\u7684\u6587\u7AE0\uFF0C\u5C55\u793A\u6765\u81EA\u7528\u6237\u7684\u6700\u771F\u5B9E\u7684\u4F53\u9A8C\u548C\u89C2\u70B9\u3002\u6587\u7AE0\u4EE3\u8868\u4F5C\u8005\u4E2A\u4EBA\u89C2\u70B9
+        ...&lt;a href=&#34;https://sspai.com/post/103811&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u4E00\u6CFDEze</author><pubDate>Tue,
+        18 Nov 2025 11:03:00 +0800</pubDate></item><item><title>\u6D3E\u65E9\u62A5\uFF1A\u963F\u91CC\u5DF4\u5DF4\u5343\u95EE
+        App \u516C\u6D4B\u4E0A\u7EBF\uFF0C\u7D2B\u5149\u5C55\u9510\u53D1\u5E03 T9300
+        5G SoC \u7B49</title><link>https://sspai.com/post/103901</link><description>TGA
+        2025 \u6E38\u620F\u5956\u63D0\u540D\u516C\u5E03\uFF0COPPO \u53D1\u5E03 Reno15
+        \u7CFB\u5217\u624B\u673A\u7B49\u3002&lt;a href=&#34;https://sspai.com/post/103901&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Tue,
+        18 Nov 2025 08:42:57 +0800</pubDate></item><item><title>\u6D3E\u8BC4 | \u8FD1\u671F\u503C\u5F97\u5173\u6CE8\u7684
+        App</title><link>https://sspai.com/post/103895</link><description>\u6B22\u8FCE\u6536\u770B\u672C\u671F\u300A\u6D3E\u8BC4\u300B\u3002\u4F60\u53EF\u4EE5\u901A\u8FC7\u6587\u7AE0\u76EE\u5F55\u5FEB\u901F\u8DF3\u8F6C\u5230\u4F60\u611F\u5174\u8DA3\u7684\u5185\u5BB9\u3002\u5982\u679C\u53D1\u73B0\u4E86\u5176\u5B83\u611F\u5174\u8DA3\u7684App\u6216\u8005\u5173\u6CE8\u7684\u8BDD\u9898\uFF0C\u4E5F\u6B22\u8FCE\u5728\u8BC4\u8BBA\u533A\u548C\u6211\u4EEC\u8BA8\u8BBA\u3002\u4E0D\u5BB9\u9519\u8FC7\u7684App\u66F4\u65B0\u9664\u4E86\u300C\u65B0\u9C9C\u300DApp\uFF0CAppStore\u4E2D\u7684\u8BB8\u591A
+        ...&lt;a href=&#34;https://sspai.com/post/103895&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Mon,
+        17 Nov 2025 17:43:51 +0800</pubDate></item><atom:link href=\"https://sspai.com/feed\"
+        type=\"application/rss+xml\" ref=\"self\"></atom:link><atom:link href=\"https://sspai.com/feed\"
+        type=\"application/rss+xml\" ref=\"hub\"></atom:link></channel></rss>"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/xml; charset=UTF-8
+      Date:
+      - Wed, 19 Nov 2025 14:58:39 GMT
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/136.0.0.0 Safari/537.36
+    method: GET
+    uri: https://wsgggws.github.io
+  response:
+    body:
+      string: "<!doctype html><html class=\"not-ready lg:text-base\" style=--bg:#f8f5d7
+        lang=en-us dir=ltr><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible
+        content=\"IE=edge\"><meta name=viewport content=\"width=device-width,initial-scale=1,shrink-to-fit=no\"><title>Blogs
+        (\u7801\u7801\u8981\u6D17\u624B)</title>\n<meta name=theme-color><meta name=description
+        content=\"A personal blog\"><meta name=author content=\"Blogs (\u7801\u7801\u8981\u6D17\u624B)\"><link
+        rel=\"preload stylesheet\" as=style href=https://wsgggws.github.io/main.min.css><link
+        rel=preload as=image href=https://wsgggws.github.io/theme.svg><link rel=preload
+        as=image href=https://wsgggws.github.io/rss.svg><link rel=stylesheet href=/katex.min.css><script
+        defer src=/katex.min.js></script><script defer src=/auto-render.min.js></script><script>document.addEventListener(\"DOMContentLoaded\",()=>renderMathInElement(document.body,{delimiters:[{left:\"$$\",right:\"$$\",display:!0},{left:\"$\",right:\"$\",display:!1}],throwOnError:!1}))</script><link
+        rel=icon href=https://wsgggws.github.io/images/website/Navy.ico><link rel=apple-touch-icon
+        href=https://wsgggws.github.io/apple-touch-icon.png><meta name=generator content=\"Hugo
+        0.128.0\"><meta itemprop=name content=\"Blogs (\u7801\u7801\u8981\u6D17\u624B)\"><meta
+        itemprop=dateModified content=\"2025-04-07T11:30:03+00:00\"><meta property=\"og:url\"
+        content=\"https://wsgggws.github.io/\"><meta property=\"og:site_name\" content=\"Blogs
+        (\u7801\u7801\u8981\u6D17\u624B)\"><meta property=\"og:title\" content=\"Blogs
+        (\u7801\u7801\u8981\u6D17\u624B)\"><meta property=\"og:locale\" content=\"en_us\"><meta
+        property=\"og:type\" content=\"website\"><meta name=twitter:card content=\"summary\"><meta
+        name=twitter:title content=\"Blogs (\u7801\u7801\u8981\u6D17\u624B)\"><link
+        rel=alternate type=application/rss+xml href=https://wsgggws.github.io/index.xml
+        title=\"Blogs (\u7801\u7801\u8981\u6D17\u624B)\"><link rel=canonical href=https://wsgggws.github.io/></head><body
+        class=\"text-black duration-200 ease-out dark:text-white\"><header class=\"mx-auto
+        flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center\"><div class=\"relative
+        z-50 ltr:mr-auto rtl:ml-auto flex items-center\"><a class=\"-translate-y-[1px]
+        text-2xl font-medium\" href=https://wsgggws.github.io/>Blogs (\u7801\u7801\u8981\u6D17\u624B)</a><div
+        class=\"btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer
+        [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]\"
+        role=button aria-label=Dark></div></div><div class=\"btn-menu relative z-50
+        ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col
+        items-center justify-center gap-2.5 lg:hidden\" role=button aria-label=Menu></div><script>const
+        htmlClass=document.documentElement.classList;setTimeout(()=>{htmlClass.remove(\"not-ready\")},10);const
+        btnMenu=document.querySelector(\".btn-menu\");btnMenu.addEventListener(\"click\",()=>{htmlClass.toggle(\"open\")});const
+        metaTheme=document.querySelector('meta[name=\"theme-color\"]'),lightBg=\"#f8f5d7\".replace(/\"/g,\"\"),setDark=e=>{metaTheme.setAttribute(\"content\",e?\"#000\":lightBg),htmlClass[e?\"add\":\"remove\"](\"dark\"),localStorage.setItem(\"dark\",e)},darkScheme=window.matchMedia(\"(prefers-color-scheme:
+        dark)\");if(htmlClass.contains(\"dark\"))setDark(!0);else{const e=localStorage.getItem(\"dark\");setDark(e?e===\"true\":darkScheme.matches)}darkScheme.addEventListener(\"change\",e=>{setDark(e.matches)});const
+        btnDark=document.querySelector(\".btn-dark\");btnDark.addEventListener(\"click\",()=>{setDark(localStorage.getItem(\"dark\")!==\"true\")})</script><div
+        class=\"nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none
+        flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto
+        lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none\"><nav class=\"lg:ml-12
+        lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse\"><a
+        class=\"block text-center text-xl leading-[5rem] lg:text-base lg:font-normal\"
+        href=/about/>About.Me</a></nav><nav class=\"mt-12 flex justify-center space-x-10
+        rtl:space-x-reverse dark:invert ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center\"><a
+        class=\"h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat]
+        lg:h-6 lg:w-6\" style=--url:url(./rss.svg) href=https://wsgggws.github.io/index.xml
+        target=_blank rel=alternate>rss</a></nav></div></header><main class=\"prose
+        prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16
+        pt-14 dark:prose-invert\"><section class=\"relative my-10 first-of-type:mt-0
+        last-of-type:mb-0\"><h2 class=!my-0>Python Debugger Pdb</h2><time class=\"text-xs
+        antialiased opacity-60\">Sep 6, 2024</time>\n<a class=\"absolute inset-0 text-[0]\"
+        href=https://wsgggws.github.io/blogs/pdb/>Python Debugger Pdb</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>MVP</h2><time
+        class=\"text-xs antialiased opacity-60\">Sep 6, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/mvp/>MVP</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>\u897F\u6E38\u8BB0</h2><time
+        class=\"text-xs antialiased opacity-60\">Sep 4, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/%E8%A5%BF%E6%B8%B8%E8%AE%B0/>\u897F\u6E38\u8BB0</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>\u5BCC\u7238\u7238\u4E0E\u7A77\u7238\u7238</h2><time
+        class=\"text-xs antialiased opacity-60\">Sep 2, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/%E5%AF%8C%E7%88%B8%E7%88%B8%E4%B8%8E%E7%A9%B7%E7%88%B8%E7%88%B8/>\u5BCC\u7238\u7238\u4E0E\u7A77\u7238\u7238</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>\u8521\u5FD7\u5FE0\u7ECF\u5178\u89E3\u5BC6\u7CFB\u5217</h2><time
+        class=\"text-xs antialiased opacity-60\">Aug 23, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/%E8%94%A1%E5%BF%97%E5%BF%A0%E7%BB%8F%E5%85%B8%E8%A7%A3%E5%AF%86%E7%B3%BB%E5%88%97/>\u8521\u5FD7\u5FE0\u7ECF\u5178\u89E3\u5BC6\u7CFB\u5217</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>HttpBin</h2><time
+        class=\"text-xs antialiased opacity-60\">Aug 23, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/httpbin/>HttpBin</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>JavaScript
+        \u7279\u6027</h2><time class=\"text-xs antialiased opacity-60\">Aug 5, 2024</time>\n<a
+        class=\"absolute inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/javascript-specials/>JavaScript
+        \u7279\u6027</a></section><section class=\"relative my-10 first-of-type:mt-0
+        last-of-type:mb-0\"><h2 class=!my-0>JEMSPath</h2><time class=\"text-xs antialiased
+        opacity-60\">Aug 1, 2024</time>\n<a class=\"absolute inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/jemspath/>JEMSPath</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>jq</h2><time
+        class=\"text-xs antialiased opacity-60\">Jul 31, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/jq/>jq</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>XPath</h2><time
+        class=\"text-xs antialiased opacity-60\">Jul 31, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/xpath/>XPath</a></section><nav
+        class=\"mt-14 flex\"><a class=\"btn ml-auto\" href=/page/2/>Next Page \u2192</a></nav></main><footer
+        class=\"mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase
+        tracking-wider opacity-60\"><div class=mr-auto>&copy; 2025\n<a class=link
+        href=https://wsgggws.github.io/>Blogs (\u7801\u7801\u8981\u6D17\u624B)</a></div><a
+        class=\"link mx-6\" href=https://gohugo.io/ rel=noopener target=_blank>powered
+        by hugo\uFE0F\uFE0F</a>\uFE0F\n<a class=link href=https://github.com/nanxiaobei/hugo-paper
+        rel=noopener target=_blank>hugo-paper</a></footer></body></html>"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - '*'
+      Age:
+      - '235'
+      Cache-Control:
+      - max-age=600
+      Connection:
+      - keep-alive
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Wed, 19 Nov 2025 14:58:40 GMT
+      Etag:
+      - W/"67f412bd-1e34"
+      Expires:
+      - Wed, 19 Nov 2025 15:03:10 GMT
+      Last-Modified:
+      - Mon, 07 Apr 2025 18:00:29 GMT
+      Server:
+      - GitHub.com
+      Strict-Transport-Security:
+      - max-age=31556952
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish
+      X-Cache:
+      - HIT
+      X-Cache-Hits:
+      - '0'
+      X-Fastly-Request-ID:
+      - d1e5894655b193076a05eccdd05573be7c715712
+      X-GitHub-Request-Id:
+      - F862:3D22FB:BEB646:C3EDE6:691DD9D6
+      X-Served-By:
+      - cache-tyo11921-TYO
+      X-Timer:
+      - S1763564320.045257,VS0,VE1
+      content-length:
+      - '7732'
+      x-proxy-cache:
+      - MISS
+    status:
+      code: 200
+      message: OK
+- request:
+    body: "{\"username\":\"rss_user\",\"password\":\"Passw0rd;\",\"email\":\"rss@example.com\",\"bio\":\"\u53EF\u7EF4\u62A4\u6027\",\"avatar\":\"https://avatars.githubusercontent.com/u/20469245?v=4\",\"favorite_sites\":{\"GitHub\":\"https://github.com/wsgggws\",\"Bilibili\":\"https://space.bilibili.com/472722204\"}}"
+    headers:
+      accept:
+      - '*/*'
+      accept-encoding:
+      - gzip, deflate
+      connection:
+      - keep-alive
+      content-length:
+      - '264'
+      content-type:
+      - application/json
+      host:
+      - test
+      user-agent:
+      - python-httpx/0.28.1
+    method: POST
+    uri: http://test/api/v1/user/register
+  response:
+    body:
+      string: '{"id":"dc004012-c020-40e2-bb7c-202e5f632afd","username":"rss_user","email":"rss@example.com","last_login":null,"avatar":null,"bio":null,"favorite_sites":null,"created_at":"2025-11-19T15:00:38.602110Z","updated_at":"2025-11-19T15:00:38.602129Z"}'
+    headers:
+      content-length:
+      - '244'
+      content-type:
+      - application/json
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/136.0.0.0 Safari/537.36
+    method: GET
+    uri: https://sspai.com/feed
+  response:
+    body:
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\"
+        xmlns:dc=\"http://purl.org/dc/elements/1.1/\"><channel><title>\u5C11\u6570\u6D3E</title><link>https://sspai.com</link><description>\u5C11\u6570\u6D3E\u81F4\u529B\u4E8E\u66F4\u597D\u5730\u8FD0\u7528\u6570\u5B57\u4EA7\u54C1\u6216\u79D1\u5B66\u65B9\u6CD5\uFF0C\u5E2E\u52A9\u7528\u6237\u63D0\u5347\u5DE5\u4F5C\u6548\u7387\u548C\u751F\u6D3B\u54C1\u8D28</description><language>zh-CN</language><managingEditor>contact@sspai.com
+        (\u5C11\u6570\u6D3E)</managingEditor><pubDate>Wed, 19 Nov 2025 17:44:54 +0800</pubDate><item><title>\u5177\u900F
+        | \u5F53\u4E00\u4E2A\u89C6\u9891\u4E0B\u8F7D\u811A\u672C\u88AB\u8FEB\u53D8\u6210\u534A\u4E2A\u6D4F\u89C8\u5668\uFF1BAndroid
+        \u4FA7\u8F7D\u4FDD\u4F4F\u4E86\u4E00\u534A</title><link>https://sspai.com/prime/story/inside-release-notes-251119</link><description>yt-dlp\u5F00\u59CB\u4F9D\u8D56\u5916\u90E8JavaScript\u8FD0\u884C\u65F6@PlatyHsu\uFF1Ayt-dlp\u662F\u5F00\u6E90\u793E\u533A\u975E\u5E38\u6709\u540D\u7684\u89C6\u9891\u4E0B\u8F7D\u5DE5\u5177\uFF0C\u4E5F\u662Fyoutube-dl\u505C\u6B62\u66F4\u65B0\u4E4B\u540E\uFF0C\u5C11\u6570\u4FDD\u6301\u6D3B\u8DC3\u548C\u53EF\u7528\u7684\u9009\u9879\u3002\u9664\u4E86\u5728\u7EC8\u7AEF\u76F4\u63A5\u4F7F\u7528\u5916
+        ...&lt;a href=&#34;https://sspai.com/prime/story/inside-release-notes-251119&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;&lt;p&gt;\u672C\u6587\u4E3A\u4F1A\u5458\u6587\u7AE0\uFF0C\u51FA\u81EA&lt;a
+        href=&#34;https://sspai.com/prime/precog/single&#34; target=&#34;_blank&#34;&gt;\u300A\u5355\u7BC7\u6587\u7AE0\u300B&lt;/a
+        &gt;\uFF0C\u8BA2\u9605\u540E\u53EF\u9605\u8BFB\u5168\u6587\u3002&lt;/p &gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Wed,
+        19 Nov 2025 17:44:54 +0800</pubDate></item><item><title>\u4F4E\u6210\u672C\u3001\u53EF\u6269\u5C55\u7684
+        CyberBrick \u590D\u73B0\u65B9\u6848\uFF0C\u81EA\u5DF1\u52A8\u624B\u505A\u4E00\u53F0
+        3D \u6253\u5370\u9065\u63A7\u8F66</title><link>https://sspai.com/post/103872</link><description>Matrix\u9996\u9875\u63A8\u8350Matrix\u662F\u5C11\u6570\u6D3E\u7684\u5199\u4F5C\u793E\u533A\uFF0C\u6211\u4EEC\u4E3B\u5F20\u5206\u4EAB\u771F\u5B9E\u7684\u4EA7\u54C1\u4F53\u9A8C\uFF0C\u6709\u5B9E\u7528\u4EF7\u503C\u7684\u7ECF\u9A8C\u4E0E\u601D\u8003\u3002\u6211\u4EEC\u4F1A\u4E0D\u5B9A\u671F\u6311\u9009Matrix\u6700\u4F18\u8D28\u7684\u6587\u7AE0\uFF0C\u5C55\u793A\u6765\u81EA\u7528\u6237\u7684\u6700\u771F\u5B9E\u7684\u4F53\u9A8C\u548C\u89C2\u70B9\u3002\u6587\u7AE0\u4EE3\u8868\u4F5C\u8005\u4E2A\u4EBA\u89C2\u70B9
+        ...&lt;a href=&#34;https://sspai.com/post/103872&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u4EFB\u4E9A\u519B</author><pubDate>Wed,
+        19 Nov 2025 17:33:01 +0800</pubDate></item><item><title>\u4ECE\u65E5\u5E38\u5230\u8FD0\u52A8\uFF0CAirPods
+        3 Pro \u5168\u9762\u4F53\u9A8C\u62A5\u544A</title><link>https://sspai.com/post/103806</link><description>AirPods
+        \u7CFB\u5217\u771F\u7684\u65E0\u6127\u4E8E iPhone \u4E4B\u540E\u82F9\u679C\u6700\u4F1F\u5927\u7684\u4EA7\u54C1\u3002&lt;a
+        href=&#34;https://sspai.com/post/103806&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5199\u5C0F\u9ED1\u6587\u7684Alex</author><pubDate>Wed,
+        19 Nov 2025 15:09:41 +0800</pubDate></item><item><title>\u6211\u7684\u79CB\u51AC\u7A7F\u642D\u601D\u8DEF\uFF1A\u4ECE\u6838\u5FC3\u5355\u54C1\u51FA\u53D1\uFF0C\u517C\u987E\u4FDD\u6696\u4E0E\u4E2A\u6027</title><link>https://sspai.com/post/103912</link><description>\u5929\u6C14\u8D8A\u51B7\uFF0C\u7ED9\u7A7F\u642D\u7684\u53D1\u6325\u7A7A\u95F4\u5C31\u8D8A\u5927\u3002\u79CB\u51AC\u7684\u5355\u54C1\uFF0C\u65E0\u8BBA\u662F\u5185\u642D\u8FD8\u662F\u5916\u8863\uFF0C\u90FD\u6709\u5F88\u591A\u79CD\u7EC6\u5206\u7684\u54C1\u7C7B\u53EF\u4EE5\u9009\u62E9\uFF0C\u81EA\u7136\u4E5F\u5C31\u6709\u65E0\u6570\u7684\u7A7F\u642D\u53EF\u80FD\u3002\u5728\u642D\u914D\u7684\u65B9\u6CD5\u4E0A\uFF0C\u9664\u4E86\u5E38\u89C4\u7684\u5185\u642D\u52A0\u5916\u5957\u7684\u7A7F\u6CD5\uFF0C\u79CB\u51AC\u8FD8\u53EF\u4EE5\u7528\u300C\u53E0\u7A7F\u300D\u6765\u7A81\u51FA\u5C42\u6B21\u611F\uFF0C
+        ...&lt;a href=&#34;https://sspai.com/post/103912&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u7A0B\u5929\u51B2</author><pubDate>Wed,
+        19 Nov 2025 11:00:00 +0800</pubDate></item><item><title>\u6D3E\u65E9\u62A5\uFF1AGoogle
+        \u53D1\u5E03 Gemini 3\u3001Cloudflare \u5F15\u53D1\u7F51\u7EDC\u6545\u969C\u7B49</title><link>https://sspai.com/post/103926</link><description>Zigbee
+        4.0 \u6807\u51C6\u516C\u5E03\uFF0C\u5FAE\u8F6F\u3001\u82F1\u4F1F\u8FBE\u4E0E
+        Anthropic \u8FBE\u6210\u6218\u7565\u5408\u4F5C\u7B49\u3002&lt;a href=&#34;https://sspai.com/post/103926&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Wed,
+        19 Nov 2025 08:54:21 +0800</pubDate></item><item><title>\u793E\u533A\u901F\u9012
+        118 | \u6D3E\u53CB\u5343\u5947\u767E\u602A\u7684\u5065\u8EAB\u8D77\u70B9\u3001\u4E00\u5468\u70ED\u8BC4\u4EE5\u53CA\u65B0\u73A9\u610F</title><link>https://sspai.com/post/103908</link><description>\u9664\u4E86\u9996\u9875\u65F6\u95F4\u6D41\u548C\u4FA7\u680F\u7684\u7CBE\u9009\u5C55\u4F4D\uFF0C\u5C11\u6570\u6D3EMatrix\u793E\u533A\u8FD8\u6709\u5F88\u591A\u4F18\u79C0\u5185\u5BB9\u56E0\u6761\u4EF6\u6240\u9650\u65E0\u6CD5\u5F97\u5230\u6709\u6548\u66DD\u5149\uFF0C\u56E0\u6B64\u6211\u4EEC\u51B3\u5B9A\u91CD\u542FMatrix\u5468\u62A5\uFF0C\u5E76\u5728\u6B64\u57FA\u7840\u4E0A\u6DFB\u52A0\u66F4\u591A\u793E\u533A\u5185\u5BB9\u3001\u4F5C\u8005\u6295\u7A3F\u65B0\u73A9\u610F\u5448\u73B0\u7ED9\u5927\u5BB6\u3002\U0001F4AC\u4E00\u6D3E\u70ED\u8BAE\u5728
+        ...&lt;a href=&#34;https://sspai.com/post/103908&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>Matrix\u673A\u5668\u4EBA</author><pubDate>Tue,
+        18 Nov 2025 17:20:00 +0800</pubDate></item><item><title>\u4E2D\u6863\u4EF7\u4F4D\u771F\u65E0\u7EBF\u8033\u673A\u6A2A\u8BC4\u4E0E\u5EFA\u8BAE\uFF082025
+        \u5E74\u7EC8\uFF09 - TDS \u65E0\u5FC3\u5FEB\u8BED</title><link>https://sspai.com/post/103767</link><description>\u805A\u7126\u4F69\u6234\u3001\u64CD\u4F5C\u4E0E
+        App \u4F53\u9A8C\u3001\u4FE1\u53F7\u8868\u73B0\u3001\u7EED\u822A\u8868\u73B0\u3001\u964D\u566A\u7EFC\u5408\u8868\u73B0\u3001\u58F0\u97F3\u8868\u73B0\u516D\u4E2A\u5927\u9879\u3002&lt;a
+        href=&#34;https://sspai.com/post/103767&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>KingTsui</author><pubDate>Tue,
+        18 Nov 2025 15:00:00 +0800</pubDate></item><item><title>\u7528 AI \u751F\u6210\u4E92\u52A8\u6E38\u620F\uFF0C\u8BA9\u8BFE\u672C\u91CC\u7684\u6545\u4E8B\u300C\u6D3B\u300D\u8D77\u6765</title><link>https://sspai.com/post/103811</link><description>Matrix\u9996\u9875\u63A8\u8350Matrix\u662F\u5C11\u6570\u6D3E\u7684\u5199\u4F5C\u793E\u533A\uFF0C\u6211\u4EEC\u4E3B\u5F20\u5206\u4EAB\u771F\u5B9E\u7684\u4EA7\u54C1\u4F53\u9A8C\uFF0C\u6709\u5B9E\u7528\u4EF7\u503C\u7684\u7ECF\u9A8C\u4E0E\u601D\u8003\u3002\u6211\u4EEC\u4F1A\u4E0D\u5B9A\u671F\u6311\u9009Matrix\u6700\u4F18\u8D28\u7684\u6587\u7AE0\uFF0C\u5C55\u793A\u6765\u81EA\u7528\u6237\u7684\u6700\u771F\u5B9E\u7684\u4F53\u9A8C\u548C\u89C2\u70B9\u3002\u6587\u7AE0\u4EE3\u8868\u4F5C\u8005\u4E2A\u4EBA\u89C2\u70B9
+        ...&lt;a href=&#34;https://sspai.com/post/103811&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u4E00\u6CFDEze</author><pubDate>Tue,
+        18 Nov 2025 11:03:00 +0800</pubDate></item><item><title>\u6D3E\u65E9\u62A5\uFF1A\u963F\u91CC\u5DF4\u5DF4\u5343\u95EE
+        App \u516C\u6D4B\u4E0A\u7EBF\uFF0C\u7D2B\u5149\u5C55\u9510\u53D1\u5E03 T9300
+        5G SoC \u7B49</title><link>https://sspai.com/post/103901</link><description>TGA
+        2025 \u6E38\u620F\u5956\u63D0\u540D\u516C\u5E03\uFF0COPPO \u53D1\u5E03 Reno15
+        \u7CFB\u5217\u624B\u673A\u7B49\u3002&lt;a href=&#34;https://sspai.com/post/103901&#34;
+        target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Tue,
+        18 Nov 2025 08:42:57 +0800</pubDate></item><item><title>\u6D3E\u8BC4 | \u8FD1\u671F\u503C\u5F97\u5173\u6CE8\u7684
+        App</title><link>https://sspai.com/post/103895</link><description>\u6B22\u8FCE\u6536\u770B\u672C\u671F\u300A\u6D3E\u8BC4\u300B\u3002\u4F60\u53EF\u4EE5\u901A\u8FC7\u6587\u7AE0\u76EE\u5F55\u5FEB\u901F\u8DF3\u8F6C\u5230\u4F60\u611F\u5174\u8DA3\u7684\u5185\u5BB9\u3002\u5982\u679C\u53D1\u73B0\u4E86\u5176\u5B83\u611F\u5174\u8DA3\u7684App\u6216\u8005\u5173\u6CE8\u7684\u8BDD\u9898\uFF0C\u4E5F\u6B22\u8FCE\u5728\u8BC4\u8BBA\u533A\u548C\u6211\u4EEC\u8BA8\u8BBA\u3002\u4E0D\u5BB9\u9519\u8FC7\u7684App\u66F4\u65B0\u9664\u4E86\u300C\u65B0\u9C9C\u300DApp\uFF0CAppStore\u4E2D\u7684\u8BB8\u591A
+        ...&lt;a href=&#34;https://sspai.com/post/103895&#34; target=&#34;_blank&#34;&gt;\u67E5\u770B\u5168\u6587&lt;/a&gt;</description><author>\u5C11\u6570\u6D3E\u7F16\u8F91\u90E8</author><pubDate>Mon,
+        17 Nov 2025 17:43:51 +0800</pubDate></item><atom:link href=\"https://sspai.com/feed\"
+        type=\"application/rss+xml\" ref=\"self\"></atom:link><atom:link href=\"https://sspai.com/feed\"
+        type=\"application/rss+xml\" ref=\"hub\"></atom:link></channel></rss>"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/xml; charset=UTF-8
+      Date:
+      - Wed, 19 Nov 2025 15:00:39 GMT
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/136.0.0.0 Safari/537.36
+    method: GET
+    uri: https://sspai.com/feeds
+  response:
+    body:
+      string: "{\"error\":404,\"message\":\"\u672A\u627E\u5230\"}\n"
+    headers:
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '36'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 19 Nov 2025 15:00:39 GMT
+      Vary:
+      - Origin
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: null
+    headers:
+      User-Agent:
+      - Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/136.0.0.0 Safari/537.36
+    method: GET
+    uri: https://wsgggws.github.io
+  response:
+    body:
+      string: "<!doctype html><html class=\"not-ready lg:text-base\" style=--bg:#f8f5d7
+        lang=en-us dir=ltr><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible
+        content=\"IE=edge\"><meta name=viewport content=\"width=device-width,initial-scale=1,shrink-to-fit=no\"><title>Blogs
+        (\u7801\u7801\u8981\u6D17\u624B)</title>\n<meta name=theme-color><meta name=description
+        content=\"A personal blog\"><meta name=author content=\"Blogs (\u7801\u7801\u8981\u6D17\u624B)\"><link
+        rel=\"preload stylesheet\" as=style href=https://wsgggws.github.io/main.min.css><link
+        rel=preload as=image href=https://wsgggws.github.io/theme.svg><link rel=preload
+        as=image href=https://wsgggws.github.io/rss.svg><link rel=stylesheet href=/katex.min.css><script
+        defer src=/katex.min.js></script><script defer src=/auto-render.min.js></script><script>document.addEventListener(\"DOMContentLoaded\",()=>renderMathInElement(document.body,{delimiters:[{left:\"$$\",right:\"$$\",display:!0},{left:\"$\",right:\"$\",display:!1}],throwOnError:!1}))</script><link
+        rel=icon href=https://wsgggws.github.io/images/website/Navy.ico><link rel=apple-touch-icon
+        href=https://wsgggws.github.io/apple-touch-icon.png><meta name=generator content=\"Hugo
+        0.128.0\"><meta itemprop=name content=\"Blogs (\u7801\u7801\u8981\u6D17\u624B)\"><meta
+        itemprop=dateModified content=\"2025-04-07T11:30:03+00:00\"><meta property=\"og:url\"
+        content=\"https://wsgggws.github.io/\"><meta property=\"og:site_name\" content=\"Blogs
+        (\u7801\u7801\u8981\u6D17\u624B)\"><meta property=\"og:title\" content=\"Blogs
+        (\u7801\u7801\u8981\u6D17\u624B)\"><meta property=\"og:locale\" content=\"en_us\"><meta
+        property=\"og:type\" content=\"website\"><meta name=twitter:card content=\"summary\"><meta
+        name=twitter:title content=\"Blogs (\u7801\u7801\u8981\u6D17\u624B)\"><link
+        rel=alternate type=application/rss+xml href=https://wsgggws.github.io/index.xml
+        title=\"Blogs (\u7801\u7801\u8981\u6D17\u624B)\"><link rel=canonical href=https://wsgggws.github.io/></head><body
+        class=\"text-black duration-200 ease-out dark:text-white\"><header class=\"mx-auto
+        flex h-[4.5rem] max-w-[--w] px-8 lg:justify-center\"><div class=\"relative
+        z-50 ltr:mr-auto rtl:ml-auto flex items-center\"><a class=\"-translate-y-[1px]
+        text-2xl font-medium\" href=https://wsgggws.github.io/>Blogs (\u7801\u7801\u8981\u6D17\u624B)</a><div
+        class=\"btn-dark text-[0] ltr:ml-4 rtl:mr-4 h-6 w-6 shrink-0 cursor-pointer
+        [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]\"
+        role=button aria-label=Dark></div></div><div class=\"btn-menu relative z-50
+        ltr:-mr-8 rtl:-ml-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col
+        items-center justify-center gap-2.5 lg:hidden\" role=button aria-label=Menu></div><script>const
+        htmlClass=document.documentElement.classList;setTimeout(()=>{htmlClass.remove(\"not-ready\")},10);const
+        btnMenu=document.querySelector(\".btn-menu\");btnMenu.addEventListener(\"click\",()=>{htmlClass.toggle(\"open\")});const
+        metaTheme=document.querySelector('meta[name=\"theme-color\"]'),lightBg=\"#f8f5d7\".replace(/\"/g,\"\"),setDark=e=>{metaTheme.setAttribute(\"content\",e?\"#000\":lightBg),htmlClass[e?\"add\":\"remove\"](\"dark\"),localStorage.setItem(\"dark\",e)},darkScheme=window.matchMedia(\"(prefers-color-scheme:
+        dark)\");if(htmlClass.contains(\"dark\"))setDark(!0);else{const e=localStorage.getItem(\"dark\");setDark(e?e===\"true\":darkScheme.matches)}darkScheme.addEventListener(\"change\",e=>{setDark(e.matches)});const
+        btnDark=document.querySelector(\".btn-dark\");btnDark.addEventListener(\"click\",()=>{setDark(localStorage.getItem(\"dark\")!==\"true\")})</script><div
+        class=\"nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none
+        flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto
+        lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none\"><nav class=\"lg:ml-12
+        lg:flex lg:flex-row lg:items-center lg:space-x-10 rtl:space-x-reverse\"><a
+        class=\"block text-center text-xl leading-[5rem] lg:text-base lg:font-normal\"
+        href=/about/>About.Me</a></nav><nav class=\"mt-12 flex justify-center space-x-10
+        rtl:space-x-reverse dark:invert ltr:lg:ml-14 rtl:lg:mr-14 lg:mt-0 lg:items-center\"><a
+        class=\"h-7 w-7 text-[0] [background:var(--url)_center_center/cover_no-repeat]
+        lg:h-6 lg:w-6\" style=--url:url(./rss.svg) href=https://wsgggws.github.io/index.xml
+        target=_blank rel=alternate>rss</a></nav></div></header><main class=\"prose
+        prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-[--w] px-8 pb-16
+        pt-14 dark:prose-invert\"><section class=\"relative my-10 first-of-type:mt-0
+        last-of-type:mb-0\"><h2 class=!my-0>Python Debugger Pdb</h2><time class=\"text-xs
+        antialiased opacity-60\">Sep 6, 2024</time>\n<a class=\"absolute inset-0 text-[0]\"
+        href=https://wsgggws.github.io/blogs/pdb/>Python Debugger Pdb</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>MVP</h2><time
+        class=\"text-xs antialiased opacity-60\">Sep 6, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/mvp/>MVP</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>\u897F\u6E38\u8BB0</h2><time
+        class=\"text-xs antialiased opacity-60\">Sep 4, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/%E8%A5%BF%E6%B8%B8%E8%AE%B0/>\u897F\u6E38\u8BB0</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>\u5BCC\u7238\u7238\u4E0E\u7A77\u7238\u7238</h2><time
+        class=\"text-xs antialiased opacity-60\">Sep 2, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/%E5%AF%8C%E7%88%B8%E7%88%B8%E4%B8%8E%E7%A9%B7%E7%88%B8%E7%88%B8/>\u5BCC\u7238\u7238\u4E0E\u7A77\u7238\u7238</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>\u8521\u5FD7\u5FE0\u7ECF\u5178\u89E3\u5BC6\u7CFB\u5217</h2><time
+        class=\"text-xs antialiased opacity-60\">Aug 23, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/%E8%94%A1%E5%BF%97%E5%BF%A0%E7%BB%8F%E5%85%B8%E8%A7%A3%E5%AF%86%E7%B3%BB%E5%88%97/>\u8521\u5FD7\u5FE0\u7ECF\u5178\u89E3\u5BC6\u7CFB\u5217</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>HttpBin</h2><time
+        class=\"text-xs antialiased opacity-60\">Aug 23, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/httpbin/>HttpBin</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>JavaScript
+        \u7279\u6027</h2><time class=\"text-xs antialiased opacity-60\">Aug 5, 2024</time>\n<a
+        class=\"absolute inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/javascript-specials/>JavaScript
+        \u7279\u6027</a></section><section class=\"relative my-10 first-of-type:mt-0
+        last-of-type:mb-0\"><h2 class=!my-0>JEMSPath</h2><time class=\"text-xs antialiased
+        opacity-60\">Aug 1, 2024</time>\n<a class=\"absolute inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/jemspath/>JEMSPath</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>jq</h2><time
+        class=\"text-xs antialiased opacity-60\">Jul 31, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/jq/>jq</a></section><section
+        class=\"relative my-10 first-of-type:mt-0 last-of-type:mb-0\"><h2 class=!my-0>XPath</h2><time
+        class=\"text-xs antialiased opacity-60\">Jul 31, 2024</time>\n<a class=\"absolute
+        inset-0 text-[0]\" href=https://wsgggws.github.io/blogs/xpath/>XPath</a></section><nav
+        class=\"mt-14 flex\"><a class=\"btn ml-auto\" href=/page/2/>Next Page \u2192</a></nav></main><footer
+        class=\"mx-auto flex h-[4.5rem] max-w-[--w] items-center px-8 text-xs uppercase
+        tracking-wider opacity-60\"><div class=mr-auto>&copy; 2025\n<a class=link
+        href=https://wsgggws.github.io/>Blogs (\u7801\u7801\u8981\u6D17\u624B)</a></div><a
+        class=\"link mx-6\" href=https://gohugo.io/ rel=noopener target=_blank>powered
+        by hugo\uFE0F\uFE0F</a>\uFE0F\n<a class=link href=https://github.com/nanxiaobei/hugo-paper
+        rel=noopener target=_blank>hugo-paper</a></footer></body></html>"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Origin:
+      - '*'
+      Age:
+      - '0'
+      Cache-Control:
+      - max-age=600
+      Connection:
+      - keep-alive
+      Content-Type:
+      - text/html; charset=utf-8
+      Date:
+      - Wed, 19 Nov 2025 15:00:39 GMT
+      Etag:
+      - W/"67f412bd-1e34"
+      Expires:
+      - Wed, 19 Nov 2025 14:56:44 GMT
+      Last-Modified:
+      - Mon, 07 Apr 2025 18:00:29 GMT
+      Server:
+      - GitHub.com
+      Strict-Transport-Security:
+      - max-age=31556952
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish
+      X-Cache:
+      - HIT
+      X-Cache-Hits:
+      - '0'
+      X-Fastly-Request-ID:
+      - aa875861653c8025a7981cc15ba50a523b3adb16
+      X-GitHub-Request-Id:
+      - F6EB:82351:BDE149:C317BB:691DD854
+      X-Served-By:
+      - cache-nrt-rjtf7700085-NRT
+      X-Timer:
+      - S1763564440.570759,VS0,VE181
+      content-length:
+      - '7732'
+      x-proxy-cache:
+      - MISS
+    status:
+      code: 200
+      message: OK
 version: 1
