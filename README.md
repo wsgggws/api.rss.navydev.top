@@ -54,7 +54,7 @@
 
 | **技术**            | **描述**                                              |
 | ------------------- | ----------------------------------------------------- |
-| **开发语言**        | Python 3.11                                           |
+| **开发语言**        | Python 3.12                                           |
 | **包管理**          | uv                                                    |
 | **后端框架**        | FastAPI                                               |
 | **数据库**          | PostgreSQL + SQLAlchemy（ORM）                        |
@@ -76,11 +76,7 @@
 
 ## 环境安装
 
-### Python3.11
-
-推荐使用 [Miniconda](https://www.anaconda.com/docs/getting-started/miniconda/main) 进行 Python 版本管理
-
-### uv
+## uv
 
 ```sh
 curl -LsSf https://astral.sh/uv/install.sh | sh
