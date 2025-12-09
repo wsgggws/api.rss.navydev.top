@@ -10,6 +10,7 @@ from app.models.user import User
 from app.schemas.rss import (
     RSSArticleResponse,
     RSSArticlesListResponse,
+    RSSRecommendedListResponse,
     RSSSubscribeRequest,
     RSSSubscribeResponse,
     RSSSubscribesListResponse,
@@ -180,3 +181,44 @@ async def unsubscribe_rss(
         raise RSSNotFoundException
     await db.commit()
     return {"message": "取消订阅成功"}
+
+
+@router.get("/recommended", response_model=RSSRecommendedListResponse)
+async def get_recommended_rss(
+    limit: int = Query(10, gt=0, le=100),
+    offset: int = Query(0, ge=0),
+    db: AsyncSession = Depends(get_db),
+):
+    """获取推荐的RSS源列表（基于所有用户的订阅）"""
+    # 查询总数：统计所有被至少一个用户订阅过的 RSS 源数量
+    total_query = (
+        select(func.count(func.distinct(RSSFeed.id)))
+        .select_from(RSSFeed)
+        .join(UserRSS, RSSFeed.id == UserRSS.rss_id)
+    )
+    total = await db.scalar(total_query)
+
+    # 分页查询：获取所有被订阅过的 RSS 源，按订阅数量排序
+    feeds_query = (
+        select(RSSFeed, func.count(UserRSS.id).label("subscriber_count"))
+        .join(UserRSS, RSSFeed.id == UserRSS.rss_id)
+        .group_by(RSSFeed.id)
+        .order_by(func.count(UserRSS.id).desc())  # 按订阅数量降序排列
+        .offset(offset)
+        .limit(limit)
+    )
+    result = await db.execute(feeds_query)
+    feeds = result.all()
+
+    return {
+        "items": [
+            {
+                "id": feed.id,
+                "title": feed.title or "未知标题",
+                "description": None,  # RSSFeed 模型中没有 description 字段，可以后续扩展
+                "url": feed.url,
+            }
+            for feed, _ in feeds
+        ],
+        "total": total or 0,
+    }
