@@ -40,3 +40,18 @@ class RSSArticleResponse(BaseModel):
 class RSSArticlesListResponse(BaseModel):
     items: List[RSSArticleResponse] = Field(description="Articles 列表")
     total: int = Field(description="Articles 的总数量")
+
+
+class RSSRecommendedItem(BaseModel):
+    id: UUID = Field(description="RSS源在数据库中的唯一标识符")
+    title: str = Field(description="RSS源的标题")
+    description: Optional[str] = Field(None, description="RSS源的描述")
+    url: HttpUrl = Field(description="RSS源的URL")
+
+    class Config:
+        from_attributes = True
+
+
+class RSSRecommendedListResponse(BaseModel):
+    items: List[RSSRecommendedItem] = Field(description="推荐的 RSS 源列表")
+    total: int = Field(description="推荐的 RSS 源总数量")
