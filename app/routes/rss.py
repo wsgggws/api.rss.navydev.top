@@ -6,7 +6,6 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.exceptions import RSSInvalidException, RSSNotFoundException, RSSSubscribeRepeatException, UserBannedException
 from app.models.rss import RSSArticle, RSSFeed, UserRSS
-from app.models.user import User
 from app.schemas.rss import (
     RSSArticleResponse,
     RSSArticlesListResponse,
@@ -15,7 +14,6 @@ from app.schemas.rss import (
     RSSSubscribeResponse,
     RSSSubscribesListResponse,
 )
-from app.services.auth import get_current_user
 from app.services.database import get_db
 from app.utils.limiter import rss_limiter
 from app.utils.validator import get_rss_title
@@ -30,41 +28,10 @@ async def subscribe_rss(
     request: Request,
     data: RSSSubscribeRequest,
     db: AsyncSession = Depends(get_db),
-    user: User = Depends(get_current_user),
 ):
-    """订阅一个新的RSS源"""
-    user_id = user.id
-    # 检查 RSSFeed 是否已存在
-    result = await db.execute(select(RSSFeed).where(RSSFeed.url == str(data.url)))
-    rss = result.scalar_one_or_none()
-
-    if not rss:
-        # 是不是有效的 Feed url, 并拿到 title
-        title = await get_rss_title(data.url)
-        if not title:
-            raise RSSInvalidException
-        rss = RSSFeed(url=str(data.url), title=title)
-        db.add(rss)
-        await db.commit()
-        await db.flush()
-        await db.refresh(rss)
-
-    # 这里需要先记录下值，由于下一次会再执行数据库操作
-    rss_id = rss.id
-    rss_title = rss.title
-    rss_url = rss.url
-
-    # 是否已经订阅
-    result = await db.execute(select(UserRSS).where(UserRSS.user_id == user_id, UserRSS.rss_id == rss_id))
-    existing = result.scalar_one_or_none()
-    if existing:
-        raise RSSSubscribeRepeatException
-
-    subscription = UserRSS(user_id=user_id, rss_id=rss_id)
-    db.add(subscription)
-    await db.commit()
-    await db.flush()
-    return {"id": rss_id, "title": rss_title, "url": rss_url, "message": "success"}
+    """订阅一个新的RSS源（需要用户认证才能正常使用，当前已禁用）"""
+    # 由于移除了用户认证，此接口无法正常工作
+    raise RSSInvalidException
 
 
 @router.get("/subscriptions", response_model=RSSSubscribesListResponse)
@@ -72,15 +39,12 @@ async def get_subscriptions(
     limit: int = Query(10, gt=0),
     offset: int = Query(0, ge=0),
     db: AsyncSession = Depends(get_db),
-    user: User = Depends(get_current_user),
 ):
-    """获取当前用户已订阅的RSS源列表"""
-    total = await db.scalar(select(func.count()).select_from(UserRSS).where(UserRSS.user_id == user.id))
+    """获取所有RSS源列表（原为用户订阅列表，现返回所有RSS源）"""
+    total = await db.scalar(select(func.count()).select_from(RSSFeed))
 
     result = await db.execute(
         select(RSSFeed)
-        .join(UserRSS, RSSFeed.id == UserRSS.rss_id)
-        .where(UserRSS.user_id == user.id)
         .offset(offset)
         .limit(limit)
     )
@@ -97,17 +61,15 @@ async def get_articles_by_subscription(
     limit: int = Query(10, gt=0, le=100),
     offset: int = Query(0, ge=0),
     db: AsyncSession = Depends(get_db),
-    user: User = Depends(get_current_user),
 ):
-    """获取指定订阅源下的文章列表"""
-    # 验证该订阅是否属于该用户
-    result = await db.scalar(
+    """获取指定订阅源下的文章列表（已移除用户验证）"""
+    # 验证RSS源是否存在
+    rss_exists = await db.scalar(
         select(func.count())
         .select_from(RSSFeed)
-        .join(UserRSS, RSSFeed.id == UserRSS.rss_id)
-        .where(UserRSS.user_id == user.id, UserRSS.rss_id == rss_id)
+        .where(RSSFeed.id == rss_id)
     )
-    if result == 0:
+    if rss_exists == 0:
         return {"items": [], "total": 0}
 
     # 查询总数
@@ -142,13 +104,8 @@ async def get_article_detail(
     rss_id: UUID = Path(...),
     article_id: UUID = Path(...),
     db: AsyncSession = Depends(get_db),
-    user: User = Depends(get_current_user),
 ):
-    """获取指定文章的详细信息"""
-    # 校验该订阅是否属于当前用户
-    has_access = await db.scalar(select(UserRSS).where(UserRSS.user_id == user.id, UserRSS.rss_id == rss_id))
-    if not has_access:
-        raise UserBannedException
+    """获取指定文章的详细信息（已移除用户验证）"""
 
     # 查找文章
     result = await db.execute(select(RSSArticle).where(RSSArticle.id == article_id, RSSArticle.rss_id == rss_id))
@@ -170,17 +127,10 @@ async def get_article_detail(
 async def unsubscribe_rss(
     rss_id: UUID,
     db: AsyncSession = Depends(get_db),
-    user: User = Depends(get_current_user),
 ):
-    """取消订阅一个RSS源"""
-    result = await db.execute(
-        delete(UserRSS).where(UserRSS.user_id == user.id, UserRSS.rss_id == rss_id).returning(UserRSS.id)
-    )
-    deleted = result.scalar_one_or_none()
-    if not deleted:
-        raise RSSNotFoundException
-    await db.commit()
-    return {"message": "取消订阅成功"}
+    """取消订阅一个RSS源（需要用户认证才能正常使用，当前已禁用）"""
+    # 由于移除了用户认证，此接口无法正常工作
+    raise RSSInvalidException
 
 
 @router.get("/recommended", response_model=RSSRecommendedListResponse)
