@@ -3,18 +3,11 @@
 ![CI](https://github.com/wsgggws/api.rss.navydev.top/actions/workflows/ci.yml/badge.svg)
 [![Codecov](https://codecov.io/gh/wsgggws/api.rss.navydev.top/branch/main/graph/badge.svg)](https://codecov.io/gh/wsgggws/api.rss.navydev.top)
 
-**AI 生成个性化新闻摘要**，并在 [Bilibili](https://space.bilibili.com/472722204?spm_id_from=333.1007.0.0) 有合集分享，敬请期待！🚀
+**AI 生成个性化 RSS 摘要**，并在 [Bilibili](https://space.bilibili.com/472722204?spm_id_from=333.1007.0.0) 有合集分享，敬请期待！🚀
 
 ## 体验地址
 
-[查看监控面板 (by FastAPI-radar)](https://rss.navydev.top/__radar/)
-
 [前端体验 (by Vue3)](https://rss.navydev.top/)
-
-**注册** 或者使用如下用户密码
-
-- username: 码码要洗手
-- password: Mmyxs;!1
 
 ---
 
