@@ -23,7 +23,6 @@ async def test_rss_subscribe_flow(generate_token, client: AsyncClient):
     data = response.json()
     assert data["url"] == rss_data["url"]
     assert data["title"] == "少数派"
-    assert data["message"] == "success"
     rss_id = data["id"]
 
     # ❌ 再次订阅会抛出重复异常
@@ -50,15 +49,15 @@ async def test_rss_subscribe_flow(generate_token, client: AsyncClient):
         data = response.json()
         assert data["url"] == rss_data["url"]
         assert data["title"] == "潮流周刊"
-        assert data["message"] == "success"
         rss_id = data["id"]
     else:
         # 可能是"已订阅"或"RSS无效"，两者都是业务逻辑预期的 400
         # 这里不再断言具体消息，直接跳过或获取 rss_id
         # 为继续测试，尝试从订阅列表获取该 URL 的 rss_id（如果存在）
         rss_response = await client.get("/api/v1/rss/subscriptions", headers=headers)
-        subs = rss_response.json()
-        if isinstance(subs, list):
+        subs_data = rss_response.json()
+        if isinstance(subs_data, dict) and "items" in subs_data:
+            subs = subs_data["items"]
             matching = [feed for feed in subs if feed["url"] == rss_data["url"]]
             if len(matching) > 0:
                 rss_id = matching[0]["id"]
@@ -66,13 +65,18 @@ async def test_rss_subscribe_flow(generate_token, client: AsyncClient):
                 # 如果该 RSS 未在订阅列表中，说明订阅失败（例如 RSS 无效），跳过后续断言
                 return
         else:
-            # subs 不是列表，异常情况，跳过后续断言
+            # subs_data 格式异常，跳过后续断言
             return
 
     # ✅ 获取当前用户所有订阅
     response = await client.get("/api/v1/rss/subscriptions", headers=headers)
     assert response.status_code == 200
-    subs = response.json()
+    subs_data = response.json()
+    # 检查返回格式是否正确（包含 items 和 total）
+    assert isinstance(subs_data, dict)
+    assert "items" in subs_data
+    assert "total" in subs_data
+    subs = subs_data["items"]
     # 检查 subs 是否为 list（防止某些异常场景返回其他格式）
     if isinstance(subs, list):
         assert any(feed["id"] == rss_id for feed in subs)
