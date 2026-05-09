@@ -9,6 +9,26 @@ from app.models.user import User  # noqa
 from app.services.database import Base
 
 
+class VisitLog(Base):
+    __tablename__ = "visit_log"
+
+    id: Mapped[UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid4)
+    ip_address: Mapped[str] = mapped_column(String(45), nullable=False)
+    user_agent: Mapped[str | None] = mapped_column(String(512), nullable=True)
+    referer: Mapped[str | None] = mapped_column(String(2048), nullable=True)
+    path: Mapped[str | None] = mapped_column(String(512), nullable=True)
+    visit_dt: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False, index=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
+
+
+class VisitCountCache(Base):
+    __tablename__ = "visit_count_cache"
+
+    id: Mapped[int] = mapped_column(primary_key=True, default=1)  # single row, id=1
+    total_count: Mapped[int] = mapped_column(default=0)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
+
+
 class RSSFeed(Base):
     __tablename__ = "rss_feed"
 
@@ -50,5 +70,6 @@ class RSSArticle(Base):
     summary_md: Mapped[str | None] = mapped_column(Text, comment="Article summary in Markdown format")
     is_new: Mapped[bool] = mapped_column(Boolean, default=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
+    view_count: Mapped[int] = mapped_column(default=0)
 
     rss_feed = relationship("RSSFeed", back_populates="articles")

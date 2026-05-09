@@ -32,6 +32,7 @@ class RSSArticleResponse(BaseModel):
     link: HttpUrl = Field(description="Article origin link")
     published_at: datetime = Field(description="Article 发布日期")
     summary_md: Optional[str] = Field(None, description="AI摘要")
+    view_count: int = Field(0, description="文章阅读次数")
 
     class Config:
         from_attributes = True  # 允许 Pydantic 直接从 ORM 模型转换
