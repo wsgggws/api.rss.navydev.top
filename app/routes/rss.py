@@ -156,25 +156,24 @@ async def get_article_detail(
 ):
     """获取指定文章的详细信息（已移除用户验证）"""
 
-    # 查找文章
     result = await db.execute(select(RSSArticle).where(RSSArticle.id == article_id, RSSArticle.rss_id == rss_id))
     article = result.scalar_one_or_none()
 
     if not article:
         raise RSSNotFoundException
 
-    # 递增阅读次数
-    article.view_count = (article.view_count or 0) + 1
-    await db.commit()
-
-    return {
+    article_data = {
         "id": article.id,
         "title": article.title,
         "link": article.link,
         "published_at": article.published_at,
         "summary_md": article.summary_md,
-        "view_count": article.view_count,
+        "view_count": (article.view_count or 0) + 1,
     }
+    article.view_count = article_data["view_count"]
+    await db.commit()
+
+    return article_data
 
 
 @router.delete("/unsubscribe/{rss_id}")
