@@ -28,7 +28,6 @@ async def track_visit(
     """记录一次访问"""
     visit_dt = datetime.now(timezone.utc)
 
-    # 写入 visit_log
     log = VisitLog(
         ip_address=request.client.host if request.client else "unknown",
         user_agent=request.headers.get("user-agent"),
@@ -38,14 +37,14 @@ async def track_visit(
     )
     db.add(log)
 
-    # 递增缓存计数
     cache = await get_or_create_cache(db)
     cache.total_count += 1
     cache.updated_at = visit_dt
 
+    total = cache.total_count
     await db.commit()
 
-    return {"total_visits": cache.total_count}
+    return {"total_visits": total}
 
 
 @router.get("/count")
