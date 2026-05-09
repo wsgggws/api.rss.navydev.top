@@ -5,7 +5,7 @@ from fastapi.concurrency import asynccontextmanager
 from app.error_handlers import setup_exception_handlers
 from app.extentions import setup_extentions
 from app.middleware_handlers import setup_middlewares
-from app.routes import rss, user
+from app.routes import rss, user, visit
 from app.services.database import init_db
 
 # 可以使用 zero code 的形式, 但不能使用 --reload 参数启动 fastapi 服务
@@ -35,6 +35,7 @@ app = FastAPI(lifespan=lifespan)
 
 app.include_router(user.router)
 app.include_router(rss.router)
+app.include_router(visit.router)
 
 setup_extentions(app)
 setup_exception_handlers(app)

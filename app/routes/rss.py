@@ -163,12 +163,17 @@ async def get_article_detail(
     if not article:
         raise RSSNotFoundException
 
+    # 递增阅读次数
+    article.view_count = (article.view_count or 0) + 1
+    await db.commit()
+
     return {
         "id": article.id,
         "title": article.title,
         "link": article.link,
         "published_at": article.published_at,
         "summary_md": article.summary_md,
+        "view_count": article.view_count,
     }
 
 
