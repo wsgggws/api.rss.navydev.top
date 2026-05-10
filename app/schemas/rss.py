@@ -35,11 +35,19 @@ class RSSArticleResponse(BaseModel):
     view_count: int = Field(0, description="文章阅读次数")
 
     class Config:
-        from_attributes = True  # 允许 Pydantic 直接从 ORM 模型转换
+        from_attributes = True
+
+
+class RSSArticleListItem(BaseModel):
+    id: UUID
+    title: str
+    link: HttpUrl
+    published_at: datetime
+    view_count: int = 0
 
 
 class RSSArticlesListResponse(BaseModel):
-    items: List[RSSArticleResponse] = Field(description="Articles 列表")
+    items: List[RSSArticleListItem] = Field(description="Articles 列表")
     total: int = Field(description="Articles 的总数量")
 
 

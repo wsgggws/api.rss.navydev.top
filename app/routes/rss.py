@@ -141,6 +141,7 @@ async def get_articles_by_subscription(
                 "title": a.title,
                 "link": a.link,
                 "published_at": a.published_at,
+                "view_count": a.view_count or 0,
             }
             for a in articles
         ],
