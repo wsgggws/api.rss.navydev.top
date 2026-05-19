@@ -142,6 +142,7 @@ async def get_articles_by_subscription(
                 "link": a.link,
                 "published_at": a.published_at,
                 "view_count": a.view_count or 0,
+                "image_url": a.image_url,
             }
             for a in articles
         ],
@@ -169,6 +170,7 @@ async def get_article_detail(
         "link": article.link,
         "published_at": article.published_at,
         "summary_md": article.summary_md,
+        "image_url": article.image_url,
         "view_count": (article.view_count or 0) + 1,
     }
     article.view_count = article_data["view_count"]

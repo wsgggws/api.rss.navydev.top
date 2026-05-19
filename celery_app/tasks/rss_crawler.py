@@ -1,4 +1,5 @@
 import asyncio
+import re
 from typing import Dict, List
 
 import aiohttp
@@ -53,9 +54,11 @@ def md_articles(articles: List[Dict]) -> List[Dict]:
         html = article.pop("article_html") or ""
         if not html:
             article["summary_md"] = ""
+            article["image_url"] = None
             continue
         markdown = html2text.html2text(html)
         article["summary_md"] = markdown
+        article["image_url"] = extract_first_image(html)
     return articles
 
 
@@ -158,3 +161,19 @@ async def save_articles_to_db(session, rss_id, articles: List[Dict]):
     except IntegrityError:
         logger.warning("IntegrityError during saving articles: skiping")
         await session.rollback()
+
+
+def extract_first_image(html: str) -> str | None:
+    """从 HTML 中提取第一张图片的 URL"""
+    if not html:
+        return None
+    img_patterns = [
+        r'<img[^>]+src=["\']([^"\']+)["\']',
+        r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)["\']',
+        r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image["\']',
+    ]
+    for pattern in img_patterns:
+        match = re.search(pattern, html, re.IGNORECASE)
+        if match:
+            return match.group(1)
+    return None

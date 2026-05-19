@@ -68,6 +68,7 @@ class RSSArticle(Base):
     description: Mapped[str | None] = mapped_column(Text, comment="Original description from RSS feed")
     published_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     summary_md: Mapped[str | None] = mapped_column(Text, comment="Article summary in Markdown format")
+    image_url: Mapped[str | None] = mapped_column(String, nullable=True, comment="Article cover image URL")
     is_new: Mapped[bool] = mapped_column(Boolean, default=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
     view_count: Mapped[int] = mapped_column(default=0)
