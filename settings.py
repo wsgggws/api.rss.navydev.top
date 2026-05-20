@@ -37,7 +37,7 @@ class RedisSettings(BaseSettings):
 class AISettings(BaseSettings):
     BASE_URL: str = "https://api.deepseek.com"
     API_KEY: Optional[str] = None
-    MODEL: str = "DeepSeek-V4-Flash"
+    MODEL: str = "deepseek-v4-flash"
     MAX_TOKENS: int = 4096
     TEMPERATURE: float = 0.1
 
