@@ -30,7 +30,7 @@ class RSSArticleResponse(BaseModel):
     id: UUID = Field(description="成功订阅后RSS源在数据库中的唯一标识符")
     title: str = Field(description="Article origin title")
     link: HttpUrl = Field(description="Article origin link")
-    published_at: datetime = Field(description="Article 发布日期")
+    published_at: Optional[datetime] = Field(None, description="Article 发布日期")
     summary_md: Optional[str] = Field(None, description="AI摘要")
     view_count: int = Field(0, description="文章阅读次数")
 
@@ -42,7 +42,7 @@ class RSSArticleListItem(BaseModel):
     id: UUID
     title: str
     link: HttpUrl
-    published_at: datetime
+    published_at: Optional[datetime] = None
     view_count: int = 0
 
 
