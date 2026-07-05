@@ -7,7 +7,7 @@
 
 ## 体验地址
 
-[前端体验 (by Vue3)](https://rss.navydev.top/)
+[前端体验 (by React 18)](https://rss.navydev.top/)
 
 ---
 
@@ -136,5 +136,6 @@ make test ARGS="tests/test_whoami -vv -s" # 运行单个文件, 并显示输出
 
 ## 📡 **API 接口文档**
 
-- 📌 访问 API 文档：[Swagger UI](http://127.0.0.1:8000/docs)
+- 📌 本地 API 文档：[Swagger UI](http://127.0.0.1:8000/docs)
+- 📌 线上 API 文档：[Swagger UI](https://rss.navydev.top/docs) | [ReDoc](https://rss.navydev.top/redoc) | [OpenAPI JSON](https://rss.navydev.top/openapi.json)
 - 📌 后续将提供 Postman 请求案例

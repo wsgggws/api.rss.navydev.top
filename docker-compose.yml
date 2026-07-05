@@ -194,6 +194,7 @@ services:
     volumes:
       - ./config/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./config/nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./config/nginx/proxy_params.conf:/etc/nginx/proxy_params.conf:ro
       - ${REMOTE_FRONT_ROOT}/dist:/usr/share/nginx/html:ro
       - ./data/certbot/conf:/etc/letsencrypt:ro
       - ./data/certbot/www:/var/www/certbot:ro
