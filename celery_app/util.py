@@ -29,7 +29,9 @@ def parse_date(date_str: str = ""):
         return None
     try:
         # feedparser 的 parsed_parsed 不一定有 → 使用 dateutil 兜底
-        return date_parser.parse(date_str)
+        parsed_date = date_parser.parse(date_str)
+        # Some feeds use the Unix epoch as a placeholder for a missing date.
+        return parsed_date if parsed_date.year > 1970 else None
     except Exception as e:
         logger.error(f"Failed to parse date: {date_str}, error: {e}")
         return None

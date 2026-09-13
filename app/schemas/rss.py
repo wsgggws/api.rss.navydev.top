@@ -1,8 +1,18 @@
 from datetime import datetime
-from typing import List, Optional
+from typing import Annotated, List, Optional
 from uuid import UUID
 
-from pydantic import BaseModel, Field, HttpUrl
+from pydantic import AfterValidator, BaseModel, Field, HttpUrl
+
+
+def reject_epoch_placeholder(value: Optional[datetime]) -> Optional[datetime]:
+    """Treat Unix-epoch feed dates as missing instead of exposing 1970 to clients."""
+    if value is not None and value.year <= 1970:
+        return None
+    return value
+
+
+PublishedAt = Annotated[Optional[datetime], AfterValidator(reject_epoch_placeholder)]
 
 
 class RSSSubscribeRequest(BaseModel):
@@ -30,9 +40,10 @@ class RSSArticleResponse(BaseModel):
     id: UUID = Field(description="成功订阅后RSS源在数据库中的唯一标识符")
     title: str = Field(description="Article origin title")
     link: HttpUrl = Field(description="Article origin link")
-    published_at: Optional[datetime] = Field(None, description="Article 发布日期")
+    published_at: PublishedAt = Field(None, description="Article 发布日期")
     summary_md: Optional[str] = Field(None, description="AI摘要")
     view_count: int = Field(0, description="文章阅读次数")
+    image_url: Optional[str] = Field(None, description="文章封面图片")
 
     class Config:
         from_attributes = True
@@ -42,8 +53,9 @@ class RSSArticleListItem(BaseModel):
     id: UUID
     title: str
     link: HttpUrl
-    published_at: Optional[datetime] = None
+    published_at: PublishedAt = None
     view_count: int = 0
+    image_url: Optional[str] = None
 
 
 class RSSArticlesListResponse(BaseModel):
