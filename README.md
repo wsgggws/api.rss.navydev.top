@@ -3,7 +3,7 @@
 [![CI](https://github.com/wsgggws/api.rss.navydev.top/actions/workflows/ci.yml/badge.svg)](https://github.com/wsgggws/api.rss.navydev.top/actions/workflows/ci.yml)
 [![Codecov](https://codecov.io/gh/wsgggws/api.rss.navydev.top/branch/main/graph/badge.svg)](https://codecov.io/gh/wsgggws/api.rss.navydev.top)
 
-RSS NAVY 的后端服务。项目负责 RSS 订阅管理、定时采集、正文解析、AI Markdown 摘要、文章查询、用户认证和访问统计，并提供一套基于 OpenTelemetry 的可观测性环境。
+RSS NAVY 的后端服务。项目负责 RSS 订阅管理、定时采集、文章元数据查询、用户认证和访问统计，并提供一套基于 OpenTelemetry 的可观测性环境。
 
 - 前端：<https://rss.navydev.top/>
 - 线上 API：<https://api.rss.navydev.top/>
@@ -13,9 +13,8 @@ RSS NAVY 的后端服务。项目负责 RSS 订阅管理、定时采集、正文
 
 - 使用 FastAPI 提供异步 REST API
 - 使用 PostgreSQL 和 SQLAlchemy 存储订阅源、文章、用户及访问记录
-- 使用 Celery Beat 定时调度，Celery Worker 并发抓取 RSS 和文章正文
-- 使用 `aiohttp`、Feedparser、Parsel 和 html2text 完成采集与 Markdown 转换
-- 调用 OpenAI 兼容接口生成结构清晰、保留关键数据和代表性图片的摘要
+- 使用 Celery Beat 定时调度，Celery Worker 抓取并解析 RSS Feed
+- 使用 `aiohttp`、Feedparser 和 Parsel 提取文章标题、链接、日期与 description
 - 将缺失或 `1970` Unix Epoch 占位日期规范化为 `null`
 - 支持 JWT 认证、RSS 接口限流和推荐订阅源
 - 支持 OpenTelemetry、Prometheus、Grafana、Tempo 和 Loki
@@ -29,8 +28,7 @@ RSS NAVY 的后端服务。项目负责 RSS 订阅管理、定时采集、正文
 | Web API | FastAPI、Uvicorn、Pydantic |
 | 数据库 | PostgreSQL 16、SQLAlchemy、asyncpg |
 | 异步任务 | Celery、Redis |
-| RSS 与正文解析 | Feedparser、aiohttp、Parsel、html2text |
-| AI 摘要 | OpenAI Python SDK、OpenAI 兼容模型服务 |
+| RSS 解析 | Feedparser、aiohttp、Parsel |
 | 认证与限流 | JWT、Argon2、SlowAPI |
 | 可观测性 | OpenTelemetry、Prometheus、Grafana、Tempo、Loki |
 | 测试与检查 | Pytest、pytest-asyncio、Ruff、Codecov |
@@ -42,14 +40,11 @@ RSS NAVY 的后端服务。项目负责 RSS 订阅管理、定时采集、正文
 Celery Beat
     -> 分发需要更新的订阅源
     -> Worker 获取并解析 Feed
-    -> 并发下载新文章正文
-    -> HTML 转换为 Markdown 并提取封面
-    -> AI 生成结构化 Markdown 摘要
     -> 写入 PostgreSQL
     -> FastAPI 向前端提供文章列表与详情
 ```
 
-AI 摘要会根据文章类型自适应组织内容：先给出简短导读，再提炼核心内容，并仅在原文存在相应信息时加入关键数据、案例、影响或建议。模型只允许使用原文图片 URL，代表性图片会放在对应段落之后，避免头像、广告和装饰图干扰阅读。
+服务不会下载、转换或存储文章正文。API 返回 Feed 中的文章元数据和原始 `link`，由前端浏览器直接加载来源页面。这减少了采集耗时、存储占用和内容失真，也让读者看到作者发布的原始排版。
 
 ## 项目结构
 
@@ -62,8 +57,6 @@ app/
 └── utils/        # 限流、校验和日志工具
 celery_app/
 ├── tasks/        # RSS 调度、抓取和入库任务
-├── constants.py  # AI 摘要提示词
-├── llm.py        # 模型调用与输出规范化
 └── config.py     # Celery 配置
 config/           # PostgreSQL、Nginx 与可观测性配置
 scripts/          # 本地运行、测试和部署脚本
@@ -106,20 +99,11 @@ REDIS_PORT=6379
 REDIS_BROKER_NUM=1
 REDIS_BACKEND_NUM=2
 
-# OpenAI 兼容接口；不设置 API_KEY 时跳过 AI，总体采集流程仍可运行
-LLM_API_KEY=replace-with-provider-key
-LLM_BASE_URL=https://api.deepseek.com
-LLM_MODEL=deepseek-v4-flash
-LLM_MAX_TOKENS=4096
-LLM_TEMPERATURE=0.1
-
 RSS_TIMEOUT=15
 RSS_LIMITER=5
 RSS_TIME_UNIT=minute
 CELERY_BEAT_MINUTES=15
 ```
-
-`LLM_BASE_URL` 可以指向任意兼容 OpenAI Chat Completions API 的服务。低温度配置更适合忠实摘要；提高温度可能增加表达变化，也会增加事实偏移风险。
 
 ## 本地运行
 
@@ -166,6 +150,8 @@ Docker Compose 会启动 Web API、Celery Worker、Celery Beat、PostgreSQL、Re
 | `POST` | `/api/v1/visit/track` | 否 | 记录站点访问 |
 | `GET` | `/api/v1/visit/count` | 否 | 获取累计访问次数 |
 
+现有数据库中的旧正文/摘要列不再由应用读取或写入，可以在完成数据库备份后通过单独迁移删除。当前变更不执行破坏性数据库操作。
+
 文档地址：
 
 - Swagger UI：`/docs`
@@ -184,7 +170,7 @@ make test
 make test ARGS="-vv -s"
 
 # 运行指定测试
-make test ARGS="tests/celery_app/test_llm.py -q"
+make test ARGS="tests/celery_app/test_rss_crawler_fun.py -q"
 ```
 
 运行静态检查：

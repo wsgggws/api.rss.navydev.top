@@ -41,7 +41,6 @@ class RSSArticleResponse(BaseModel):
     title: str = Field(description="Article origin title")
     link: HttpUrl = Field(description="Article origin link")
     published_at: PublishedAt = Field(None, description="Article 发布日期")
-    summary_md: Optional[str] = Field(None, description="AI摘要")
     view_count: int = Field(0, description="文章阅读次数")
     image_url: Optional[str] = Field(None, description="文章封面图片")
 
@@ -53,6 +52,7 @@ class RSSArticleListItem(BaseModel):
     id: UUID
     title: str
     link: HttpUrl
+    description: Optional[str] = None
     published_at: PublishedAt = None
     view_count: int = 0
     image_url: Optional[str] = None

@@ -1,9 +1,8 @@
 from datetime import datetime
 
-import pytest
 from dateutil.tz import tzutc
 
-from celery_app.tasks.rss_crawler import enhance_articles, md_articles, parse_feed
+from celery_app.tasks.rss_crawler import parse_feed
 
 # TODO 最好是使用 VCR 这类工具将每个 feed 及 articles 自动做个记录，下次跑测试时可以模拟网络请求
 
@@ -62,24 +61,3 @@ def test_parse_feed_with_rss():
                 "published_at": datetime(2025, 4, 7, 0, 0, tzinfo=tzutc()),
             },
         ]
-
-
-@pytest.mark.vcr()
-@pytest.mark.asyncio
-async def test_enhence_articles_case1():
-    with open("tests/data/articles/阮一峰的网络日志/source.html") as f:
-        html = f.read()
-
-    articles = [
-        {
-            "article_html": html,
-        }
-    ]
-    articles = md_articles(articles)
-    articles = await enhance_articles(articles)
-    assert "article_md" not in articles[0]
-    assert "article_html" not in articles[0]
-    assert "summary_md" in articles[0]
-    # could see example at source.md(html 到 markdown 的转换结果) summary.md(调用 AI 模型的总结)
-    # tests/data/articles/*/source.md
-    # tests/data/articles/*/summary.md

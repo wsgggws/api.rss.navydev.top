@@ -17,7 +17,7 @@ articles_count = [0, 0]  # 放宽为0即可
 @pytest.mark.asyncio
 async def test_do_one_feed_logic():
     for index, feed in enumerate(test_feeds):
-        # 主要测试爬取逻辑不崩溃（即使下载或 enhance 失败）
+        # 主要测试 Feed 抓取与入库逻辑不崩溃。
         await do_one_feed_logic(feed["id"], feed["url"])
         async with AsyncSession() as async_session:
             articles = await async_session.execute(select(RSSArticle).where(RSSArticle.rss_id == feed["id"]))

@@ -1,18 +1,13 @@
 import asyncio
-import re
 from typing import Dict, List
-from urllib.parse import urljoin, urlparse
 
 import aiohttp
 import feedparser
-import html2text
-from aiohttp.client import ClientTimeout
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.future import select
 
 from app.models.rss import RSSArticle
 from celery_app import celery_app
-from celery_app.llm import sem_async_chat
 from celery_app.util import get_celery_async_session, logger, parse_date, parse_description
 from settings import settings
 
@@ -40,42 +35,11 @@ async def do_one_feed_logic(rss_id: str, url: str):
             entries = discard_exists_entries(entries, exist_urls)
             logger.info(f"Found {len(entries)} new entries to process")
 
-            articles = await fetch_articles(entries)
-            articles = md_articles(articles)
-            articles = await enhance_articles(articles)
-            await save_articles_to_db(session, rss_id, articles)
+            await save_articles_to_db(session, rss_id, entries)
     except Exception as e:
         logger.error(f"Error in do_one_feed_logic for {rss_id} ({url}): {e}")
     else:
         logger.info(f"successful do_one_feed_logic for {rss_id} ({url})")
-
-
-def md_articles(articles: List[Dict]) -> List[Dict]:
-    for article in articles:
-        html = article.pop("article_html") or ""
-        if not html:
-            article["summary_md"] = ""
-            article["image_url"] = None
-            continue
-        article_url = str(article.get("link") or "")
-        normalized_html = absolutize_html_image_sources(html, article_url)
-        markdown = html2text.html2text(normalized_html)
-        article["summary_md"] = markdown
-        article["image_url"] = extract_first_image(html, article_url)
-    return articles
-
-
-async def enhance_articles(articles: List[Dict]) -> List[Dict]:
-    semaphore = asyncio.Semaphore(10)  # 限制并发数
-    tasks = [sem_async_chat(article, semaphore) for article in articles or []]
-    raw_results = await asyncio.gather(*tasks, return_exceptions=True)
-    result = []
-    for item in raw_results:
-        if isinstance(item, Exception):
-            logger.error("Article download exception: %s", item)
-            continue
-        result.append(item)
-    return result
 
 
 async def get_exist_urls(session, rss_id) -> set:
@@ -127,35 +91,6 @@ def parse_feed(html):
     return entries
 
 
-async def _async_download(entry, session, semaphore):
-    async with semaphore:
-        url = entry.get("link") or ""
-        try:
-            async with session.get(url, headers=HEADERS, timeout=ClientTimeout(total=settings.RSS_TIMEOUT)) as response:
-                if response.status == 200:
-                    entry["article_html"] = await response.text()
-                else:
-                    entry["article_html"] = ""
-                    logger.warning("%s status %s", url, response.status)
-        except Exception as exc:
-            logger.error("Download failed %s → %s", url, exc)
-        return entry
-
-
-async def fetch_articles(entries):
-    semaphore = asyncio.Semaphore(10)  # 限制并发数
-    async with aiohttp.ClientSession() as session:
-        tasks = [_async_download(entry, session, semaphore) for entry in entries or []]
-        raw_results = await asyncio.gather(*tasks, return_exceptions=True)
-        articles = []
-        for item in raw_results:
-            if isinstance(item, Exception):
-                logger.error("Article download exception: %s", item)
-                continue
-            articles.append(item)
-        return articles
-
-
 async def save_articles_to_db(session, rss_id, articles: List[Dict]):
     for article in articles or []:
         new_article = RSSArticle(rss_id=rss_id, **article)
@@ -166,40 +101,3 @@ async def save_articles_to_db(session, rss_id, articles: List[Dict]):
     except IntegrityError:
         logger.warning("IntegrityError during saving articles: skiping")
         await session.rollback()
-
-
-def resolve_image_url(image_url: str, article_url: str = "") -> str | None:
-    image_url = image_url.strip()
-    if not image_url or urlparse(image_url).scheme in {"data", "blob", "cid"}:
-        return None
-    return urljoin(article_url, image_url)
-
-
-def absolutize_html_image_sources(html: str, article_url: str = "") -> str:
-    """Resolve relative image sources before converting article HTML to Markdown."""
-    if not html or not article_url:
-        return html
-
-    def replace_source(match: re.Match) -> str:
-        resolved_url = resolve_image_url(match.group(2), article_url)
-        return f"{match.group(1)}{resolved_url or match.group(2)}{match.group(3)}"
-
-    return re.sub(r"(<img\b[^>]*?\bsrc\s*=\s*[\"'])([^\"']+)([\"'])", replace_source, html, flags=re.IGNORECASE)
-
-
-def extract_first_image(html: str, article_url: str = "") -> str | None:
-    """Prefer the page cover and return an absolute, browser-renderable URL."""
-    if not html:
-        return None
-    img_patterns = [
-        r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)["\']',
-        r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image["\']',
-        r'<img[^>]+src=["\']([^"\']+)["\']',
-    ]
-    for pattern in img_patterns:
-        match = re.search(pattern, html, re.IGNORECASE)
-        if match:
-            resolved_url = resolve_image_url(match.group(1), article_url)
-            if resolved_url:
-                return resolved_url
-    return None

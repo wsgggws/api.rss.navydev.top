@@ -88,12 +88,12 @@ async def get_subscriptions(
     total = await db.scalar(
         select(func.count())
         .select_from(RSSFeed)
-        .where(RSSFeed.is_paused == False)
+        .where(RSSFeed.is_paused.is_(False))
     )
 
     result = await db.execute(
         select(RSSFeed)
-        .where(RSSFeed.is_paused == False)
+        .where(RSSFeed.is_paused.is_(False))
         .offset(offset)
         .limit(limit)
     )
@@ -140,6 +140,7 @@ async def get_articles_by_subscription(
                 "id": a.id,
                 "title": a.title,
                 "link": a.link,
+                "description": a.description,
                 "published_at": a.published_at,
                 "view_count": a.view_count or 0,
                 "image_url": a.image_url,
@@ -169,7 +170,6 @@ async def get_article_detail(
         "title": article.title,
         "link": article.link,
         "published_at": article.published_at,
-        "summary_md": article.summary_md,
         "image_url": article.image_url,
         "view_count": (article.view_count or 0) + 1,
     }
