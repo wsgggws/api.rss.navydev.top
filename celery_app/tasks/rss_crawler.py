@@ -1,6 +1,7 @@
 import asyncio
 import re
 from typing import Dict, List
+from urllib.parse import urljoin, urlparse
 
 import aiohttp
 import feedparser
@@ -56,9 +57,11 @@ def md_articles(articles: List[Dict]) -> List[Dict]:
             article["summary_md"] = ""
             article["image_url"] = None
             continue
-        markdown = html2text.html2text(html)
+        article_url = str(article.get("link") or "")
+        normalized_html = absolutize_html_image_sources(html, article_url)
+        markdown = html2text.html2text(normalized_html)
         article["summary_md"] = markdown
-        article["image_url"] = extract_first_image(html)
+        article["image_url"] = extract_first_image(html, article_url)
     return articles
 
 
@@ -116,7 +119,9 @@ def parse_feed(html):
                 "title": entry.get("title", ""),
                 "link": entry.get("link", ""),
                 "description": description,
-                "published_at": parse_date(str(entry.get("published") or "")),
+                "published_at": parse_date(
+                    str(entry.get("published") or entry.get("updated") or entry.get("created") or "")
+                ),
             }
         )
     return entries
@@ -163,17 +168,38 @@ async def save_articles_to_db(session, rss_id, articles: List[Dict]):
         await session.rollback()
 
 
-def extract_first_image(html: str) -> str | None:
-    """从 HTML 中提取第一张图片的 URL"""
+def resolve_image_url(image_url: str, article_url: str = "") -> str | None:
+    image_url = image_url.strip()
+    if not image_url or urlparse(image_url).scheme in {"data", "blob", "cid"}:
+        return None
+    return urljoin(article_url, image_url)
+
+
+def absolutize_html_image_sources(html: str, article_url: str = "") -> str:
+    """Resolve relative image sources before converting article HTML to Markdown."""
+    if not html or not article_url:
+        return html
+
+    def replace_source(match: re.Match) -> str:
+        resolved_url = resolve_image_url(match.group(2), article_url)
+        return f"{match.group(1)}{resolved_url or match.group(2)}{match.group(3)}"
+
+    return re.sub(r"(<img\b[^>]*?\bsrc\s*=\s*[\"'])([^\"']+)([\"'])", replace_source, html, flags=re.IGNORECASE)
+
+
+def extract_first_image(html: str, article_url: str = "") -> str | None:
+    """Prefer the page cover and return an absolute, browser-renderable URL."""
     if not html:
         return None
     img_patterns = [
-        r'<img[^>]+src=["\']([^"\']+)["\']',
         r'<meta[^>]+property=["\']og:image["\'][^>]+content=["\']([^"\']+)["\']',
         r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image["\']',
+        r'<img[^>]+src=["\']([^"\']+)["\']',
     ]
     for pattern in img_patterns:
         match = re.search(pattern, html, re.IGNORECASE)
         if match:
-            return match.group(1)
+            resolved_url = resolve_image_url(match.group(1), article_url)
+            if resolved_url:
+                return resolved_url
     return None

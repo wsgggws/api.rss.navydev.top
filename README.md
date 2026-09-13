@@ -1,141 +1,216 @@
-# 📰 api.rss.navydev.top
+# api.rss.navydev.top
 
-![CI](https://github.com/wsgggws/api.rss.navydev.top/actions/workflows/ci.yml/badge.svg)
+[![CI](https://github.com/wsgggws/api.rss.navydev.top/actions/workflows/ci.yml/badge.svg)](https://github.com/wsgggws/api.rss.navydev.top/actions/workflows/ci.yml)
 [![Codecov](https://codecov.io/gh/wsgggws/api.rss.navydev.top/branch/main/graph/badge.svg)](https://codecov.io/gh/wsgggws/api.rss.navydev.top)
 
-**AI 生成个性化 RSS 摘要**，并在 [Bilibili](https://space.bilibili.com/472722204?spm_id_from=333.1007.0.0) 有合集分享，敬请期待！🚀
+RSS NAVY 的后端服务。项目负责 RSS 订阅管理、定时采集、正文解析、AI Markdown 摘要、文章查询、用户认证和访问统计，并提供一套基于 OpenTelemetry 的可观测性环境。
 
-## 体验地址
+- 前端：<https://rss.navydev.top/>
+- 线上 API：<https://api.rss.navydev.top/>
+- 本地 Swagger UI：<http://127.0.0.1:8000/docs>
 
-[前端体验 (by React 18)](https://rss.navydev.top/)
+## 核心能力
 
----
+- 使用 FastAPI 提供异步 REST API
+- 使用 PostgreSQL 和 SQLAlchemy 存储订阅源、文章、用户及访问记录
+- 使用 Celery Beat 定时调度，Celery Worker 并发抓取 RSS 和文章正文
+- 使用 `aiohttp`、Feedparser、Parsel 和 html2text 完成采集与 Markdown 转换
+- 调用 OpenAI 兼容接口生成结构清晰、保留关键数据和代表性图片的摘要
+- 将缺失或 `1970` Unix Epoch 占位日期规范化为 `null`
+- 支持 JWT 认证、RSS 接口限流和推荐订阅源
+- 支持 OpenTelemetry、Prometheus、Grafana、Tempo 和 Loki
+- 使用 Pytest、Ruff 和覆盖率报告保障代码质量
 
-## 🎯 **项目目标**
+## 技术栈
 
-- 爬取用户订阅的 RSS 新闻源。
-- 使用 AI 生成简短摘要。
-- 根据用户阅读历史，个性化推荐相关新闻。
-- 监控 API 请求量、摘要生成成功率。
-- 设定告警规则，如 API 失败率高于 20% 触发警报。
-- 支持单元测试及测试报告。
-- 集成 CICD 流水线，自动化部署。
+| 类别 | 技术 |
+| --- | --- |
+| 语言与包管理 | Python 3.12、uv |
+| Web API | FastAPI、Uvicorn、Pydantic |
+| 数据库 | PostgreSQL 16、SQLAlchemy、asyncpg |
+| 异步任务 | Celery、Redis |
+| RSS 与正文解析 | Feedparser、aiohttp、Parsel、html2text |
+| AI 摘要 | OpenAI Python SDK、OpenAI 兼容模型服务 |
+| 认证与限流 | JWT、Argon2、SlowAPI |
+| 可观测性 | OpenTelemetry、Prometheus、Grafana、Tempo、Loki |
+| 测试与检查 | Pytest、pytest-asyncio、Ruff、Codecov |
+| 部署 | Docker Compose、Nginx |
 
----
+## 工作流程
 
-## 🚀 **核心功能**
-
-- [x] 用户身份验证 & 登录
-- [x] API 限流 & 身份认证（JWT）
-- [x] 单元测试（Pytest）
-- [x] 新闻订阅
-- [x] 监控 Metrics（OpenTelemetry + otel-collector + Prometheus + Grafana）
-- [x] 监控 Traces（OpenTelemetry + otel-collector + Tempo + Grafana）
-- [x] 监控 Logs（OpenTelemetry + otel-collector + Loki + Grafana）
-- [x] 监控 FastAPI-radar（实时请求，异常监控）
-- [x] pydantic-settings（配置管理）
-- [x] 新闻爬取 & 存储（Celery + asyncio + aiohttp + parsel）
-- [x] AI 生成摘要（DeepSeek API）
-- [x] CICD (Github actions 一键部署到 aliyun ECS 并启动)
-- [ ] 错误追踪 （Sentry ）
-- [ ] 个性化推荐（TF-IDF / 余弦相似度）
-- [ ] Redis 缓存（新闻数据与个性化推荐）
-
----
-
-## 🛠 **技术栈**
-
-| **技术**            | **描述**                                              |
-| ------------------- | ----------------------------------------------------- |
-| **开发语言**        | Python 3.12                                           |
-| **包管理**          | uv                                                    |
-| **后端框架**        | FastAPI                                               |
-| **数据库**          | PostgreSQL + SQLAlchemy（ORM）                        |
-| **任务队列**        | Celery + aioredis（异步任务处理）                     |
-| **配置管理**        | pydantic-settings                                     |
-| **新闻爬取与解析**  | Asyncio + aiohttp + parsel                            |
-| **单元测试**        | Pytest                                                |
-| **AI 组件**         | TODO                                                  |
-| **监控 Metrics**    | OpenTelemetry + otel-collector + Prometheus + Grafana |
-| **监控 Traces**     | OpenTelemetry + otel-collector + Tempo + Grafana      |
-| **监控 Logs**       | OpenTelemetry + otel-collector + Loki + Grafana       |
-| **监控 请求与异常** | FastAPI-radar                                         |
-| **错误追踪**        | Sentry                                                |
-| **API 认证**        | JWT（身份验证）                                       |
-| **API 限流**        | SlowAPI（请求频率限制）                               |
-| **部署方式**        | Docker Compose                                        |
-
----
-
-## 环境安装
-
-## uv
-
-```sh
-curl -LsSf https://astral.sh/uv/install.sh | sh
+```text
+Celery Beat
+    -> 分发需要更新的订阅源
+    -> Worker 获取并解析 Feed
+    -> 并发下载新文章正文
+    -> HTML 转换为 Markdown 并提取封面
+    -> AI 生成结构化 Markdown 摘要
+    -> 写入 PostgreSQL
+    -> FastAPI 向前端提供文章列表与详情
 ```
 
----
+AI 摘要会根据文章类型自适应组织内容：先给出简短导读，再提炼核心内容，并仅在原文存在相应信息时加入关键数据、案例、影响或建议。模型只允许使用原文图片 URL，代表性图片会放在对应段落之后，避免头像、广告和装饰图干扰阅读。
 
-## 🚀 **如何本地运行**
+## 项目结构
 
-```sh
-# 使用 poetry install python package
-make install
+```text
+app/
+├── models/       # SQLAlchemy 数据模型
+├── routes/       # FastAPI 路由
+├── schemas/      # Pydantic 请求与响应模型
+├── services/     # 数据库和认证服务
+└── utils/        # 限流、校验和日志工具
+celery_app/
+├── tasks/        # RSS 调度、抓取和入库任务
+├── constants.py  # AI 摘要提示词
+├── llm.py        # 模型调用与输出规范化
+└── config.py     # Celery 配置
+config/           # PostgreSQL、Nginx 与可观测性配置
+scripts/          # 本地运行、测试和部署脚本
+tests/            # API、抓取器、模型和工具测试
 ```
 
-```sh
-# 本地启动 WebAPI
+## 环境要求
+
+- Python `>=3.12,<3.13`
+- [uv](https://docs.astral.sh/uv/)
+- PostgreSQL 16
+- Redis 6.2 或兼容版本
+- Docker 与 Docker Compose，推荐用于数据库、Redis 和完整服务栈
+
+安装依赖：
+
+```bash
+uv sync
+```
+
+## 环境变量
+
+本地脚本从 `.env.local` 加载变量，Docker Compose 使用 `.env.docker` 和 `.env`。不要把真实密钥提交到仓库。
+
+常用配置示例：
+
+```dotenv
+APP_ENV=local
+SECRET_KEY=replace-with-a-random-secret
+
+DB_URL=postgresql+asyncpg://user:password@localhost:5432/newsdb
+DB_POOL_SIZE=10
+DB_MAX_OVERFLOW=20
+DB_POOL_TIMEOUT=15
+DB_POOL_RECYCLE=1800
+DB_POOL_PRE_PING=true
+
+REDIS_HOST=localhost
+REDIS_PORT=6379
+REDIS_BROKER_NUM=1
+REDIS_BACKEND_NUM=2
+
+# OpenAI 兼容接口；不设置 API_KEY 时跳过 AI，总体采集流程仍可运行
+LLM_API_KEY=replace-with-provider-key
+LLM_BASE_URL=https://api.deepseek.com
+LLM_MODEL=deepseek-v4-flash
+LLM_MAX_TOKENS=4096
+LLM_TEMPERATURE=0.1
+
+RSS_TIMEOUT=15
+RSS_LIMITER=5
+RSS_TIME_UNIT=minute
+CELERY_BEAT_MINUTES=15
+```
+
+`LLM_BASE_URL` 可以指向任意兼容 OpenAI Chat Completions API 的服务。低温度配置更适合忠实摘要；提高温度可能增加表达变化，也会增加事实偏移风险。
+
+## 本地运行
+
+启动 FastAPI 及 PostgreSQL：
+
+```bash
 make local-run
 ```
 
-```sh
-# 启动 Celery beat and worker
-make local-celery-start
+服务默认运行于 <http://127.0.0.1:8000>。
 
-# 停止 Celery beat and worker
+启动和停止定时采集任务：
+
+```bash
+make local-celery-start
 make local-celery-stop
 ```
 
-由于会使用到 AI 功能，可在 .env 文件里添加相关环境变量，
-否则订阅的总结(summary_md) 字段将不会有内容生成, 其它功能正常
+也可以启动完整 Docker Compose 环境：
 
-```.env
-LLM_API_KEY="XXX"
-LLM_BASE_URL="https://xxx" # Options 默认使用 DeepSeek
-LLM_MODEL="YYY" # Options 默认使用 deepseek-chat
+```bash
+make docker-run
+make docker-stop
 ```
 
-<details>
-<summary>
-OpenTelemetry-Instrument 启动, 并观测 Metrics, Traces, Logs
-</summary>
+Docker Compose 会启动 Web API、Celery Worker、Celery Beat、PostgreSQL、Redis、Nginx，以及可选的完整可观测性组件。首次启动前需要创建 Compose 使用的外部网络并准备环境文件。
 
-```sh
-# 注意不能添加 --reload 启动
+## API
+
+主要接口如下，完整请求与响应结构以 Swagger UI 为准。
+
+| 方法 | 路径 | 认证 | 用途 |
+| --- | --- | --- | --- |
+| `POST` | `/api/v1/user/register` | 否 | 注册用户 |
+| `POST` | `/api/v1/user/token` | 否 | 获取访问令牌 |
+| `GET` | `/api/v1/user/me` | 是 | 获取当前用户 |
+| `PUT` | `/api/v1/user/me` | 是 | 更新当前用户 |
+| `POST` | `/api/v1/rss/subscribe` | 是 | 添加订阅源 |
+| `DELETE` | `/api/v1/rss/unsubscribe/{rss_id}` | 是 | 取消订阅 |
+| `GET` | `/api/v1/rss/subscriptions` | 否 | 获取可用订阅源 |
+| `GET` | `/api/v1/rss/subscriptions/{rss_id}/articles` | 否 | 获取订阅源文章 |
+| `GET` | `/api/v1/rss/subscriptions/{rss_id}/articles/{article_id}` | 否 | 获取文章详情并增加阅读次数 |
+| `GET` | `/api/v1/rss/recommended` | 否 | 获取推荐订阅源 |
+| `POST` | `/api/v1/visit/track` | 否 | 记录站点访问 |
+| `GET` | `/api/v1/visit/count` | 否 | 获取累计访问次数 |
+
+文档地址：
+
+- Swagger UI：`/docs`
+- ReDoc：`/redoc`
+- OpenAPI JSON：`/openapi.json`
+
+## 测试与代码检查
+
+测试脚本会启动独立的 PostgreSQL 测试实例，并读取 `.env.ci`：
+
+```bash
+# 全部测试
+make test
+
+# 传递 Pytest 参数
+make test ARGS="-vv -s"
+
+# 运行指定测试
+make test ARGS="tests/celery_app/test_llm.py -q"
+```
+
+运行静态检查：
+
+```bash
+uv run ruff check .
+```
+
+## 可观测性
+
+使用 OpenTelemetry Instrumentation 启动 API：
+
+```bash
 make local-otel-run
 ```
 
-![metrics](./png/prometheus-metrics.png)
-![traces](./png/tempo-traces.png)
-![logs](./png/loki-logs.png)
+相关服务与默认端口：
 
-</details>
+| 服务 | 端口 | 用途 |
+| --- | --- | --- |
+| Grafana | `3000` | 指标、日志和链路看板 |
+| Prometheus | `9090` | Metrics 存储与查询 |
+| Tempo | `3200` | Traces 存储与查询 |
+| Loki | `3100` | Logs 存储与查询 |
+| OTLP gRPC | `4317` | 遥测数据接收 |
 
----
+## License
 
-## 🧪 **测试**
-
-```sh
-make test # 运行所有测试文件
-make test ARGS="-vv -s" # 运行所有测试文件, -s 表示 print() 的内容也显示
-make test ARGS="tests/test_whoami -vv -s" # 运行单个文件, 并显示输出
-```
-
----
-
-## 📡 **API 接口文档**
-
-- 📌 本地 API 文档：[Swagger UI](http://127.0.0.1:8000/docs)
-- 📌 线上 API 文档：[Swagger UI](https://rss.navydev.top/docs) | [ReDoc](https://rss.navydev.top/redoc) | [OpenAPI JSON](https://rss.navydev.top/openapi.json)
-- 📌 后续将提供 Postman 请求案例
+[MIT](./LICENSE)
