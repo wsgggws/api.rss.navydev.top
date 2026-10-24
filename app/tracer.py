@@ -12,7 +12,7 @@ from opentelemetry.sdk.trace.export import (
     ConsoleSpanExporter,  # Optional for debugging
 )
 
-SERVICE_NAME = "api.rss.navydev.top"
+SERVICE_NAME = "navydev.top_api.rss"
 
 
 # Initialize OpenTelemetry Tracer globally

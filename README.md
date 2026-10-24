@@ -1,12 +1,12 @@
-# api.rss.navydev.top
+# navydev.top_api.rss
 
-[![CI](https://github.com/wsgggws/api.rss.navydev.top/actions/workflows/ci.yml/badge.svg)](https://github.com/wsgggws/api.rss.navydev.top/actions/workflows/ci.yml)
-[![Codecov](https://codecov.io/gh/wsgggws/api.rss.navydev.top/branch/main/graph/badge.svg)](https://codecov.io/gh/wsgggws/api.rss.navydev.top)
+[![CI](https://github.com/wsgggws/navydev.top_api.rss/actions/workflows/ci.yml/badge.svg)](https://github.com/wsgggws/navydev.top_api.rss/actions/workflows/ci.yml)
+[![Codecov](https://codecov.io/gh/wsgggws/navydev.top_api.rss/branch/main/graph/badge.svg)](https://codecov.io/gh/wsgggws/navydev.top_api.rss)
 
 RSS NAVY 的后端服务。项目负责 RSS 订阅管理、定时采集、文章元数据查询、用户认证和访问统计，并提供一套基于 OpenTelemetry 的可观测性环境。
 
-- 前端：<https://rss.navydev.top/>
-- 线上 API：<https://api.rss.navydev.top/>
+- 前端：<https://navydev.top/rss>
+- 线上 API：<https://navydev.top/rss/backend/>
 - 本地 Swagger UI：<http://127.0.0.1:8000/docs>
 
 ## 核心能力

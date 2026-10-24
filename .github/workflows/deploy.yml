@@ -11,10 +11,15 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    concurrency:
+      group: deploy-navydev-top-api-rss
+      cancel-in-progress: true
+    permissions:
+      contents: read
 
     steps:
       - name: ✅ Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
 
       - name: 📄 Create .env file and Copy .env to server via SCP
         run: echo "${{ secrets.ENV_FILE }}" > .env
@@ -26,17 +31,17 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: ".,!notes,!tests,!png,!.git,!.github,!.env.ci,!.env.local"
-          target: "deploy/api.rss.navydev.top/"
+          target: "deploy/navydev.top_api.rss/"
           strip_components: 0
 
       - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.5.3
+        uses: webfactory/ssh-agent@v0.10.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: 🚀 Deploy on server
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.REMOTE_IP }} <<EOF
-            cd deploy/api.rss.navydev.top/
+            cd deploy/navydev.top_api.rss/
             make docker-run
           EOF

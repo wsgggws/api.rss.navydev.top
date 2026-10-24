@@ -1,5 +1,5 @@
 [project]
-name = "api.rss.navydev.top"
+name = "navydev.top_api.rss"
 version = "0.1.0"
 description = ""
 authors = [{ name = "wsgggws", email = "wsgggws@gmail.com" }]

@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Start Docker Compose
         run: |
@@ -21,9 +21,9 @@ jobs:
           done
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
-          python-version: "3.11"
+          python-version: "3.12"
 
       - name: Install uv
         run: pip install uv
@@ -44,4 +44,4 @@ jobs:
         with:
           file: ./coverage.xml
           token: ${{ secrets.CODECOV_TOKEN }}
-          slug: wsgggws/news-summary
+          slug: wsgggws/navydev.top_api.rss

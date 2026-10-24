@@ -44,7 +44,7 @@ setup_middlewares(app)
 
 @app.get("/whoami")
 async def root():
-    return {"whoami": "api.rss.navydev.top"}
+    return {"whoami": "navydev.top_api.rss"}
 
 
 @app.get("/sentry-debug")
