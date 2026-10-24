@@ -131,6 +131,10 @@ make docker-stop
 
 Docker Compose 会启动 Web API、Celery Worker、Celery Beat、PostgreSQL、Redis、Nginx，以及可选的完整可观测性组件。首次启动前需要创建 Compose 使用的外部网络并准备环境文件。
 
+部署脚本会检查旧目录 `~/deploy/api.rss.navydev.top/data/postgres`。如果重命名后的
+新数据库为空，会先备份新目录，再迁移旧 PostgreSQL 数据；当前数据库已有数据时
+则跳过迁移。
+
 ## API
 
 主要接口如下，完整请求与响应结构以 Swagger UI 为准。

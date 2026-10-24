@@ -41,7 +41,9 @@ jobs:
 
       - name: 🚀 Deploy on server
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.REMOTE_IP }} <<EOF
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.REMOTE_IP }} <<'EOF'
+            set -euo pipefail
             cd deploy/navydev.top_api.rss/
+            bash scripts/migrate-legacy-data.sh
             make docker-run
           EOF
