@@ -5,7 +5,7 @@ FROM swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/python:3.12-slim AS buil
 RUN pip install --no-cache-dir uv
 
 # 设置工作目录
-WORKDIR /navydev.top_api.rss
+WORKDIR /api.rss.navydev.top
 
 # 复制依赖文件（缓存优化：先复制 pyproject 和锁文件）
 COPY pyproject.toml uv.lock ./
@@ -20,7 +20,7 @@ RUN uv sync --frozen --no-dev
 FROM swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/python:3.12-slim AS runtime
 
 # 设置工作目录
-WORKDIR /navydev.top_api.rss
+WORKDIR /api.rss.navydev.top
 
 # 从 builder 复制系统级已安装依赖（site-packages）
 # Python 安装目录一般为 /usr/local/lib/python3.12/
